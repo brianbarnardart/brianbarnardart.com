@@ -1,0 +1,63 @@
+---
+# This file extends the minima theme's default CSS.
+# The --- frontmatter tells Jekyll to process it.
+---
+
+@import "minima";
+
+// ── Shorts responsive grid ──────────────────────────────────────────────────
+
+.shorts-grid {
+  display: grid;
+  gap: 1.25rem;
+
+  // Mobile: single column
+  grid-template-columns: 1fr;
+
+  // Tablet: two columns
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Desktop: three columns
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.short-card {
+  display: flex;
+  flex-direction: column;
+}
+
+// Enforce 9:16 aspect ratio for vertical Shorts
+.short-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%; // 16/9 inverted
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.short-caption {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+// ── Social / channel link ───────────────────────────────────────────────────
+
+.channel-link {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  text-align: center;
+}

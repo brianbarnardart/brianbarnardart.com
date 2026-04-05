@@ -1,0 +1,15 @@
+# Brian's YouTube Shorts
+#
+# To add a short: paste the YouTube URL, e.g. https://www.youtube.com/shorts/dQw4w9WgXcQ
+# The "id" is the last part after /shorts/
+# The "title" is just for your own reference — it shows as caption on the site.
+#
+# Example entry:
+# - id: dQw4w9WgXcQ
+#   title: Painting a sunset in acrylic
+
+- id: EwNpy4Kwisc
+  title: Mikey Houser Themed Painting
+
+- id: VzBPOkKssuI
+  title: Painting Auctioned for Cat's Angels
