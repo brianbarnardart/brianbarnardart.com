@@ -4,8 +4,7 @@ url: "https://brianbarnardart.com"
 baseurl: ""
 
 # Author info used by the minima theme
-author:
-  name: Brian Barnard
+author: Brian Barnard
 
 # The minima theme ships with GitHub Pages — no Gemfile needed.
 theme: minima
