@@ -1,0 +1,20 @@
+title: Brian Barnard Art
+description: Fernandina Beach Artist
+url: "https://brianbarnardart.com"
+baseurl: ""
+
+# Author info used by the minima theme
+author:
+  name: Brian Barnard
+
+# The minima theme ships with GitHub Pages — no Gemfile needed.
+theme: minima
+
+# Jekyll build settings
+markdown: kramdown
+permalink: pretty
+
+# These files/dirs are excluded from the Jekyll build output
+exclude:
+  - README.md
+  - LICENSE
