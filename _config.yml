@@ -13,6 +13,12 @@ theme: minima
 markdown: kramdown
 permalink: pretty
 
+# Artworks collection — each file in _artworks/ becomes a page
+collections:
+  artworks:
+    output: true
+    permalink: /artworks/:name/
+
 # These files/dirs are excluded from the Jekyll build output
 exclude:
   - README.md
