@@ -8,7 +8,7 @@ Interested in a piece, a commission, or just want to say hello?
 
 You can reach me at **[Facebook: @brianbarnardart](https://www.facebook.com/brianbarnardart/)** or on **[LinkedIn](https://www.linkedin.com/in/brian-barnard-60b7b543)**, and soon I'll have the form below working too.  :-)
 
-<form action="https://submit.formspark.io/f/FORMSPARK_FORM_ID" method="POST" class="contact-form">
+<form action="https://api.formspark.io/AvqUDoWyl" method="POST" class="contact-form">
   <div class="form-field">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Your name" required>
