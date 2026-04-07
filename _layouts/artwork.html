@@ -5,7 +5,9 @@ layout: default
 
   <div class="artwork-hero">
     <div class="artwork-image-wrap">
-      <img src="{{ page.image }}" alt="{{ page.title }}">
+      <a class="lightbox-trigger" href="{{ page.image }}" aria-label="View larger image">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+      </a>
     </div>
     <div class="artwork-details">
       <h1>{{ page.title }}</h1>
@@ -35,3 +37,46 @@ layout: default
   {% endunless %}
 
 </article>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button aria-label="Close">&times;</button>
+  <img src="" alt="">
+</div>
+
+<script>
+(function () {
+  var lightbox = document.getElementById('lightbox');
+  var lbImg    = lightbox.querySelector('img');
+  var lbClose  = lightbox.querySelector('button');
+
+  function open(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function close() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('.lightbox-trigger').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var img = link.querySelector('img');
+      open(link.href, img ? img.alt : '');
+    });
+  });
+
+  lbClose.addEventListener('click', close);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+}());
+</script>
