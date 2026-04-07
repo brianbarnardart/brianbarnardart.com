@@ -5,6 +5,70 @@
 
 @import "minima";
 
+// ── Contact form ────────────────────────────────────────────────────────────
+
+.contact-form {
+  max-width: 560px;
+  margin-top: 1.5rem;
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+
+    .optional {
+      font-weight: normal;
+      color: #888;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.15s;
+      width: 100%;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: none;
+        border-color: #666;
+      }
+    }
+
+    textarea {
+      min-height: 7rem;
+      resize: none;      // auto-grow handles sizing instead
+      overflow: hidden;
+    }
+  }
+}
+
+.form-submit {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #555;
+  }
+}
+
 // ── Social icon alignment ───────────────────────────────────────────────────
 
 .social-media-list a svg {
