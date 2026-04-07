@@ -11,9 +11,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e0e0e0;
+  margin-top: -1px;   // sits flush against any top border from the page wrapper
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-top: none;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .artwork-nav-link {
@@ -225,7 +227,14 @@
   font-weight: 700;
 
   &--sold      { background: #e8e8e8; color: #555; }
-  &--available { background: #e6f4ea; color: #2a7a2a; }
+  &--available {
+    background: #e6f4ea;
+    color: #2a7a2a;
+    text-decoration: none;
+
+    &:hover, &:visited, &:active { color: #2a7a2a; }
+    &:hover { text-decoration: underline; }
+  }
 }
 
 .artwork-description {
