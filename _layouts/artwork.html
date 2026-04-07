@@ -2,32 +2,25 @@
 layout: default
 ---
 
+{% assign prev_artwork = page.previous | default: site.artworks.last %}
+{% assign next_artwork = page.next | default: site.artworks.first %}
+
 <nav class="artwork-nav">
-  {% if page.previous %}
-    <a href="{{ page.previous.url }}" class="artwork-nav-link artwork-nav-link--prev">
-      <span class="artwork-nav-arrow">&larr;</span>
-      <span class="artwork-nav-text">
-        <span class="artwork-nav-label">Previous</span>
-        <span class="artwork-nav-title">{{ page.previous.title }}</span>
-      </span>
-    </a>
-  {% else %}
-    <span></span>
-  {% endif %}
+  <a href="{{ prev_artwork.url }}" class="artwork-nav-link artwork-nav-link--prev">
+    <span class="artwork-nav-arrow">&larr;</span>
+    <span class="artwork-nav-text">
+      <span class="artwork-nav-label">Previous</span>
+      <span class="artwork-nav-title">{{ prev_artwork.title }}</span>
+    </span>
+  </a>
 
-  <a href="/gallery/" class="artwork-nav-gallery">All Works</a>
-
-  {% if page.next %}
-    <a href="{{ page.next.url }}" class="artwork-nav-link artwork-nav-link--next">
-      <span class="artwork-nav-text">
-        <span class="artwork-nav-label">Next</span>
-        <span class="artwork-nav-title">{{ page.next.title }}</span>
-      </span>
-      <span class="artwork-nav-arrow">&rarr;</span>
-    </a>
-  {% else %}
-    <span></span>
-  {% endif %}
+  <a href="{{ next_artwork.url }}" class="artwork-nav-link artwork-nav-link--next">
+    <span class="artwork-nav-text">
+      <span class="artwork-nav-label">Next</span>
+      <span class="artwork-nav-title">{{ next_artwork.title }}</span>
+    </span>
+    <span class="artwork-nav-arrow">&rarr;</span>
+  </a>
 </nav>
 
 <article class="artwork-page">

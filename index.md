@@ -1,6 +1,5 @@
 ---
 layout: home
-title: Welcome
 ---
 
 Welcome to the homepage of **Brian Barnard**: Fernandina Beach artist working in acrylic and mixed media.
