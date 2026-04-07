@@ -4,7 +4,71 @@
 ---
 
 @import "minima";
+// ── Artwork prev/next navigation ────────────────────────────────────────────
 
+.artwork-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.artwork-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  max-width: 38%;
+
+  &:hover .artwork-nav-title {
+    text-decoration: underline;
+  }
+}
+
+.artwork-nav-link--next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.artwork-nav-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.artwork-nav-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+}
+
+.artwork-nav-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.artwork-nav-arrow {
+  font-size: 1.4rem;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.artwork-nav-gallery {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover { color: #333; }
+}
 // ── Lightbox ────────────────────────────────────────────────────────────────
 
 .lightbox-trigger {
