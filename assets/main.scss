@@ -67,6 +67,18 @@
   &:hover {
     background: #555;
   }
+  button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.form-status {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+
+  &.form-status--ok  { color: #2a7a2a; }
+  &.form-status--err { color: #b00020; }
 }
 
 // ── Social icon alignment ───────────────────────────────────────────────────
