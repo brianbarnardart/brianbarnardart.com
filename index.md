@@ -1,5 +1,6 @@
 ---
 layout: home
+image: /assets/paintings/fox-and-nymph.jpg
 ---
 
 Welcome to the homepage of **Brian Barnard**: Fernandina Beach artist working in acrylic and mixed media.

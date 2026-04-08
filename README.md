@@ -201,6 +201,13 @@ lines in the files mean.
 
 ---
 
+## Images Shown By Chat Apps and iMessage
+
+`jekyll-seo-tag` reads `image:` from front matter and outputs it as `og:image`.
+Chat apps and iMessage use that to pull the preview thumbnail.
+
+---
+
 ## Adding a new page
 
 1. Create a new `.md` file in the project root, e.g. `gallery.md`.
