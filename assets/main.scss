@@ -3,7 +3,14 @@
 # The --- frontmatter tells Jekyll to process it.
 ---
 
-@import "minima";// ── Site logo SVG ────────────────────────────────────────────────────────────
+@import "minima";
+
+// ── Global background ───────────────────────────────────────────────────────
+
+body {
+  background-color: #fdfdfd;  // looks slightly classier than pure white
+}
+
 
 // ── Site logo SVG ────────────────────────────────────────────────────────────
 
