@@ -62,8 +62,17 @@
   white-space: nowrap;
   margin-right: 0;
 }
-.site-nav .page-link:visited { background-color: #1756a9; color: #fff; }
+// Explicitly neutralise a:visited so nav buttons always look the same colour
+.site-nav .page-link:visited { background-color: #2a7ae2; color: #fff; }
 .site-nav .page-link:hover   { background-color: #1756a9; color: #fff; text-decoration: none; }
+
+@media (max-width: 600px) {
+  .site-nav .page-link,
+  .site-nav .page-link:not(:last-child) {
+    padding: 0.45em 1em;
+    font-size: 1rem;
+  }
+}
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────
 
