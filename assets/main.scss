@@ -3,7 +3,31 @@
 # The --- frontmatter tells Jekyll to process it.
 ---
 
-@import "minima";
+@import "minima";// ── Site logo SVG ────────────────────────────────────────────────────────────
+
+// ── Site logo SVG ────────────────────────────────────────────────────────────
+
+// Override minima's dark .site-title colour so currentColor flows into the SVG
+.site-title,
+.site-title:visited { color: #2a7ae2; }
+.site-title:hover   { color: #1756a9; text-decoration: none; }
+
+.site-title svg {
+  height: 1.6em;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: visible;
+}
+
+// Nav links — match default link colour so they behave like any other link
+.site-nav .page-link {
+  color: #2a7ae2;
+
+  &:visited { color: #1756a9; }
+  &:hover   { color: #111; text-decoration: underline; }
+}
+
 // ── Artwork prev/next navigation ────────────────────────────────────────────
 
 .artwork-nav {
