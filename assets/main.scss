@@ -20,12 +20,47 @@
   overflow: visible;
 }
 
-// Nav links — match default link colour so they behave like any other link
-.site-nav .page-link {
-  color: #2a7ae2;
+// ── Header layout — logo + nav always visible, wraps on small screens ───────
 
-  &:visited { color: #1756a9; }
-  &:hover   { color: #111; text-decoration: underline; }
+.site-header .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+// Override minima's float/absolute hamburger nav — always show inline
+.site-nav {
+  float: none;
+  position: static;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  line-height: normal;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+// Nav links as solid rounded-corner buttons
+.site-nav .page-link {
+  display: inline-block;
+  padding: 0.2em 0.65em;
+  background-color: #2a7ae2;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  line-height: 1.5;
+  white-space: nowrap;
+  margin-right: 0;
+
+  &:visited { background-color: #1756a9; color: #fff; }
+  &:hover   { background-color: #1756a9; color: #fff; text-decoration: none; }
 }
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────
