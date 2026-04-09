@@ -46,16 +46,16 @@
   gap: 0.3rem;
 }
 
-// Nav links as solid rounded-corner buttons
+// Nav links as outlined rounded-corner buttons with a light fill
 // Use :not(:last-child) to beat minima's margin-right: 20px rule
 .site-nav .page-link,
 .site-nav .page-link:not(:last-child) {
   display: inline-block;
   padding: 0.2em 0.65em;
-  background-color: #2a7ae2;
-  border: none;
+  background-color: rgba(42, 122, 226, 0.1);
+  border: 1.5px solid #2a7ae2;
   border-radius: 5px;
-  color: #fff;
+  color: #2a7ae2;
   font-size: 0.9rem;
   text-decoration: none;
   line-height: 1.5;
@@ -63,8 +63,8 @@
   margin-right: 0;
 }
 // Explicitly neutralise a:visited so nav buttons always look the same colour
-.site-nav .page-link:visited { background-color: #2a7ae2; color: #fff; }
-.site-nav .page-link:hover   { background-color: #1756a9; color: #fff; text-decoration: none; }
+.site-nav .page-link:visited { background-color: rgba(42, 122, 226, 0.1); color: #2a7ae2; }
+.site-nav .page-link:hover   { background-color: rgba(42, 122, 226, 0.2); color: #1756a9; text-decoration: none; border-color: #1756a9; }
 
 @media (max-width: 600px) {
   // Stack header vertically on mobile, nav on top of logo
