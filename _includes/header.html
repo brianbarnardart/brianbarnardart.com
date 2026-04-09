@@ -5,10 +5,9 @@
     </a>
 
     <nav class="site-nav">
-      {%- for my_page in site.pages -%}
-        {%- if my_page.title and my_page.nav != false -%}
-          <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-        {%- endif -%}
+      {%- assign nav_pages = site.pages | where_exp: "p", "p.nav" | sort: "nav" -%}
+      {%- for my_page in nav_pages -%}
+        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
       {%- endfor -%}
     </nav>
   </div>
