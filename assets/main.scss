@@ -13,8 +13,9 @@
 .site-title:hover   { color: #1756a9; text-decoration: none; }
 
 .site-title svg {
-  height: 2rem;
-  width: auto;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
   vertical-align: middle;
   display: inline-block;
 }
@@ -72,7 +73,11 @@
     align-items: flex-start;
   }
   .site-nav   { order: 1; }
-  .site-title { order: 2; }
+  .site-title { order: 2; width: 100%; }
+
+  .site-title svg {
+    max-width: 100%;
+  }
 
   .site-nav .page-link,
   .site-nav .page-link:not(:last-child) {
