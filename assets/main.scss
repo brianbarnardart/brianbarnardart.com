@@ -67,6 +67,14 @@
 .site-nav .page-link:hover   { background-color: #1756a9; color: #fff; text-decoration: none; }
 
 @media (max-width: 600px) {
+  // Stack header vertically on mobile, nav on top of logo
+  .site-header .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-nav   { order: 1; }
+  .site-title { order: 2; }
+
   .site-nav .page-link,
   .site-nav .page-link:not(:last-child) {
     padding: 0.45em 1em;
