@@ -194,7 +194,7 @@ Anything below the closing `---` is the page content, written in Markdown.
 
 Jekyll passes Markdown files through a templating language called
 **[Liquid](https://shopify.github.io/liquid/)** before converting to HTML.
-This is how `{% include shorts_grid.html %}` works, and how `_data/shorts.yml`
+This is how `{% include shorts-grid.html %}` works, and how `_data/shorts.yml`
 gets looped over. Most content authors won't need to write Liquid, but
 recognising `{{ }}` (output) and `{% %}` (logic) tags explains what those
 lines in the files mean.

@@ -9,4 +9,4 @@ Welcome to the homepage of **Brian Barnard**: Fernandina Beach artist working in
 
 Have ideas?  **[Contact Me](/contact)**
 
-{% include shorts_grid.html %}
+{% include shorts-grid.html %}

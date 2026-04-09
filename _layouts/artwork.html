@@ -38,7 +38,7 @@ layout: default
       {% if page.year %}        <p class="artwork-meta"><strong>Year:</strong> {{ page.year }}</p>{% endif %}
 
       {% if page.price %}
-        <a href="#inq-name" class="artwork-status artwork-status--available">{{ page.price }}</a>
+        <a href="#form-name-inquiry-form" class="artwork-status artwork-status--available">{{ page.price }}</a>
       {% endif %}
     </div>
   </div>
@@ -55,7 +55,12 @@ layout: default
     <a href="/contact/" class="form-submit">Get in touch about a commission</a>
   </section>
   {% else %}
-  {% include artwork_inquiry.html %}
+  <section class="artwork-inquiry">
+    <h2>Interested in this piece?</h2>
+    <p>Leave your details and Brian will get back to you.</p>
+
+    {% include contact-form.html id="inquiry-form" is_inquiry=true message_placeholder="Any questions about the piece?" submit_text="Send Enquiry" success_message="Enquiry sent — Brian will be in touch soon!" %}
+  </section>
   {% endunless %}
 
 </article>
