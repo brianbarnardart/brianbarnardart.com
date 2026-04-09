@@ -47,10 +47,13 @@
 }
 
 // Nav links as solid rounded-corner buttons
-.site-nav .page-link {
+// Use :not(:last-child) to beat minima's margin-right: 20px rule
+.site-nav .page-link,
+.site-nav .page-link:not(:last-child) {
   display: inline-block;
   padding: 0.2em 0.65em;
   background-color: #2a7ae2;
+  border: none;
   border-radius: 5px;
   color: #fff;
   font-size: 0.9rem;
@@ -58,10 +61,9 @@
   line-height: 1.5;
   white-space: nowrap;
   margin-right: 0;
-
-  &:visited { background-color: #1756a9; color: #fff; }
-  &:hover   { background-color: #1756a9; color: #fff; text-decoration: none; }
 }
+.site-nav .page-link:visited { background-color: #1756a9; color: #fff; }
+.site-nav .page-link:hover   { background-color: #1756a9; color: #fff; text-decoration: none; }
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────
 

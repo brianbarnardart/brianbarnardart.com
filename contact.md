@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+nav: false
 ---
 
 Interested in a piece, a commission, or just want to say hello?
