@@ -582,32 +582,33 @@ body {
     align-items: flex-end;          // Align their bottom edges before overlap
   }
 
-  // The logo "tab" jutting out left and slightly rotated
+  // The logo "tab" hangs off the left — but only as far as the viewport safely allows
   .site-title {
     background-color: #fdfdfd !important;
     padding: 0.8rem 1.2rem;
-    margin-left: -30px; // Simple static offset
+    // clamp(max-hang, (space-to-left-of-content - safety-margin), 0)
+    // Starts hanging when viewport > 960px; capped at 120px; always leaves ≥20px to edge
+    transform: translateX(clamp(-120px, calc((920px - 100vw) / 2 + 20px), 0px)) rotate(-1.5deg);
+    transform-origin: bottom right;
     box-shadow: -2px 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #eee;
     border-radius: 4px 4px 0 0;
-    transform: rotate(-1.5deg);
-    transform-origin: bottom right;
     position: relative;
     z-index: 10;
     display: inline-block;
   }
 
-  // The nav buttons "tab" jutting out right and slightly rotated
+  // The nav buttons "tab" hangs off the right — capped to stay ≥20px from viewport edge
   .site-nav {
     background-color: #fdfdfd !important;
     padding: 0.8rem 1.2rem;
-    margin-right: -30px; // Simple static offset
-    margin-left: auto;
+    margin-left: auto; // push nav to the right end of the flex row
+    // clamp(0, (space-to-right-of-content - safety-margin), max-hang)
+    transform: translateX(clamp(0px, calc((100vw - 920px) / 2 - 20px), 120px)) rotate(1.5deg);
+    transform-origin: bottom left;
     box-shadow: 2px 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #eee;
     border-radius: 4px 4px 0 0;
-    transform: rotate(1.5deg);
-    transform-origin: bottom left;
     position: relative;
     z-index: 10;
   }
@@ -627,14 +628,15 @@ body {
     z-index: 20;
   }
 
-  // The footer sits at the bottom, askew other way
+  // The footer slides toward the bottom-right — centered then pushed right safely
   .site-footer {
     max-width: 850px;
-    margin-right: -30px; // Simple static offset
-    margin-left: auto;
+    margin-left: auto;  // center the footer box …
+    margin-right: auto; // … then translateX shifts it right without ever clipping
     margin-bottom: 3rem;
     margin-top: -1px; // tuck against page content safely
-    transform: rotate(-1deg);
+    // Same clamp formula as the nav: starts moving at >960px viewport, capped at 80px
+    transform: translateX(clamp(0px, calc((100vw - 920px) / 2 - 20px), 80px)) rotate(-1deg);
     box-shadow: 4px 5px 12px rgba(0,0,0,0.06);
     border: 1px solid #efefef;
     position: relative;
