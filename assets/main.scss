@@ -14,38 +14,49 @@ body {
   background-attachment: fixed;
 }
 
-// Wrap the main functional sections into a "page" block
+// Wrap the main functional sections into a "page" block resembling stacked art paper
 .site-header,
 .page-content,
 .site-footer {
   background-color: #fdfdfd; // Original site background colour
-  max-width: 900px;         // The width of the paper column
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  // Give them all relative positioning so z-index stacking works
+  position: relative;
 }
 
-.site-header {
-  border-bottom: 1px solid #e8e8e8;
-  // Give top border on wider screens to finish the "paper" look, and minimal shadow
-  @media (min-width: 900px) {
-    margin-top: 2rem;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
-    border-radius: 6px 6px 0 0;
+@media (min-width: 900px) {
+  // The header gets rotated slightly one way
+  .site-header {
+    max-width: 880px;  // Slightly narrower so the paper below peeks through
+    margin-top: 3rem;
+    transform: rotate(-1deg) translateX(-8px);
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    z-index: 10;
   }
-}
 
-.page-content {
-  @media (min-width: 900px) {
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  // The main body is the "center" piece of paper
+  .page-content {
+    max-width: 920px;  // Wider
+    // Push it up slightly so it overlaps the header realistically
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+    transform: rotate(0.8deg) translateX(4px);
+    box-shadow: -2px 6px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eaeaea;
+    z-index: 20;
   }
-}
 
-.site-footer {
-  border-top: 1px solid #e8e8e8;
-  @media (min-width: 900px) {
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-radius: 0 0 6px 6px;
+  // The footer sits at the bottom, rotated the other way
+  .site-footer {
+    max-width: 890px;
+    margin-bottom: 3rem;
+    transform: rotate(-0.5deg) translateX(6px);
+    box-shadow: 4px 5px 12px rgba(0,0,0,0.06);
+    border: 1px solid #efefef;
+    z-index: 10;
   }
 }
 
