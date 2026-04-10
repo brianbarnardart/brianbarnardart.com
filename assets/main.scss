@@ -40,10 +40,15 @@ body {
 
   // The main body is the "center" piece of paper
   .page-content {
+    width: 100%;
     max-width: 920px;  // Wider
+    min-height: 55vh;  // Prevents very short pages from collapsing vertically
     // Push it up slightly so it overlaps the header realistically
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #efefef;
+    z-index: 20;
   }
 
   // The footer sits at the bottom, aligned right, letting pattern peek through
