@@ -26,49 +26,6 @@ body {
   position: relative;
 }
 
-@media (min-width: 900px) {
-  // The header juts out to the left, but is wide enough to hold both items
-  .site-header {
-    max-width: 820px;
-    margin-right: auto;
-    margin-left: calc(50vw - 470px);
-    margin-top: 3rem;
-    box-shadow: 2px 4px 15px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-    z-index: 10;
-  }
-
-  // Ensure the navigation stays neatly in flow on the right edge of the header block
-  .site-nav {
-    margin-left: auto; // Pushes the nav to the far right inside the flex container
-  }
-
-  // The main body is the "center" piece of paper
-  .page-content {
-    width: 100%;
-    max-width: 920px;  // Wider
-    min-height: 55vh;  // Prevents very short pages from collapsing vertically
-    // Push it up slightly so it overlaps the header realistically
-    margin-top: -0.5rem;
-    margin-bottom: -0.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    border: 1px solid #efefef;
-    z-index: 20;
-  }
-
-  // The footer sits at the bottom, aligned right, letting pattern peek through
-  .site-footer {
-    max-width: 850px;
-    margin-right: calc(50vw - 490px); // Juts out right
-    margin-left: auto;
-    margin-bottom: 3rem;
-    box-shadow: 4px 5px 12px rgba(0,0,0,0.06);
-    border: 1px solid #efefef;
-    z-index: 10;
-  }
-}
-
-
 // ── Site logo SVG ────────────────────────────────────────────────────────────
 
 // Override minima's dark .site-title colour so currentColor flows into the SVG
@@ -136,15 +93,15 @@ body {
     flex-direction: column;
     align-items: flex-start; // Align entirely to the left edge of the screen
   }
-  
-  .site-nav { 
+
+  .site-nav {
     order: 1;
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.5rem;
   }
-  
-  .site-title { 
-    order: 2; 
-    width: 100%; 
+
+  .site-title {
+    order: 2;
+    width: 100%;
   }
 
   .site-title svg {
@@ -604,4 +561,84 @@ body {
   margin-top: 2rem;
   font-size: 1.05rem;
   text-align: center;
+}
+
+// ── Desktop Asymmetric "Scattered Papers" Layout ────────────────────────────
+
+@media (min-width: 900px) {
+  // Make the header wrapper span the full width, but without a background
+  .site-header {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 920px;
+    margin: 3rem auto 0;
+    z-index: 10;
+  }
+  
+  .site-header .wrapper {
+    padding: 0;
+    justify-content: space-between; // Separate the logo and nav to opposite ends
+    align-items: flex-end;          // Align their bottom edges before overlap
+  }
+
+  // The logo "tab" jutting out left and slightly rotated
+  .site-title {
+    background-color: #fdfdfd !important;
+    padding: 0.8rem 1.2rem;
+    margin-left: -35px; // Jut left
+    box-shadow: -2px 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    border-radius: 4px 4px 0 0;
+    transform: rotate(-1deg);
+    transform-origin: bottom right;
+    position: relative;
+    z-index: 10;
+    
+    // Accommodate the tab behavior naturally
+    display: inline-block;
+  }
+
+  // The nav buttons "tab" jutting out right and slightly rotated
+  .site-nav {
+    background-color: #fdfdfd !important; // Force overwrite the mobile transparency
+    padding: 0.8rem 1.2rem;
+    margin-right: -35px; // Jut right
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    border-radius: 4px 4px 0 0;
+    transform: rotate(1deg);
+    transform-origin: bottom left;
+    position: relative;
+    z-index: 10;
+  }
+
+  // The main body overlaps both tabs, pressing down on them
+  .page-content {
+    background-color: #fdfdfd;
+    width: 100%;
+    max-width: 920px;
+    min-height: 55vh;
+    // Push it up slightly to overlap the tabs, looking "stuck on" 
+    margin-top: -0.6rem; 
+    margin-bottom: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #eaeaea;
+    position: relative;
+    z-index: 20; 
+  }
+
+  // The footer sits at the bottom, askew other way
+  .site-footer {
+    max-width: 850px;
+    margin-right: calc(50vw - 490px); 
+    margin-left: auto;
+    margin-bottom: 3rem;
+    margin-top: -1px; // tuck against page content safely
+    transform: rotate(-0.5deg);
+    box-shadow: 4px 5px 12px rgba(0,0,0,0.06);
+    border: 1px solid #efefef;
+    position: relative;
+    z-index: 10;
+  }
 }
