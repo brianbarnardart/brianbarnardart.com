@@ -575,7 +575,7 @@ body {
     margin: 3rem auto 0;
     z-index: 10;
   }
-  
+
   .site-header .wrapper {
     padding: 0;
     justify-content: space-between; // Separate the logo and nav to opposite ends
@@ -586,15 +586,16 @@ body {
   .site-title {
     background-color: #fdfdfd !important;
     padding: 0.8rem 1.2rem;
-    margin-left: -35px; // Jut left
+    // Uses viewport-aware math to claim exactly 25% of whatever empty margin space is actually available
+    margin-left: clamp(-150px, calc((920px - 100vw) / 4), -20px);
     box-shadow: -2px 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #eee;
     border-radius: 4px 4px 0 0;
-    transform: rotate(-1deg);
+    transform: rotate(-1.5deg);
     transform-origin: bottom right;
     position: relative;
     z-index: 10;
-    
+
     // Accommodate the tab behavior naturally
     display: inline-block;
   }
@@ -603,11 +604,13 @@ body {
   .site-nav {
     background-color: #fdfdfd !important; // Force overwrite the mobile transparency
     padding: 0.8rem 1.2rem;
-    margin-right: -35px; // Jut right
+    // Uses viewport-aware math to claim exactly 25% of whatever empty margin space is actually available
+    margin-right: clamp(-150px, calc((920px - 100vw) / 4), -20px);
+    margin-left: auto;   // Fallback alignment guarantee
     box-shadow: 2px 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #eee;
     border-radius: 4px 4px 0 0;
-    transform: rotate(1deg);
+    transform: rotate(1.5deg);
     transform-origin: bottom left;
     position: relative;
     z-index: 10;
@@ -619,23 +622,23 @@ body {
     width: 100%;
     max-width: 920px;
     min-height: 55vh;
-    // Push it up slightly to overlap the tabs, looking "stuck on" 
-    margin-top: -0.6rem; 
+    // Push it up slightly to overlap the tabs, looking "stuck on"
+    margin-top: -0.6rem;
     margin-bottom: 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     border: 1px solid #eaeaea;
     position: relative;
-    z-index: 20; 
+    z-index: 20;
   }
 
   // The footer sits at the bottom, askew other way
   .site-footer {
     max-width: 850px;
-    margin-right: calc(50vw - 490px); 
+    margin-right: clamp(-180px, calc((920px - 100vw) / 6), -30px);
     margin-left: auto;
     margin-bottom: 3rem;
     margin-top: -1px; // tuck against page content safely
-    transform: rotate(-0.5deg);
+    transform: rotate(-1deg);
     box-shadow: 4px 5px 12px rgba(0,0,0,0.06);
     border: 1px solid #efefef;
     position: relative;
