@@ -6,11 +6,11 @@
   {% endif %}
 
   <div class="form-field">
-    <label for="form-name-{{ include.id }}">Name</label>
+    <label for="form-name-{{ include.id }}">Name (WARNING! THIS FORM DOES NOT WORK YET!)</label>
     <input type="text" id="form-name-{{ include.id }}" name="name" placeholder="Your name" required>
   </div>
   <div class="form-field">
-    <label for="form-email-{{ include.id }}">Email</label>
+    <label for="form-email-{{ include.id }}">Email (WARNING! THIS FORM DOES NOT WORK YET!)</label>
     <input type="email" id="form-email-{{ include.id }}" name="email" placeholder="your@email.com">
   </div>
   <div class="form-field">
@@ -64,7 +64,7 @@
       if (res.ok) {
         form.reset();
         if (textarea) textarea.style.height = '';
-        status.textContent = `{{ include.success_message | default: 'Message sent — thank you! Brian will be in touch soon.' }}`;
+        status.textContent = `{{ include.success_message | default: 'IF THIS FORM WORKED, it would say — thank you! Brian will be in touch soon.' }}`;
         status.classList.add('form-status--ok');
       } else {
         return res.json().then(function(data) {
