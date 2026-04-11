@@ -1,16 +1,19 @@
-<form {% if include.id %}id="{{ include.id }}"{% endif %} action="https://submit-form.com/AvqUDoWyl" method="POST" class="contact-form" novalidate>
+<form {% if include.id %}id="{{ include.id }}"{% endif %} action="https://api.formspark.io/AvqUDoWyl" method="POST" class="contact-form" novalidate>
+  {% comment %}
+    For inquiries about specific pieces, this originally included the URL as a hidden field.  But that may have
+    created problems with getting false positives on spam filtering in FormSpark.  So it just uses the artwork
+    name as a hidden field for now, which should be enough to know which piece the inquiry is about.
+  {% endcomment %}
   {% if include.is_inquiry %}
-  <!-- These hidden fields tell Brian which painting the inquiry is about -->
-  <input type="hidden" name="painting" value="{{ page.title }}">
-  <input type="hidden" name="page_url" value="{{ page.url | absolute_url }}">
+  <input type="hidden" id="form-artwork-{{ include.id }}" name="artwork" value="{{ page.title }}">
   {% endif %}
 
   <div class="form-field">
-    <label for="form-name-{{ include.id }}">Name (WARNING! THIS FORM DOES NOT WORK YET!)</label>
+    <label for="form-name-{{ include.id }}">Name</label>
     <input type="text" id="form-name-{{ include.id }}" name="name" placeholder="Your name" required>
   </div>
   <div class="form-field">
-    <label for="form-email-{{ include.id }}">Email (WARNING! THIS FORM DOES NOT WORK YET!)</label>
+    <label for="form-email-{{ include.id }}">Email</label>
     <input type="email" id="form-email-{{ include.id }}" name="email" placeholder="your@email.com">
   </div>
   <div class="form-field">
@@ -64,7 +67,7 @@
       if (res.ok) {
         form.reset();
         if (textarea) textarea.style.height = '';
-        status.textContent = `{{ include.success_message | default: 'IF THIS FORM WORKED, it would say — thank you! Brian will be in touch soon.' }}`;
+        status.innerHTML = `{{ include.success_message | default: 'Thanks for your message! 😊'}} Should you not hear back, maybe <a href="https://formspark.io" target="_blank" rel="noopener">FormSpark</a> ate the message--so please try another method of contact!`;
         status.classList.add('form-status--ok');
       } else {
         return res.json().then(function(data) {
@@ -74,7 +77,7 @@
     })
     .catch(function (error) {
       console.error(error);
-      status.textContent = 'Something went wrong. Please try again or contact Brian directly.';
+      status.innerHTML = `{{ include.error_message | default: 'Something went wrong! 😕'}} Maybe <a href="https://formspark.io" target="_blank" rel="noopener">FormSpark</a> thought what you wrote was Spam? Please edit the message and try again, or try another method of contact!`;
       status.classList.add('form-status--err');
     })
     .finally(function () {

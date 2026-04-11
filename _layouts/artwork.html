@@ -57,9 +57,11 @@ layout: default
   {% else %}
   <section class="artwork-inquiry">
     <h2>Interested in this piece?</h2>
-    <p>Leave your details and Brian will get back to you.</p>
+    <p>Leave your details and we will get back to you!</p>
 
-    {% include contact-form.html id="inquiry-form" is_inquiry=true message_placeholder="Any questions about the piece?" submit_text="Send Enquiry" success_message="Enquiry sent — Brian will be in touch soon!" %}
+    {% comment %} It's not legal to use the double-brace substitutions in modern Liquid syntax, use a "capture". {% endcomment %}
+    {% capture msg_placeholder %}Any questions about {{ page.title }}?{% endcapture %}
+    {% include contact-form.html id="inquiry-form" is_inquiry=true message_placeholder=msg_placeholder submit_text="Send Enquiry" success_message="Enquiry sent! ✅" %}
   </section>
   {% endunless %}
 
