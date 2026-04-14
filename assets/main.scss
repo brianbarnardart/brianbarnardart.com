@@ -716,6 +716,7 @@ body {
     transform-origin: bottom right;
     box-shadow: -2px 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #eee;
+    border-top: 3px solid #424242; // match minima's header top stripe
     border-radius: 4px 4px 0 0;
     position: relative;
     z-index: 10;
@@ -732,6 +733,7 @@ body {
     transform-origin: bottom left;
     box-shadow: 2px 4px 12px rgba(0,0,0,0.06);
     border: 1px solid #eee;
+    border-top: 3px solid #424242; // match minima's header top stripe
     border-radius: 4px 4px 0 0;
     position: relative;
     z-index: 10;
@@ -758,7 +760,8 @@ body {
     margin-left: auto;  // center the footer box …
     margin-right: auto; // … then translateX shifts it right without ever clipping
     margin-bottom: 3rem;
-    margin-top: -1px; // tuck against page content safely
+    // rotate(-1deg) on an 850px element lifts one top edge ~7px; pull up enough to stay flush
+    margin-top: -7px;
     // Same clamp formula as the nav: starts moving at >960px viewport, capped at 80px
     transform: translateX(clamp(0px, calc((100vw - 920px) / 2 - 20px), 80px)) rotate(-1deg);
     box-shadow: 4px 5px 12px rgba(0,0,0,0.06);
