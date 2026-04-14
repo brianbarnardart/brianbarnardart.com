@@ -67,25 +67,26 @@ body {
   gap: 0.3rem;
 }
 
-// Nav links as outlined rounded-corner buttons with a light fill
+// Nav links as solid rounded-corner buttons with dark fill
 // Use :not(:last-child) to beat minima's margin-right: 20px rule
 .site-nav .page-link,
 .site-nav .page-link:not(:last-child) {
   display: inline-block;
-  padding: 0.2em 0.65em;
-  background-color: rgba(42, 122, 226, 0.1);
-  border: 1.5px solid #2a7ae2;
+  padding: 0.3em 0.8em;
+  background-color: #555;       // dark by default
+  border: 1.5px solid transparent; // transparent outline so size doesn't change on hover
   border-radius: 5px;
-  color: #2a7ae2;
+  color: #fff;                  // light writing
   font-size: 0.9rem;
   text-decoration: none;
   line-height: 1.5;
   white-space: nowrap;
   margin-right: 0;
+  transition: all 0.2s ease;
 }
 // Explicitly neutralise a:visited so nav buttons always look the same colour
-.site-nav .page-link:visited { background-color: rgba(42, 122, 226, 0.1); color: #2a7ae2; }
-.site-nav .page-link:hover   { background-color: rgba(42, 122, 226, 0.2); color: #1756a9; text-decoration: none; border-color: #1756a9; }
+.site-nav .page-link:visited { background-color: #555; color: #fff; }
+.site-nav .page-link:hover   { background-color: #fdfdfd; color: #555; border-color: #555; text-decoration: none; }
 
 @media (max-width: 600px) {
   // Stack header vertically on mobile, nav on top of logo
@@ -585,7 +586,7 @@ body {
   // The logo "tab" hangs off the left — but only as far as the viewport safely allows
   .site-title {
     background-color: #fdfdfd !important;
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 1.2rem 1.6rem;
     // clamp(max-hang, (space-to-left-of-content - safety-margin), 0)
     // Starts hanging when viewport > 960px; capped at 120px; always leaves ≥20px to edge
     transform: translateX(clamp(-120px, calc((920px - 100vw) / 2 + 20px), 0px)) rotate(-1.5deg);
@@ -601,7 +602,7 @@ body {
   // The nav buttons "tab" hangs off the right — capped to stay ≥20px from viewport edge
   .site-nav {
     background-color: #fdfdfd !important;
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 1.2rem 1.6rem;
     margin-left: auto; // push nav to the right end of the flex row
     // clamp(0, (space-to-right-of-content - safety-margin), max-hang)
     transform: translateX(clamp(0px, calc((100vw - 920px) / 2 - 20px), 120px)) rotate(1.5deg);
