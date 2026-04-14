@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% assign coll = site[page.collection] %}
+{% assign prev_item = page.previous | default: coll.last %}
+{% assign next_item = page.next | default: coll.first %}
+
+<nav class="artwork-nav">
+  <a href="{{ prev_item.url }}" class="artwork-nav-link artwork-nav-link--prev">
+    <span class="artwork-nav-arrow">&larr;</span>
+    <span class="artwork-nav-text">
+      <span class="artwork-nav-label">Previous</span>
+      <span class="artwork-nav-title">{{ prev_item.title }}</span>
+    </span>
+  </a>
+
+  <a href="{{ next_item.url }}" class="artwork-nav-link artwork-nav-link--next">
+    <span class="artwork-nav-text">
+      <span class="artwork-nav-label">Next</span>
+      <span class="artwork-nav-title">{{ next_item.title }}</span>
+    </span>
+    <span class="artwork-nav-arrow">&rarr;</span>
+  </a>
+</nav>
+
+<article class="article-page">
+
+  <div class="article-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="article-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </div>
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+
+</article>

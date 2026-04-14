@@ -52,7 +52,7 @@ layout: default
   {% unless page.price %}
   <section class="artwork-sold-note">
     <p>This piece has found a home. To preserve the collectibility and uniqueness of my work, I don't make exact replicas&mdash;but if you're drawn to this style and would be interested in something in a similar spirit, I'd love to hear from you. With your ideas as input, we might create something you'd like even more!</p>
-    <a href="/contact/" class="form-submit">Get in touch about a commission</a>
+    <a href="/commissions/" class="form-submit">Get in touch about a commission</a>
   </section>
   {% else %}
   <section class="artwork-inquiry">
@@ -66,46 +66,3 @@ layout: default
   {% endunless %}
 
 </article>
-
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button aria-label="Close">&times;</button>
-  <img src="" alt="">
-</div>
-
-<script>
-(function () {
-  var lightbox = document.getElementById('lightbox');
-  var lbImg    = lightbox.querySelector('img');
-  var lbClose  = lightbox.querySelector('button');
-
-  function open(src, alt) {
-    lbImg.src = src;
-    lbImg.alt = alt;
-    lightbox.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    lbClose.focus();
-  }
-
-  function close() {
-    lightbox.classList.remove('is-open');
-    document.body.style.overflow = '';
-    lbImg.src = '';
-  }
-
-  document.querySelectorAll('.lightbox-trigger').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var img = link.querySelector('img');
-      open(link.href, img ? img.alt : '');
-    });
-  });
-
-  lbClose.addEventListener('click', close);
-  lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) close();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') close();
-  });
-}());
-</script>

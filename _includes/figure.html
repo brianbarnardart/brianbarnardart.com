@@ -1,0 +1,26 @@
+{% comment %}
+  Usage:
+    {% include figure.html image="/assets/paintings/foo.jpg" caption="A caption" side="left" %}
+    {% include figure.html image="/assets/paintings/bar.jpg" caption="Another" side="right" %}
+    {% include figure.html image="/assets/paintings/baz.jpg" %}   (full-width, no float)
+
+  Parameters:
+    image   – required  – path to the image
+    caption – optional  – text shown below the image
+    side    – optional  – "left" or "right" to float the figure into the text
+    alt     – optional  – alt text; falls back to caption, then ""
+{% endcomment %}
+
+{% assign _alt = include.alt | default: include.caption | default: "" %}
+{% assign _side_class = "" %}
+{% if include.side == "left"  %}{% assign _side_class = " article-figure--left"  %}{% endif %}
+{% if include.side == "right" %}{% assign _side_class = " article-figure--right" %}{% endif %}
+
+<figure class="article-figure{{ _side_class }}">
+  <a class="lightbox-trigger" href="{{ include.image }}" aria-label="View larger image">
+    <img src="{{ include.image }}" alt="{{ _alt }}">
+  </a>
+  {% if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

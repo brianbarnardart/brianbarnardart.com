@@ -577,6 +577,78 @@ body {
   text-align: center;
 }
 
+// ── Article pages (venues, bands, interests, events, charities) ─────────────
+
+.article-page {
+  // Inherits .page-content padding from minima/wrapper
+}
+
+.article-header {
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.article-subtitle {
+  color: #666;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+// Article body — clearfix so floated figures don't escape the container
+.article-body {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// ── Figure include (.article-figure) ────────────────────────────────────────
+
+.article-figure {
+  display: block;
+  margin: 0 0 1.5rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.4rem;
+  }
+}
+
+.article-figure--left {
+  float: left;
+  max-width: 45%;
+  margin: 0.2rem 1.5rem 1rem 0;
+}
+
+.article-figure--right {
+  float: right;
+  max-width: 45%;
+  margin: 0.2rem 0 1rem 1.5rem;
+}
+
+// Collapse floats to full-width on small screens
+@media (max-width: 620px) {
+  .article-figure--left,
+  .article-figure--right {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 1.5rem;
+  }
+}
+
 // ── Desktop Asymmetric "Scattered Papers" Layout ────────────────────────────
 
 @media (min-width: 900px) {
