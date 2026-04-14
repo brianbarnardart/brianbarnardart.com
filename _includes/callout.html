@@ -17,5 +17,5 @@
 {% if include.side == "right" %}{% assign _side_class = " article-callout--right" %}{% endif %}
 
 <blockquote class="article-callout{{ _side_class }}">
-  {{ include.quote }}
+  {{ include.quote | markdownify }}
 </blockquote>
