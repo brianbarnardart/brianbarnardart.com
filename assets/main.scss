@@ -606,6 +606,44 @@ body {
   }
 }
 
+// ── Pull-quote callout ───────────────────────────────────────────────────────
+
+.article-callout {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.4rem;
+  border-left: 4px solid #2a7ae2;
+  background: #f3f7ff;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.5;
+
+  // Reset browser blockquote margin
+  &::before { content: none; }
+}
+
+.article-callout--left {
+  float: left;
+  max-width: 42%;
+  margin: 0.2rem 1.5rem 1rem 0;
+}
+
+.article-callout--right {
+  float: right;
+  max-width: 42%;
+  margin: 0.2rem 0 1rem 1.5rem;
+}
+
+@media (max-width: 620px) {
+  .article-callout--left,
+  .article-callout--right {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 1.5rem;
+  }
+}
+
 // ── Figure include (.article-figure) ────────────────────────────────────────
 
 .article-figure {

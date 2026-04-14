@@ -5,10 +5,12 @@
     {% include figure.html image="/assets/paintings/baz.jpg" %}   (full-width, no float)
 
   Parameters:
-    image   – required  – path to the image
-    caption – optional  – text shown below the image
-    side    – optional  – "left" or "right" to float the figure into the text
-    alt     – optional  – alt text; falls back to caption, then ""
+    image    – required  – path to the image
+    caption  – optional  – text shown below the image
+    side     – optional  – "left" or "right" to float the figure into the text
+    alt      – optional  – alt text; falls back to caption, then ""
+    maxwidth – optional  – inline max-width override e.g. "160px" or "40%"
+    lightbox – optional  – set to "no" to disable the lightbox link
 {% endcomment %}
 
 {% assign _alt = include.alt | default: include.caption | default: "" %}
@@ -16,10 +18,16 @@
 {% if include.side == "left"  %}{% assign _side_class = " article-figure--left"  %}{% endif %}
 {% if include.side == "right" %}{% assign _side_class = " article-figure--right" %}{% endif %}
 
-<figure class="article-figure{{ _side_class }}">
+{% capture _style %}{% if include.maxwidth %}max-width:{{ include.maxwidth }};{% endif %}{% endcapture %}
+
+<figure class="article-figure{{ _side_class }}"{% if _style != "" %} style="{{ _style }}"{% endif %}>
+  {% if include.lightbox == "no" %}
+  <img src="{{ include.image }}" alt="{{ _alt }}">
+  {% else %}
   <a class="lightbox-trigger" href="{{ include.image }}" aria-label="View larger image">
     <img src="{{ include.image }}" alt="{{ _alt }}">
   </a>
+  {% endif %}
   {% if include.caption %}
   <figcaption>{{ include.caption }}</figcaption>
   {% endif %}
