@@ -14,9 +14,9 @@ want to share, so check that out if you have not heard of it before!)
 
 ## How this site works
 
-This site is hosted on **[GitHub Pages](https://pages.github.com/)**.  Every
-time a change is pushed to the `main` branch, GitHub automatically rebuilds the
-site using a tool called **Jekyll** and publishes the result at
+This site is hosted on **[GitHub Pages](https://pages.github.com/)** using a
+**GitHub Actions** workflow. Every time a change is pushed to the `main` branch,
+the workflow installs dependencies, runs **Jekyll**, and publishes the result at
 `https://brianbarnardart.com`.
 
 ---
@@ -40,6 +40,7 @@ website. There is no database and no server-side code to maintain.
 
 | Path | Purpose |
 |---|---|
+| `Gemfile` | Ruby gem versions — Jekyll, minima, plugins |
 | `_config.yml` | Site-wide settings (title, URL, theme, etc.) |
 | `_data/*.yml` | Structured data files (e.g. the Shorts video list) |
 | `_includes/*.html` | Reusable HTML fragments, inserted with `{% include name.html %}` |
@@ -56,46 +57,25 @@ website. There is no database and no server-side code to maintain.
 - [Jekyll includes](https://jekyllrb.com/docs/includes/)
 - [Jekyll data files](https://jekyllrb.com/docs/datafiles/)
 - [GitHub Pages documentation](https://docs.github.com/en/pages)
-- [GitHub Pages dependency versions](https://pages.github.com/versions/) — the definitive list of what versions GitHub Pages actually runs
 
 ---
 
 ## The Minima theme
 
 Minima is Jekyll's default bundled theme: a clean, minimal design with a
-header navigation bar, a main content area, and a three-column footer.
+header navigation bar, a main content area, and a footer.
 
-### The version problem
+### Theme overrides
 
-This is the most confusing thing about using Jekyll with GitHub Pages, and
-worth understanding:
-
-| Version | What it is |
-|---|---|
-| **Minima 2.1.1** | What GitHub Pages runs. Old. |
-| **Minima 3.x** | The current version on GitHub and in the minima docs. Has many more features. |
-
-The [minima GitHub repository](https://github.com/jekyll/minima) and most
-tutorials you find online describe version 3.x. GitHub Pages has been pinned
-to 2.1.1 for years. This means a lot of documented features — including the
-`custom-head.html` hook, the `social_links` config, and the updated SCSS
-structure — **do not exist** in the version GitHub Pages uses.
-
-Because of this mismatch, this project overrides several theme files directly
-by placing replacements in `_includes/` and `assets/`. Jekyll always prefers
-files in the project over the theme's copies:
+Jekyll always prefers files in the project folder over the theme's copies,
+which lets you customise individual pieces without forking the entire theme:
 
 | This project's file | Replaces theme file | Why |
 |---|---|---|
-| `_includes/head.html` | Minima's `head.html` | Adds favicon, manifest, theme-color |
-| `_includes/footer.html` | Minima's `footer.html` | Custom layout, social links, copyright |
+| `_includes/head.html` | Minima's `head.html` | Custom title format, favicon, web manifest |
+| `_includes/footer.html` | Minima's `footer.html` | Custom social links layout and copyright |
 
-GitHub has not updated the Pages-pinned version of Minima because doing so
-would be a potentially breaking change for a very large number of existing
-sites. There is no public timeline for an update. The workaround of overriding
-theme files is the standard approach for the foreseeable future.
-
-- [Minima 2.x source (what GitHub Pages runs)](https://github.com/jekyll/minima/tree/2.5-stable)
+- [Minima source](https://github.com/jekyll/minima)
 - [Minima README](https://github.com/jekyll/minima/blob/master/README.md)
 
 ---

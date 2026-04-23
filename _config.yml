@@ -6,8 +6,12 @@ baseurl: ""
 # Author info used by the minima theme
 author: Brian Barnard
 
-# The minima theme ships with GitHub Pages — no Gemfile needed.
 theme: minima
+
+# Plugins loaded from Gemfile
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Jekyll build settings
 markdown: kramdown
