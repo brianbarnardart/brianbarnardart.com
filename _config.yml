@@ -37,6 +37,9 @@ collections:
   charities:
     output: true
     permalink: /charities/:name/
+  characters:
+    output: true
+    permalink: /characters/:name/
 
 # These files/dirs are excluded from the Jekyll build output
 exclude:
