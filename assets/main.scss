@@ -43,8 +43,8 @@ body {
 
 // Override minima's dark .site-title colour so currentColor flows into the SVG
 .site-title,
-.site-title:visited { color: #2a7ae2; }
-.site-title:hover   { color: #1756a9; text-decoration: none; }
+.site-title:visited { color: #444; transition: color 0.2s ease; }
+.site-title:hover   { color: #2a7ae2; text-decoration: none; }
 
 .site-title svg {
   width: 100%;
