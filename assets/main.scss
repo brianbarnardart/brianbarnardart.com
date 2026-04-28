@@ -687,6 +687,13 @@ body {
   }
 }
 
+// Headings always clear floated figures
+.article-body, .post-content {
+  h1, h2, h3, h4, h5, h6 {
+    clear: both;
+  }
+}
+
 // ── Desktop Asymmetric "Scattered Papers" Layout ────────────────────────────
 
 @media (min-width: 900px) {
