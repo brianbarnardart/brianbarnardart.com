@@ -8,6 +8,8 @@ nav: 2
 
 <div class="gallery-grid">
 {% for artwork in site.artworks %}
+  {% assign path_parts = artwork.relative_path | split: '/' %}
+  {% if path_parts.size == 2 %}
   <a href="{{ artwork.url }}" class="gallery-item">
     <div class="gallery-thumb">
       <img src="{{ artwork.image }}" alt="{{ artwork.title }}" loading="lazy">
@@ -17,5 +19,6 @@ nav: 2
       <span class="gallery-badge gallery-badge--price">{{ artwork.price }}</span>
     {% endif %}
   </a>
+  {% endif %}
 {% endfor %}
 </div>
