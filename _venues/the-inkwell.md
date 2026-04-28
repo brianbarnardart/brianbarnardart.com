@@ -7,7 +7,7 @@ cover_image: /assets/venues/the-inkwell.jpg
 
 {% include figure.html image="/assets/venues/the-inkwell.jpg" caption="The Inkwell" side="right" %}
 
-**The Inkwell** ([(website)](https://www.theinkwellamelia.com)) is a bar, music venue, gallery, and art class space...all rolled into one.  It has a relaxed, creative vibe that fits right in with Brian's live-painting work. Whether it's an open-mic night or a full band, the atmosphere here always inspires.
+**The Inkwell** [(website)](https://www.theinkwellamelia.com) is a bar, music venue, gallery, and art class space...all rolled into one.  It has a relaxed, creative vibe that fits right in with Brian's live-painting work. Whether it's an open-mic night or a full band, the atmosphere here always inspires.
 
 {% include figure.html image="/assets/venues/the-inkwell-2.jpg" caption="An evening at The Inkwell" side="left" %}
 
