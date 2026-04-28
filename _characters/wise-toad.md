@@ -11,15 +11,11 @@ cover_image: /assets/paintings/wise-toad-320x430.png
 
 He started as a studio painting and has since become a recurring presence. He sits. He reads. He wears his crown without making a big deal of it. Whatever's in that book has been there a while, and he'll get to the important parts when he gets to them.
 
----
-
 ## An Elusive Smile...
 
-The [icon you see in browser tabs](https://en.wikipedia.org/wiki/Favicon) for this website isn't just a B (or even a BB...) *it's his grin!*  How much of it you see depends on the resolution.
+The [icon you see in browser tabs](https://en.wikipedia.org/wiki/Favicon) for this website isn't just a "B" (or even a "BB"...) *it's his grin!*  How much of it you see depends on the resolution.
 
 ![The elusive smile at various resolutions](/assets/icons/BB-elusive-smile.png)
-
----
 
 ## Get the Shirt!
 

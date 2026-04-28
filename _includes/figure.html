@@ -13,7 +13,8 @@
     lightbox – optional  – set to "no" to disable the lightbox link
 {% endcomment %}
 
-{% assign _alt = include.alt | default: include.caption | default: "" %}
+{% assign _caption_plain = include.caption | markdownify | strip_html | strip %}
+{% assign _alt = include.alt | default: _caption_plain | default: "" %}
 {% assign _side_class = "" %}
 {% if include.side == "left"  %}{% assign _side_class = " article-figure--left"  %}{% endif %}
 {% if include.side == "right" %}{% assign _side_class = " article-figure--right" %}{% endif %}
