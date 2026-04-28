@@ -6,6 +6,8 @@ description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and
 nav: 2
 ---
 
+The most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to come to a **[live painting event](/events/)**, where one or two unique 11x17 pieces are made every weekend!  Larger studio pieces are most often done by commission, but occasionally some will be available for sale here *(and/or at [The Inkwell](/venues/the-inkwell/))*.
+
 <div class="gallery-grid">
 {% for artwork in site.artworks %}
   {% assign path_parts = artwork.relative_path | split: '/' %}

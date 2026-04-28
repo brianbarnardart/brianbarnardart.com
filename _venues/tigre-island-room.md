@@ -7,10 +7,8 @@ cover_image: /assets/venues/tigre-island-room.jpg
 
 {% include figure.html image="/assets/venues/tigre-island-room.jpg" caption="The Tigre Island Room" side="right" %}
 
-The Tigre Island Room is a distinctive live-music space with its own personality and a loyal following. Brian has spent many evenings here sketching and painting while the music plays.
+The **Tigre Island Room** ([(website)](https://tigreislandroom.com/)) is a relatively new addition to downtown Fernandina, as an upscale and distinctive live-music space with ticketed events (as well as free ones, including open mics).  Brian has had the privilege of painting with some exceptional bands that Tigre Island has brought to town.
 
-Add your notes about this venue — the layout, the stage, the kind of acts that come through, what makes it special.
+If it's a Friday or a Saturday, and Brian's not at The Green Turtle or The Inkwell, check Tigre Island!
 
 {% include figure.html image="/assets/venues/tigre-island-room-2.jpg" caption="Live music at Tigre" side="left" %}
-
-Continue describing the venue, its history, and any standout memories from nights spent painting here.
