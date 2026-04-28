@@ -5,7 +5,7 @@ nav: 3
 image: /assets/paintings/fox-and-nymph.jpg
 ---
 
-{% include figure.html image="/assets/paintings/wise-toad-320x430.png" side="left" maxwidth="160px" lightbox="no" caption='<a href="/characters/wise-toad/">Wise Toad</a> Welcomes You!' %}
+{% include figure.html image="/assets/paintings/wise-toad-320x430.png" side="left" maxwidth="160px" lightbox="no" alt="Wise Toad Welcomes You!" caption="[Wise Toad](/characters/wise-toad/) Welcomes You!" %}
 
 A Fernandina native *(and son of a shrimper)*, **Brian Barnard** is a familiar sight in the local art and music scene.  He moves between the studio and painting at music venues, at events, and anywhere else the energy of a moment is worth capturing.
 
