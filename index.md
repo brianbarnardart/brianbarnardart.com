@@ -17,7 +17,7 @@ Brian has been painting live at the Turtle for years: setting up an easel, worki
 <div class="short-card" style="max-width:320px; margin: 1.5rem auto;">
   <div class="short-frame">
     <iframe
-      src="https://www.youtube.com/embed/EwNpy4Kwisc"
+      src="https://www.youtube.com/embed/P89teDbtYS4"
       title="Brian Barnard live painting at the Green Turtle"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
