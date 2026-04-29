@@ -687,6 +687,65 @@ body {
   }
 }
 
+// ── Wise Toad – animated figure ─────────────────────────────────────────────
+//
+// The Wise Toad image on the homepage floats gently up and down and occasionally
+// shows a sparkle, to signal that it's interactive without being obnoxious.
+//
+// A few Android/mobile gotchas addressed here:
+//   - translate3d() instead of translateY() forces the browser onto the GPU
+//     compositing path; translateY alone can fall back to software rendering
+//     on Android Chrome and produce no visible animation.
+//   - translateZ(0) on the parent <figure> pre-promotes the whole subtree to
+//     its own compositing layer before the animation starts, preventing a
+//     mid-animation layer-promotion flash on mobile.
+//   - will-change: transform gives the browser an early hint to allocate the
+//     GPU layer for the <a>, so it's ready when the animation begins.
+//   - -webkit-tap-highlight-color: transparent suppresses the colored tap
+//     overlay that Android Chrome shows on touch — without it the browser
+//     picks up a green tint from nearby theme colors and briefly flashes it
+//     when the toad is tapped.
+
+@keyframes toad-float {
+  // Gentle bob: drifts 8px upward at the midpoint, returns to baseline
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%       { transform: translate3d(0, -8px, 0); }
+}
+
+@keyframes toad-sparkle {
+  // Sparkle is invisible for most of the 6s cycle, then briefly blooms in
+  // (scale up + slight rotation) before fading out again
+  0%, 82%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  90%            { opacity: 1; transform: scale(1.2) rotate(20deg); }
+}
+
+.wise-toad {
+  transform: translateZ(0); // pre-promote to GPU compositing layer (see notes above)
+
+  a {
+    display: block;
+    position: relative;
+    animation: toad-float 4s ease-in-out infinite;
+    will-change: transform;                    // hint to allocate GPU layer early
+    -webkit-tap-highlight-color: transparent;  // suppress Android tap flash
+  }
+
+  // Sparkle emoji rendered as a ::after pseudo-element so it sits on top of
+  // the image without requiring any extra markup. pointer-events: none keeps
+  // it from interfering with the link click area.
+  a::after {
+    content: '\2728'; // ✨ sparkle character
+    position: absolute;
+    top: 0.1em;
+    right: 0.1em;
+    font-size: 1.2rem;
+    line-height: 1;
+    pointer-events: none;
+    animation: toad-sparkle 6s ease-in-out infinite;
+  }
+
+}
+
 // Headings always clear floated figures
 .article-body, .post-content {
   h1, h2, h3, h4, h5, h6 {

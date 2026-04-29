@@ -4,7 +4,7 @@ title: About
 image: /assets/paintings/fox-and-nymph.jpg
 ---
 
-{% include figure.html image="/assets/characters/wise-toad-320x430.png" side="left" maxwidth="160px" link="/characters/wise-toad/" %}
+{% include figure.html image="/assets/characters/wise-toad-320x430.png" side="left" maxwidth="160px" link="/characters/wise-toad/" class="wise-toad" %}
 
 A Fernandina native *(and son of a shrimper)*, **Brian Barnard** is a familiar sight in the local art and music scene.  He moves between the studio and painting at music venues, at events, and anywhere else the energy of a moment is worth capturing.
 
@@ -12,7 +12,7 @@ If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)*
 
 {% include figure.html image="/assets/paintings/green-turtle-mural.jpg" caption="(part of) The Green Turtle mural, Fernandina Beach" %}
 
-Working in acrylics and mixed media, Brian is drawn to subjects that sit at the edge of something: the intersection of the natural world and mythology, the charged atmosphere of a live performance, the moments in a story where the rules bend. Characters with an inner life. [Creatures that know more than they let on...](/characters/wise-toad/)
+Working in acrylics and mixed media, Brian is drawn to subjects that sit at the edge of something: the intersection of the natural world and mythology, the charged atmosphere of a live performance, the moments in a story where the rules bend. Characters with an inner life. Creatures that know more than they let on...
 
 {% include callout.html quote="Characters with an inner life. **[Creatures that know more than they let on...](/characters/wise-toad/)**" side="right" %}
 

@@ -21,7 +21,7 @@
 
 {% capture _style %}{% if include.maxwidth %}max-width:{{ include.maxwidth }};{% endif %}{% endcapture %}
 
-<figure class="article-figure{{ _side_class }}"{% if _style != "" %} style="{{ _style }}"{% endif %}>
+<figure class="article-figure{{ _side_class }}{% if include.class %} {{ include.class }}{% endif %}"{% if _style != "" %} style="{{ _style }}"{% endif %}>
   {% if include.lightbox == "no" %}
   <img src="{{ include.image }}" alt="{{ _alt }}">
   {% elsif include.link %}
