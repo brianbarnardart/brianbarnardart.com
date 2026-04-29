@@ -24,6 +24,10 @@
 <figure class="article-figure{{ _side_class }}"{% if _style != "" %} style="{{ _style }}"{% endif %}>
   {% if include.lightbox == "no" %}
   <img src="{{ include.image }}" alt="{{ _alt }}">
+  {% elsif include.link %}
+  <a href="{{ include.link }}">
+    <img src="{{ include.image }}" alt="{{ _alt }}">
+  </a>
   {% else %}
   <a class="lightbox-trigger" href="{{ include.image }}" aria-label="View larger image">
     <img src="{{ include.image }}" alt="{{ _alt }}">
