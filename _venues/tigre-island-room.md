@@ -11,4 +11,4 @@ The **Tigre Island Room** [(website)](https://tigreislandroom.com/) is a relativ
 
 If it's a Friday or a Saturday, and Brian's not at The Green Turtle or The Inkwell, check Tigre Island!
 
-{% include figure.html image="/assets/venues/tigre-island-room-2.jpg" caption="Live music at Tigre" side="left" %}
+{% include figure.html image="/assets/venues/tigre-island-room-2.jpg" caption="Supporting th Right Whale Charity Event at Tigre" side="left" %}

@@ -2,9 +2,12 @@
 layout: page
 title: Contact
 permalink: /contact/
+nav: 3
 ---
 
-Interested in a piece, a commission, or just want to say hi?
+{% include figure.html image="/assets/venues/tigre-island-room-2.jpg" side="right" %}
+
+Interested in a piece, [a commission](/commissions/), or just want to say hi?
 
 **[Facebook: @brianbarnardart](https://www.facebook.com/brianbarnardart/)**, **[LinkedIn](https://www.linkedin.com/in/brian-barnard-60b7b543)**, or use the form below!
 

@@ -1,7 +1,6 @@
 ---
 layout: home
 title: About
-nav: 3
 image: /assets/paintings/fox-and-nymph.jpg
 ---
 
