@@ -6,14 +6,14 @@
       <div class="short-frame">
         <iframe
           src="https://www.youtube.com/embed/{{ short.id }}?rel=0"
-          title="{{ short.title }}"
+          title="{{ short.title | markdownify | strip_html | strip_newlines | strip }}"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
           loading="lazy">
         </iframe>
       </div>
-      <p class="short-caption">{{ short.title }}</p>
+      <p class="short-caption">{{ short.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines }}</p>
     </div>
     {% endfor %}
   </div>
