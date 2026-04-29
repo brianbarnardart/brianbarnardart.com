@@ -101,6 +101,18 @@ body {
 .site-nav .page-link:visited { background-color: #555; color: #fff; }
 .site-nav .page-link:hover   { background-color: #fdfdfd; color: #555; border-color: #555; text-decoration: none; }
 
+// Contact button (always last, nav: 3) gets a face-photo hover instead of the
+// default white-outline. background-position controls which part of the photo
+// is visible inside the button — adjust "center 20%" to shift up/down/left/right.
+.site-nav .page-link:last-child:hover {
+  background-image: url('/assets/brian-face.png');
+  background-size: cover;
+  background-position: center 42%; // tweak this to frame the right part of the face
+  background-color: transparent;
+  color: transparent;
+  border-color: transparent;
+}
+
 @media (max-width: 600px) {
   // Stack header vertically on mobile, nav on top of logo
   .site-header .wrapper {
