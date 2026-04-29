@@ -441,6 +441,20 @@ body {
   }
 }
 
+// Sits below the footer card, over the background texture
+.footer-home-link {
+  text-align: center;
+  padding: 0.6rem 0 1rem;
+  font-size: 0.9rem;
+
+  a {
+    color: #888;
+    text-decoration: none;
+
+    &:hover { color: #2a7ae2; text-decoration: underline; }
+  }
+}
+
 // ── Contact form ────────────────────────────────────────────────────────────
 
 .contact-form {
@@ -838,7 +852,7 @@ body {
     max-width: 850px;
     margin-left: auto;  // center the footer box …
     margin-right: auto; // … then translateX shifts it right without ever clipping
-    margin-bottom: 3rem;
+    margin-bottom: 0.75rem;
     // rotate(-1deg) on an 850px element lifts one top edge ~7px; pull up enough to stay flush
     margin-top: -7px;
     // Same clamp formula as the nav: starts moving at >960px viewport, capped at 80px
