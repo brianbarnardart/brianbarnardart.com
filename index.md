@@ -6,7 +6,7 @@ image: /assets/paintings/fox-and-nymph.jpg
 
 {% include figure.html image="/assets/characters/frog-king-320x430.png" side="left" maxwidth="160px" link="/characters/frog-king/" class="frog-king" %}
 
-A Fernandina native *(and son of a shrimper)*, **Brian Barnard** is a familiar sight in the local art and music scene.  Art director of [The Inkwell](/venues/the-inkwell/), he moves between the studio and painting at concerts or other events — anywhere the energy of a moment is worth capturing.
+A Fernandina native *(and son of a shrimper)*, **Brian Barnard** is a familiar sight in the local art and music scene.  Artistic director of [The Inkwell](/venues/the-inkwell/), he moves between the studio and painting at concerts or other events — anywhere the energy of a moment is worth capturing.
 
 If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)**, you've probably already seen Brian's work — the murals wrapping around the venue's fences are his. It's become part of the venue's identity, and for a lot of people it's the first introduction to his style.
 
