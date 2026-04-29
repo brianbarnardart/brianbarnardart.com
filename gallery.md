@@ -6,9 +6,7 @@ description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and
 nav: 2
 ---
 
-The most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to come to a **[live painting event](/events/)**, where one or two unique 11x17 pieces are made every weekend!  Larger studio pieces are most often done by commission, but occasionally some will be available for sale here.
-
-*This page is under construction.  Waterfront Jamboree is sold, so it's not actually for sale for a million dollars...though the owner might be willing to part with it if you offer that! 😁  This is just a test of how pieces that are for sale will work when they are added!*
+Due to a busy live painting schedule, studio pieces are most often done [by commission](/commissions/).  But occasionally some will be available for sale here, displayed among the historical greatest hits!
 
 <div class="gallery-grid">
 {% for artwork in site.artworks %}
@@ -26,3 +24,5 @@ The most accessible way to become a member of the [Brian Barnard Art Collector's
   {% endif %}
 {% endfor %}
 </div>
+
+*Note that the most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to come to **[an event](/events/)**, where one or two unique 11"x17" pieces are made just about every weekend!*
