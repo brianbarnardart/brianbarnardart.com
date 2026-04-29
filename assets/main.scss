@@ -714,9 +714,9 @@ body {
   }
 }
 
-// ── Wise Toad – animated figure ─────────────────────────────────────────────
+// ── Frog King – animated figure ─────────────────────────────────────────────
 //
-// The Wise Toad image on the homepage floats gently up and down and occasionally
+// The Frog King image on the homepage floats gently up and down and occasionally
 // shows a sparkle, to signal that it's interactive without being obnoxious.
 //
 // A few Android/mobile gotchas addressed here:
@@ -746,7 +746,7 @@ body {
   90%            { opacity: 1; transform: scale(1.2) rotate(20deg); }
 }
 
-.wise-toad {
+.frog-king {
   transform: translateZ(0); // pre-promote to GPU compositing layer (see notes above)
 
   a {

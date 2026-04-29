@@ -17,7 +17,9 @@ If it's a Friday or Saturday evening, you're likely to find Brian at his easel, 
 
 ## Turtles All The Way Down... Now A Shirt!
 
-A great way to show your affinity for both The Green Turtle and Brian Barnard Art is with the **Turtle Stack T-Shirt**.  That's three turtles for the price of one!  😁🐢🐢🐢
+A great way to show your affinity for both The Green Turtle and Brian Barnard Art is with the **Turtle Stack T-Shirt**.
+
+That's THREE whole turtles for the price of one!!  🐢🐢🐢
 
 <div style="text-align:center; margin: 2rem 0;">
   <a href="https://www.stickermule.com/brianbarnardart/item/15357360">

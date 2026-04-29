@@ -4,7 +4,7 @@ title: About
 image: /assets/paintings/fox-and-nymph.jpg
 ---
 
-{% include figure.html image="/assets/characters/wise-toad-320x430.png" side="left" maxwidth="160px" link="/characters/wise-toad/" class="wise-toad" %}
+{% include figure.html image="/assets/characters/frog-king-320x430.png" side="left" maxwidth="160px" link="/characters/frog-king/" class="frog-king" %}
 
 A Fernandina native *(and son of a shrimper)*, **Brian Barnard** is a familiar sight in the local art and music scene.  He moves between the studio and painting at music venues, at events, and anywhere else the energy of a moment is worth capturing.
 
@@ -14,7 +14,7 @@ If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)*
 
 Working in acrylics and mixed media, Brian is drawn to subjects that sit at the edge of something: the intersection of the natural world and mythology, the charged atmosphere of a live performance, the moments in a story where the rules bend. Characters with an inner life. Creatures that know more than they let on...
 
-{% include callout.html quote="Characters with an inner life. **[Creatures that know more than they let on...](/characters/wise-toad/)**" side="right" %}
+{% include callout.html quote="Characters with an inner life. **[Creatures that know more than they let on...](/characters/frog-king/)**" side="right" %}
 
 Brian has been painting live at the Turtle for years: setting up a canvas, working through a set, and letting the night find its way onto the picture.  Visitors wanting to remember their night can bid to purchase the pieces, typically signed by the band as well.
 
