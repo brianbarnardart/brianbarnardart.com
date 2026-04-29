@@ -12,7 +12,9 @@ If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)*
 
 {% include figure.html image="/assets/paintings/green-turtle-mural.jpg" caption="(part of) The Green Turtle mural, Fernandina Beach" %}
 
-Brian has been painting live at the Turtle for years: setting up an easel, working through a set, and letting the night find its way onto the picture.  Visitors wanting to remember their night can bid to purchase the pieces, which are typically signed by the band as well.  You can also often find him accompanying acts during ticketed events at [The Tigre Island Room](/venues/tigre-island-room/).
+Working in acrylics and mixed media, Brian's influences span the range of street art and fantasy.  He blurs the lines between graffiti, Alice and Wonderland, Grateful Dead album covers, and his own cast of characters with an inner life. Creatures that know more than they let on...
+
+He has been painting live at the Turtle for years: setting up an easel, working through a set, and letting the night find its way onto the picture.  Visitors wanting to remember their night can bid to purchase the pieces, which are typically signed by the band as well.  You can also often find him accompanying acts during ticketed events at [The Tigre Island Room](/venues/tigre-island-room/).
 
 {% comment %}
 <!-- If there were a generic edited "promo" video, maybe that could go here? -->
@@ -28,8 +30,6 @@ Brian has been painting live at the Turtle for years: setting up an easel, worki
   </div>
 </div>
 {% endcomment %}
-
-Working in acrylics and mixed media, Brian's influences span the range of street art and fantasy.  He blurs the lines between graffiti, Alice and Wonderland, Grateful Dead album covers, and his own cast of characters with an inner life. Creatures that know more than they let on...
 
 {% include callout.html quote="Characters with an inner life. [Creatures that know more than they let on...](/characters/frog-king/)" side="right" %}
 
