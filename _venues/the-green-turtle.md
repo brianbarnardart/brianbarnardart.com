@@ -20,10 +20,10 @@ If it's a Friday or Saturday evening, you're likely to find Brian at his easel, 
 A great way to show your affinity for both The Green Turtle and Brian Barnard Art is with the **Turtle Stack T-Shirt**.  That's three turtles for the price of one!  😁🐢🐢🐢
 
 <div style="text-align:center; margin: 2rem 0;">
-  <a href="https://www.stickermule.com/brianbarnardart/item/15357360" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.stickermule.com/brianbarnardart/item/15357360">
     <img src="/assets/characters/turtle-stack-tshirt.png" alt="Turtle Stack T-Shirt" style="max-width:360px; width:100%;">
   </a>
   <p style="margin-top:0.75rem;">
-    <a href="https://www.stickermule.com/brianbarnardart/item/15357360" target="_blank" rel="noopener noreferrer">Order the Turtle Stack T-Shirt &rarr;</a>
+    <a href="https://www.stickermule.com/brianbarnardart/item/15357360">Order the Turtle Stack T-Shirt &rarr;</a>
   </p>
 </div>

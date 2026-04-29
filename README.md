@@ -181,6 +181,23 @@ lines in the files mean.
 
 ---
 
+## External links
+
+A small script in `_layouts/default.html` runs at page load and automatically
+adds `target="_blank"` and `rel="noopener noreferrer"` to every link whose
+hostname differs from `brianbarnardart.com`. This means:
+
+- **You do not need to add `target="_blank"` yourself** when writing Markdown
+  or HTML links to external sites — it is handled for you.
+- **Internal links** (relative paths like `/contact/`, or same-domain URLs)
+  open in the same tab as normal.
+- **Exception:** links that are injected into the page *after* the initial load
+  via JavaScript `innerHTML` (currently only the FormSpark status messages in
+  `_includes/contact-form.html`) are not reached by the script and must carry
+  their own `target` and `rel` attributes.
+
+---
+
 ## Images Shown By Chat Apps and iMessage
 
 `jekyll-seo-tag` reads `image:` from front matter and outputs it as `og:image`.

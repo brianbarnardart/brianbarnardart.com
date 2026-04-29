@@ -22,10 +22,10 @@ The [icon you see in browser tabs](https://en.wikipedia.org/wiki/Favicon) for th
 He's available as the **Wise Toad T-Shirt** — navy, with the full painting printed on the front.  People around town will say: "Hey, I know that toad!"
 
 <div style="text-align:center; margin: 2rem 0;">
-  <a href="https://www.stickermule.com/brianbarnardart/item/18454679" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.stickermule.com/brianbarnardart/item/18454679">
     <img src="/assets/characters/wise-toad-tshirt.png" alt="Wise Toad T-Shirt" style="max-width:360px; width:100%;">
   </a>
   <p style="margin-top:0.75rem;">
-    <a href="https://www.stickermule.com/brianbarnardart/item/18454679" target="_blank" rel="noopener noreferrer">Order the Wise Toad T-Shirt &rarr;</a>
+    <a href="https://www.stickermule.com/brianbarnardart/item/18454679">Order the Wise Toad T-Shirt &rarr;</a>
   </p>
 </div>

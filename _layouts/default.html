@@ -17,6 +17,30 @@
 
     {% include lightbox.html %}
 
+    <!--
+      External link handler — automatically opens off-site links in a new tab.
+      Because this runs at DOMContentLoaded it covers every <a> on the page,
+      so individual links do NOT need target/_blank/rel hardcoded in HTML.
+
+      Exception: links injected into the DOM after this point (e.g. via
+      innerHTML in JavaScript) are not seen by this handler and must carry
+      their own target/_blank and rel="noopener" attributes.
+    -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          // link.hostname is empty for relative/same-origin hrefs,
+          // so this condition is only true for fully-qualified external URLs.
+          if (link.hostname && link.hostname !== window.location.hostname) {
+            link.setAttribute("target", "_blank");
+            // noopener prevents the new tab from accessing window.opener;
+            // noreferrer additionally suppresses the Referer header.
+            link.setAttribute("rel", "noopener noreferrer");
+          }
+        });
+      });
+    </script>
+
   </body>
 
 </html>

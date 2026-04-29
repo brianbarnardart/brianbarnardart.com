@@ -67,6 +67,9 @@
       if (res.ok) {
         form.reset();
         if (textarea) textarea.style.height = '';
+        // target/_blank kept here because this link is injected via innerHTML
+        // *after* DOMContentLoaded, so the global external-link handler in
+        // default.html will not see it.
         status.innerHTML = `{{ include.success_message | default: 'Thanks for your message! 😊'}} Should you not hear back, maybe <a href="https://formspark.io" target="_blank" rel="noopener">FormSpark</a> ate the message--so please try another method of contact!`;
         status.classList.add('form-status--ok');
       } else {
@@ -77,6 +80,7 @@
     })
     .catch(function (error) {
       console.error(error);
+      // Same reason as above — injected after DOMContentLoaded.
       status.innerHTML = `{{ include.error_message | default: 'Something went wrong! 😕'}} Maybe <a href="https://formspark.io" target="_blank" rel="noopener">FormSpark</a> thought what you wrote was Spam? Please edit the message and try again, or try another method of contact!`;
       status.classList.add('form-status--err');
     })
