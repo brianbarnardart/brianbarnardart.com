@@ -7,7 +7,7 @@ cover_image: /assets/venues/the-green-turtle.jpg
 
 {% include figure.html image="/assets/venues/the-green-turtle.jpg" caption="View of the audience from the main stage" side="right" %}
 
-It's a happy coincidence that **The Green Turtle** [(facebook)](https://www.facebook.com/greenturtletavern1/) is terrapin-themed, as it fits perfectly with Brian's longstanding interest in painting turtles (tracing back to the Grateful Dead's [Terrapin Station](https://en.wikipedia.org/wiki/Terrapin_Station)).
+It's a happy coincidence that **The Green Turtle Tavern** [(facebook)](https://www.facebook.com/greenturtletavern1/) is terrapin-themed, as it fits perfectly with Brian's longstanding interest in painting turtles (tracing back to the Grateful Dead's [Terrapin Station](https://en.wikipedia.org/wiki/Terrapin_Station)).
 
 Known around town simply as *"The Turtle"*, it's a relaxed bar and venue that brings together locals and tourists for outdoor music 7 nights a week...either on the porch or on the stage.  Brian was commissioned to paint the murals on the fences, which sets the mood for magical performances.
 
