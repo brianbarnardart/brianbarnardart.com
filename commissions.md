@@ -32,7 +32,7 @@ Completed pieces can be picked up locally (Fernandina Beach, FL) or shipped.  Sh
 
 - Brian doesn't make exact replicas of existing work. If you love a painting that's already sold, you can talk about something *in the spirit* of it.
 - The process involves creative judgment. If you want total control over every element, a commission may not be the right fit.
-- Rush work may be possible but carries an additional fee.
+- Rush work is not feasible on large studio pieces.  But if what you want is small (on the scale of a live painting) it may be doable.
 
 ---
 
