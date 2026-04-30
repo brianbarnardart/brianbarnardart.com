@@ -9,7 +9,7 @@
   {%- if page.url == "/" or page.title == nil -%}
     <title>{{ site.title }}</title>
   {%- else -%}
-    <title>Brian Barnard | {{ page.title }}</title>
+    <title>{{ page.title }}</title>
   {%- endif -%}
   {%- seo title=false -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">

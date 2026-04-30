@@ -11,7 +11,7 @@ nav: 1
 
 Brian's Booth is number 375, right between [the Green Turtle](/venues/the-green-turtle/) and Florida House.  He'll be there all day Saturday and Sunday.  It'll be next to Greg's Burger Tent, which will be moving up there for the weekend — so come grab some food and talk some art!
 
-*Sorry to disappoint anyone hoping for whimsical paintings of shrimp. 🦐  But when asked if he will be doing any shrimp pieces for the festival, Brian gave a rather firm (and somewhat irritated): "NO."*
+*Sorry to disappoint anyone hoping for whimsical paintings of shrimp. 🦐  But when asked if he will be doing any anthropomorphic shrimp for the festival, Brian gave a rather firm (and somewhat irritated): "NO."*
 
 If you're in town early, he's also planning to do live painting (unless it rains) at the Turtle Thursday Night with [Gilberto '77](https://www.gilberto77.com/), and Friday Night with [The Honey Badgers](https://www.facebook.com/p/The-Honey-Badgers-Amelia-Island-61561513436394/).
 
