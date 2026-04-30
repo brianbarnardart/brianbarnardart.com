@@ -6,8 +6,45 @@ layout: default
   !!! Humans (or AI): if you change this file, update the README too!
 {%- endcomment -%}
 
-{% assign prev_artwork = page.previous | default: site.works.last %}
-{% assign next_artwork = page.next | default: site.works.first %}
+{% comment %} Build gallery-only works list (same filter as gallery.md: top-level _works/ only) {% endcomment %}
+{% assign _gal_ordered = "" | split: "" %}
+{% assign _gal_unordered = "" | split: "" %}
+{% for work in site.works %}
+  {% assign _parts = work.relative_path | split: '/' %}
+  {% if _parts.size == 2 %}
+    {% if work.order %}
+      {% assign _gal_ordered = _gal_ordered | push: work %}
+    {% else %}
+      {% assign _gal_unordered = _gal_unordered | push: work %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign _gal_ordered = _gal_ordered | sort: "order" %}
+{% assign _gallery_works = _gal_ordered | concat: _gal_unordered %}
+
+{% assign _is_gallery_work = false %}
+{% assign _found_current = false %}
+{% assign _prev_candidate = _gallery_works.last %}
+{% assign prev_artwork = nil %}
+{% assign next_artwork = nil %}
+{% for work in _gallery_works %}
+  {% if work.url == page.url %}
+    {% assign _is_gallery_work = true %}
+    {% assign _found_current = true %}
+    {% assign prev_artwork = _prev_candidate %}
+  {% elsif _found_current %}
+    {% unless next_artwork %}
+      {% assign next_artwork = work %}
+    {% endunless %}
+  {% else %}
+    {% assign _prev_candidate = work %}
+  {% endif %}
+{% endfor %}
+{% unless next_artwork %}
+  {% assign next_artwork = _gallery_works.first %}
+{% endunless %}
+
+{% if _is_gallery_work %}
 
 <nav class="artwork-nav">
   <a href="{{ prev_artwork.url }}" class="artwork-nav-link artwork-nav-link--prev">
@@ -26,6 +63,7 @@ layout: default
     <span class="artwork-nav-arrow">&rarr;</span>
   </a>
 </nav>
+{% endif %}
 
 <article class="artwork-page">
 
