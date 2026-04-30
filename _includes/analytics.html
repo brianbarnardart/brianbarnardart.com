@@ -1,1 +1,22 @@
-<script data-goatcounter="https://brianbarnardtest.goatcounter.com/count"         async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://brianbarnardtest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<script>
+  window.addEventListener('load', function() {
+    document.querySelectorAll('a[href^="http"]').forEach(function(el) {
+
+      // Skip links pointing to our own domain
+      if (el.href.includes('realityhandbook.org')) return;
+
+      el.addEventListener('click', function() {
+        window.goatcounter.count({
+          // Prefix with "click " so events are easy to identify in the dashboard
+          path: 'click ' + el.getAttribute('href'),
+          title: 'Outbound: ' + el.getAttribute('href'),
+
+          // Mark as an event (not a pageview) to keep traffic stats clean
+          event: true
+        });
+      });
+    });
+  });
+</script>
