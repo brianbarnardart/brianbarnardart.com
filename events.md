@@ -5,11 +5,11 @@ permalink: /events/
 nav: 1
 ---
 
-### Booth at **Shrimp Festival 2026!** *(May 2-3)*
+### Booth at **Shrimp Festival 2026!**
 
 {% include figure.html image="/assets/events/shrimp-festival-2026.jpg" side="right" link="https://brianbarnardart.com/works/diptych-shrimp-boat-jamboree/" caption="from **[Diptych Shrimp Boat Jamboree](https://brianbarnardart.com/works/diptych-shrimp-boat-jamboree/)**" %}
 
-Brian's booth is number 375, right between [the Green Turtle](/venues/the-green-turtle/) and Florida House.  He'll be there all day Saturday and Sunday.  It'll be next to Greg's Burger Tent, which will be moving up there for the weekend — so come grab some food and talk some art!
+Brian's booth is number 375, right between [the Green Turtle](/venues/the-green-turtle/) and Florida House.  He'll be there all day Saturday and Sunday *(May 2-3)*.  It'll be next to Greg's Burger Tent, which will be moving up there for the weekend — so come grab some food and talk some art!
 
 *Sorry to disappoint anyone hoping for whimsical paintings of anthropomorphic shrimp. 🦐  But when asked if he will be doing any of those for the festival, Brian gave a rather firm: "NO! It's overdone!"*
 
@@ -19,4 +19,4 @@ If you're in town early, he's also planning to do live painting (unless it rains
 
 Brian's live painting sessions are done frequently in downtown Fernandina at [The Green Turtle](/venues/the-green-turtle/) and [The Tigre Island Room](/venues/tigre-island-room/), as well as at the [The Inkwell](/venues/the-inkwell/) *(just a 7 minute drive from downtown, with free parking)*.
 
-Additionally, Brian has a guided sketching class most weeks on on Tuesdays at The Inkwell!
+Additionally, Brian has a guided sketching class most weeks on Tuesdays at The Inkwell!
