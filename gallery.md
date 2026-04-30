@@ -6,9 +6,9 @@ description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and
 nav: 2
 ---
 
-Due to a busy live painting schedule, large pieces are [most often done by commission](/commissions/).  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
+Due to a busy live painting schedule (and inherent risks of spending weeks on an idea no one has committed to buying), large pieces are [most often done by commission](/commissions/).  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
 
-**(This page is skeletal while the image hosting and copyright strategy gets figured out.  Check back for more after Shrimp Fest 2026, when things have died down a bit!)**
+**This page is skeletal while the image hosting and copyright strategy gets figured out.  Check back for more after Shrimp Fest 2026, when things have died down a bit!**
 
 <div class="gallery-grid">
 {% assign ordered_works = "" | split: "" %}
