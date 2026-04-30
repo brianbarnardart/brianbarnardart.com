@@ -43,8 +43,8 @@ website. There is no database and no server-side code to maintain.
 | `Gemfile` | Ruby gem versions — Jekyll, minima, plugins |
 | `_config.yml` | Site-wide settings (title, URL, theme, etc.) |
 | `_data/*.yml` | Structured data files (e.g. the Shorts video list) |
-| `_includes/*.html` | Reusable HTML fragments, inserted with `{% include name.html %}` |
-| `_layouts/*.html` | Page templates. Markdown files pick one with `layout: X` in front matter |
+| `_includes/` | Reusable HTML fragments — see [`_includes/README.md`](_includes/README.md) |
+| `_layouts/` | Page templates — see [`_layouts/README.md`](_layouts/README.md) |
 | `assets/main.scss` | Custom CSS/SCSS that extends the theme |
 | `index.md` | The home page |
 | `contact.md` | The `/contact/` page |
@@ -67,13 +67,9 @@ header navigation bar, a main content area, and a footer.
 
 ### Theme overrides
 
-Jekyll always prefers files in the project folder over the theme's copies,
-which lets you customise individual pieces without forking the entire theme:
-
-| This project's file | Replaces theme file | Why |
-|---|---|---|
-| `_includes/head.html` | Minima's `head.html` | Custom title format, favicon, web manifest |
-| `_includes/footer.html` | Minima's `footer.html` | Custom social links layout and copyright |
+Jekyll always prefers files in the project folder over the theme's copies.
+See [`_includes/README.md`](_includes/README.md) for the full list of
+overridden files and what each one does.
 
 - [Minima source](https://github.com/jekyll/minima)
 - [Minima README](https://github.com/jekyll/minima/blob/master/README.md)
@@ -178,23 +174,6 @@ This is how `{% include shorts-grid.html %}` works, and how `_data/shorts.yml`
 gets looped over. Most content authors won't need to write Liquid, but
 recognising `{{ }}` (output) and `{% %}` (logic) tags explains what those
 lines in the files mean.
-
----
-
-## External links
-
-A small script in `_layouts/default.html` runs at page load and automatically
-adds `target="_blank"` and `rel="noopener noreferrer"` to every link whose
-hostname differs from `brianbarnardart.com`. This means:
-
-- **You do not need to add `target="_blank"` yourself** when writing Markdown
-  or HTML links to external sites — it is handled for you.
-- **Internal links** (relative paths like `/contact/`, or same-domain URLs)
-  open in the same tab as normal.
-- **Exception:** links that are injected into the page *after* the initial load
-  via JavaScript `innerHTML` (currently only the FormSpark status messages in
-  `_includes/contact-form.html`) are not reached by the script and must carry
-  their own `target` and `rel` attributes.
 
 ---
 

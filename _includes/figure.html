@@ -1,16 +1,6 @@
 {% comment %}
-  Usage:
-    {% include figure.html image="/assets/paintings/foo.jpg" caption="A caption" side="left" %}
-    {% include figure.html image="/assets/paintings/bar.jpg" caption="Another" side="right" %}
-    {% include figure.html image="/assets/paintings/baz.jpg" %}   (full-width, no float)
-
-  Parameters:
-    image    – required  – path to the image
-    caption  – optional  – text shown below the image
-    side     – optional  – "left" or "right" to float the figure into the text
-    alt      – optional  – alt text; falls back to caption, then ""
-    maxwidth – optional  – inline max-width override e.g. "160px" or "40%"
-    lightbox – optional  – set to "no" to disable the lightbox link
+  !!! Documented in _includes/README.md
+  !!! Humans (or AI): if you change this file, update the README too!
 {% endcomment %}
 
 {% assign _caption_plain = include.caption | markdownify | strip_html | strip %}

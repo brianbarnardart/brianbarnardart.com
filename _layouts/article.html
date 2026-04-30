@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+{%- comment -%}
+  !!! Documented in _layouts/README.md
+  !!! Humans (or AI): if you change this file, update the README too!
+{%- endcomment -%}
 
 {% assign coll = site[page.collection] %}
 {% assign prev_item = page.previous | default: coll.last %}

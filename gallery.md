@@ -11,9 +11,21 @@ Due to a busy live painting schedule, large studio pieces are most often done **
 **(The Gallery is a work in progress, please check back as more pieces will be added very soon...)**
 
 <div class="gallery-grid">
+{% assign ordered_works = "" | split: "" %}
+{% assign unordered_works = "" | split: "" %}
 {% for artwork in site.works %}
   {% assign path_parts = artwork.relative_path | split: '/' %}
   {% if path_parts.size == 2 %}
+    {% if artwork.order %}
+      {% assign ordered_works = ordered_works | push: artwork %}
+    {% else %}
+      {% assign unordered_works = unordered_works | push: artwork %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign ordered_works = ordered_works | sort: "order" %}
+{% assign all_works = ordered_works | concat: unordered_works %}
+{% for artwork in all_works %}
   <a href="{{ artwork.url }}" class="gallery-item">
     <div class="gallery-thumb">
       <img src="{{ artwork.image }}" alt="{{ artwork.title }}" loading="lazy">
@@ -23,7 +35,6 @@ Due to a busy live painting schedule, large studio pieces are most often done **
       <span class="gallery-badge gallery-badge--price">{{ artwork.price }}</span>
     {% endif %}
   </a>
-  {% endif %}
 {% endfor %}
 </div>
 
