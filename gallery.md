@@ -6,7 +6,9 @@ description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and
 nav: 2
 ---
 
-Due to a busy live painting schedule, studio pieces are most often done [by commission](/commissions/).  But occasionally some will be available for sale here, displayed among the historical greatest hits!
+Due to a busy live painting schedule, studio pieces are most often done **[by commission](/commissions/)**.  But occasionally some will be available for sale here, displayed among the historical greatest hits!
+
+**(The Gallery is a work in progress, please check back as more pieces will be added very soon...)**
 
 <div class="gallery-grid">
 {% for artwork in site.artworks %}

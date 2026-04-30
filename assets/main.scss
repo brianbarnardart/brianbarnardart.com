@@ -248,7 +248,8 @@ body {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 2.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 
   @media (min-width: 720px) {
     grid-template-columns: repeat(3, 1fr);
