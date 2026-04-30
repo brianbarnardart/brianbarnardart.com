@@ -8,7 +8,7 @@ nav: 2
 
 Due to a busy live painting schedule, large studio pieces are **[most often done by commission](/commissions/)**.  But the plan is that any available works will be listed for sale here, displayed among the historical greatest hits!
 
-**(This page is under construction as we figure out the image hosting and copyright strategy; please check back after Shrimp Fest 2026, when things have died down a bit!)**
+**(This page is under construction as we figure out the image hosting and copyright strategy.  Please check back after Shrimp Fest 2026, when things have died down a bit!)**
 
 <div class="gallery-grid">
 {% assign ordered_works = "" | split: "" %}
@@ -38,4 +38,4 @@ Due to a busy live painting schedule, large studio pieces are **[most often done
 {% endfor %}
 </div>
 
-*Note that the most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to come to **[an event](/events/)**, where one or two unique 11"x17" pieces are made just about every weekend!*
+*Note that the most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to **[come to a live painting event](/events/)**, where one or two unique 11"x17" pieces are made just about every weekend!*
