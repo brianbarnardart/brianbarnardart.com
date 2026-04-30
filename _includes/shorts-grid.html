@@ -5,7 +5,7 @@
     <div class="short-card">
       <div class="short-frame">
         <iframe
-          src="https://www.youtube.com/embed/{{ short.id }}?rel=0"
+          src="https://www.youtube.com/embed/{{ short.id }}?controls=0&rel=0&loop=1&playlist={{ short.id }}"
           title="{{ short.title | markdownify | strip_html | strip_newlines | strip }}"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
