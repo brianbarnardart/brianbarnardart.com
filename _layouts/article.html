@@ -6,6 +6,7 @@ layout: default
 {% assign prev_item = page.previous | default: coll.last %}
 {% assign next_item = page.next | default: coll.first %}
 
+{% unless page.collection == 'characters' or page.collection == 'interests' %}
 <nav class="artwork-nav">
   <a href="{{ prev_item.url }}" class="artwork-nav-link artwork-nav-link--prev">
     <span class="artwork-nav-arrow">&larr;</span>
@@ -23,6 +24,7 @@ layout: default
     <span class="artwork-nav-arrow">&rarr;</span>
   </a>
 </nav>
+{% endunless %}
 
 <article class="article-page">
 
