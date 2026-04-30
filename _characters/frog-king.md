@@ -13,7 +13,7 @@ He sits. He reads. He wears his crown without making a big deal of it. Whatever'
 
 ## An Elusive Smile...
 
-The [icon you see in browser tabs](https://en.wikipedia.org/wiki/Favicon) for this website isn't just a "B" *(or even a "BB")*... **it's his grin!**  How much of it you see depends on the resolution.
+The [icon you see in browser tabs](https://en.wikipedia.org/wiki/Favicon) for this website isn't just a "B" *(or even a "BB")*... **it's his grin!**  How much of it you see will depend on the resolution of your screen.
 
 ![The elusive smile at various resolutions](/assets/icons/BB-elusive-smile.png)
 
