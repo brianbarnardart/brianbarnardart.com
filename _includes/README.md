@@ -28,6 +28,14 @@ files silently replace their Minima equivalents:
 
 ## File reference
 
+### `analytics.html`
+
+This interoperates with GoatCounter.  If you want to not count goatcounter
+from a particular browser, open the JavaScript console on brianbarnardart.com
+and say: 
+
+    localStorage.setItem('skipgc', 't')
+
 ### `head.html`
 
 The `<head>` block for every page. Sets charset, viewport, and page title
