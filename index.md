@@ -1,7 +1,7 @@
 ---
 layout: home
 title: About
-image: /assets/paintings/fox-and-nymph.jpg
+image: /assets/paintings/wild-mountain-fox-jam.jpg
 ---
 
 {% include figure.html image="/assets/characters/frog-king-320x430.png" side="left" maxwidth="160px" link="/characters/frog-king/" class="frog-king" %}
