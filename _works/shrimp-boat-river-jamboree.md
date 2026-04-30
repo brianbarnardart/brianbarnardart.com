@@ -6,7 +6,7 @@ medium: Acrylic on canvas
 dimensions: '72" x 48" (two 36" x 48" panels)'
 year: 2025/2026
 description: 2-Canvas "Diptych" Featuring a Tortoise, Owl, Tree, and Shrimp Boat
-price: "$7,500"
+price: "$7,500 (2 pieces)"
 order: 3
 ---
 
