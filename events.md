@@ -7,7 +7,7 @@ nav: 1
 
 ### Booth at **Shrimp Festival 2026!**
 
-{% include figure.html image="/assets/events/shrimp-festival-2026.jpg" side="right" link="https://brianbarnardart.com/works/diptych-shrimp-boat-jamboree/" caption="from **[Diptych Shrimp Boat Jamboree](https://brianbarnardart.com/works/diptych-shrimp-boat-jamboree/)**" %}
+{% include figure.html image="/assets/events/shrimp-festival-2026.jpg" side="right" link="https://brianbarnardart.com/works/diptych-shrimp-boat-serenade/" caption="from **[Diptych Shrimp Boat Serenade](https://brianbarnardart.com/works/diptych-shrimp-boat-serenade/)**" %}
 
 Brian's booth is number 375, right between [the Green Turtle](/venues/the-green-turtle/) and Florida House.  He'll be there all day Saturday and Sunday *(May 2-3)*.  It'll be next to Greg's Burger Tent, which will be moving up there for the weekend — so come grab some food and talk some art!
 

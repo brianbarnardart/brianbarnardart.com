@@ -1,7 +1,7 @@
 ---
 layout: artwork
-title: Diptych Shrimp Boat Jamboree
-image: /assets/paintings/diptych-shrimp-boat-jamboree.jpg
+title: Diptych Shrimp Boat Serenade
+image: /assets/paintings/diptych-shrimp-boat-serenade.jpg
 medium: Acrylic on canvas
 dimensions: '72" x 48" (two 36" x 48" panels)'
 year: 2025/2026
