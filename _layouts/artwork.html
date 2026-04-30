@@ -2,8 +2,8 @@
 layout: default
 ---
 
-{% assign prev_artwork = page.previous | default: site.artworks.last %}
-{% assign next_artwork = page.next | default: site.artworks.first %}
+{% assign prev_artwork = page.previous | default: site.works.last %}
+{% assign next_artwork = page.next | default: site.works.first %}
 
 <nav class="artwork-nav">
   <a href="{{ prev_artwork.url }}" class="artwork-nav-link artwork-nav-link--prev">

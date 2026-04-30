@@ -11,7 +11,7 @@ Due to a busy live painting schedule, studio pieces are most often done **[by co
 **(The Gallery is a work in progress, please check back as more pieces will be added very soon...)**
 
 <div class="gallery-grid">
-{% for artwork in site.artworks %}
+{% for artwork in site.works %}
   {% assign path_parts = artwork.relative_path | split: '/' %}
   {% if path_parts.size == 2 %}
   <a href="{{ artwork.url }}" class="gallery-item">

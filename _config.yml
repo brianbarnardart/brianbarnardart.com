@@ -19,9 +19,9 @@ permalink: pretty
 
 # Collections — each file in _<name>/ becomes a page
 collections:
-  artworks:
+  works:
     output: true
-    permalink: /artworks/:name/
+    permalink: /works/:name/
   venues:
     output: true
     permalink: /venues/:name/
