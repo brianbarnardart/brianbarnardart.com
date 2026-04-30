@@ -45,6 +45,10 @@
       });
     </script>
 
+  {% unless jekyll.environment == "development" %}
+    {% include analytics.html %}
+  {% endunless %}
+
   </body>
 
 </html>
