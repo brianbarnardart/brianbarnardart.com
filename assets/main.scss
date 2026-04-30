@@ -371,6 +371,25 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   max-width: 680px;
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 0.9rem 1.4rem;
+    border-left: 4px solid #2a7ae2;
+    background: #f3f7ff;
+    border-radius: 0 4px 4px 0;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #333;
+    line-height: 1.5;
+    &::before { content: none; }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 1.5rem 0;
+  }
 }
 
 .artwork-inquiry {
