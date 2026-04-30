@@ -15,7 +15,8 @@ in its front matter.
 default.html          ← base shell: <html>, <head>, <header>, <footer>, lightbox, external-link script
 ├── home.html         ← home page: wraps content in <article>; hides the back-to-home footer link
 ├── article.html      ← collection items: prev/next nav + article header + body
-└── artwork.html      ← _works/: hero image, metadata panel, inquiry form or sold note
+├── artwork.html      ← _works/: hero image, metadata panel, inquiry form or sold note
+└── 404.html          ← error page: bare shell (no site header/nav/footer), just head + content
 ```
 
 Every layout except `default.html` sets `layout: default` in its own front
@@ -24,6 +25,12 @@ matter, so the chain is handled automatically — you never nest layouts manuall
 ---
 
 ## File reference
+
+### `404.html`
+
+Minimal error page shell — just `<html>`, `<head>` (via `head.html` so fonts,
+favicon, and CSS still load), and a centred content card. No site header, nav,
+or footer. Used only by `404.md`.
 
 ### `default.html`
 

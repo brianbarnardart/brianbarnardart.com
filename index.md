@@ -33,7 +33,7 @@ He has been painting live at the Turtle for years: setting up an easel, working 
 </div>
 {% endcomment %}
 
-This site is Brian's official home on the web — and you can **[contact him using the form here](/contact/)**.  But if you're a YouTuber, a Facebooker, or an Instagrammer then feel free to connect there *(having social media followers never hurts... or does it?)* 🤔
+This site is Brian's official home on the Internet — and you can **[contact him using the form here](/contact/)**.  But if you're a YouTuber, a Facebooker, or an Instagrammer then feel free to connect there *(having social media followers never hurts... or does it?)* 🤔
 
 Have a look around, and hope to see you out sometime!
 
