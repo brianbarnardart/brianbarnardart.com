@@ -32,7 +32,7 @@ files silently replace their Minima equivalents:
 
 This interoperates with GoatCounter.  If you want to not count goatcounter
 from a particular browser, open the JavaScript console on brianbarnardart.com
-and say: 
+and say:
 
     localStorage.setItem('skipgc', 't')
 
@@ -77,6 +77,24 @@ auto-resizes the textarea.
 | `message_placeholder` | no | Placeholder text for the message textarea |
 | `submit_text` | no | Button label (default: `Send`) |
 | `success_message` | no | Message shown on successful send (default: `Thanks for your message! 😊`) |
+
+#### Double-checking form submissions with GoatCounter
+
+The contact form now integrates with [GoatCounter](https://www.goatcounter.com/) analytics to double-check submissions and help diagnose delivery issues. Three custom events are sent to GoatCounter:
+
+- **form-submit**: Fired when the user clicks submit, before contacting FormSpark.
+- **form-success**: Fired if FormSpark responds with success.
+- **form-failure**: Fired if FormSpark responds with an error.
+
+Each event includes the email address entered (or 'no email' if blank) in the event title, so you can cross-reference submissions and follow up if needed. This allows you to:
+
+- See the total number of submit attempts.
+- Compare successes and failures to the total.
+- Identify and contact users whose messages may not have gone through.
+
+All GoatCounter events use unique paths (e.g. `/contact#form-submit`, `/contact#form-success`, `/contact#form-failure`) and the email in the title for easy filtering and review.
+
+While this does mean GoatCounter gets a copy of the email address, it's not clear GoatCounter is any less trustworthy than FormSpark (or the email providers carrying the messages, or the browser itself)...so the added robustness outweighs any privacy concerns.
 
 ### `figure.html`
 

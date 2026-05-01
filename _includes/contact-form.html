@@ -49,6 +49,16 @@
   var status = form.querySelector('.form-status');
 
   form.addEventListener('submit', function (e) {
+    // Double-check form submit event in GoatCounter (checks success/fail below)
+    var emailInput = form.querySelector('input[name="email"]');
+    var emailValue = emailInput && emailInput.value ? emailInput.value : 'no email';
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({
+        path: location.pathname + '#form-submit',
+        title: 'Contact Submit (' + emailValue + ')'
+      });
+    }
+
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
@@ -69,6 +79,13 @@
     })
     .then(function (res) {
       if (res.ok) {
+        // Double-check form submit success in GoatCounter
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({
+            path: location.pathname + '#form-success',
+            title: 'Contact Success (' + emailValue + ')'
+          });
+        }
         form.reset();
         if (textarea) textarea.style.height = '';
         // target/_blank kept here because this link is injected via innerHTML
@@ -83,6 +100,13 @@
       }
     })
     .catch(function (error) {
+      // Double-check form submit failure in GoatCounter
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({
+          path: location.pathname + '#form-failure',
+          title: 'Contact Failure (' + emailValue + ')'
+        });
+      }
       console.error(error);
       // Same reason as above — injected after DOMContentLoaded.
       status.innerHTML = `{{ include.error_message | default: 'Something went wrong! 😕'}} Maybe <a href="https://formspark.io" target="_blank" rel="noopener">FormSpark</a> thought what you wrote was Spam? Please edit the message and try again, or try another method of contact!`;
