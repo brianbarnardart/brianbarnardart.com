@@ -1,10 +1,12 @@
 ---
 layout: default
 title: Privacy
+description: Your Privacy Matters
 permalink: /privacy/
+image: /assets/icons/astro-death-head.png
 ---
 
-## Your Privacy Matters
+## Your Visit... *Your Business*.
 
 This site respects you: it collects minimal, anonymous analytics.  And you can turn even that off, right here, right now.
 
@@ -18,7 +20,9 @@ This site respects you: it collects minimal, anonymous analytics.  And you can t
 <p id="tracking-confirm" aria-live="polite"></p>
 
 
-### What data is collected?
+## What data is collected?
+
+{% include figure.html image="/assets/icons/astro-death-head.png" side="right" link="https://themarkup.org/blacklight/2020/09/22/what-they-know-now" %}
 
 This site uses **[GoatCounter](https://www.goatcounter.com/)** for basic analytics — things like which pages are visited and roughly where visitors come from (by country, not address). That's it.
 
