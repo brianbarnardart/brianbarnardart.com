@@ -51,8 +51,10 @@ sorted ascending by that number.
 
 ### `footer.html`
 
-The site footer. Social icon links (YouTube, Instagram, Facebook, LinkedIn) and
+The site footer. Social icon links (YouTube, Instagram, Facebook) and
 a copyright line with the current year. Icons are pulled from `icons/`.
+
+(At time of writing, LinkedIn is pending an account recovery.)
 
 ### `custom-head.html`
 
