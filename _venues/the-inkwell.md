@@ -1,7 +1,7 @@
 ---
 layout: article
 title: The Inkwell
-subtitle: Fernandina Beach, FL
+subtitle: 1925 South 14th Street, (904) 556-9090
 cover_image: /assets/venues/the-inkwell.jpg
 ---
 

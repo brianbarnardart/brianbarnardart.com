@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Tigre Island Room
-subtitle: Fernandina Beach, FL
+subtitle: 10 North 2nd Street, (904) 578-3703
 cover_image: /assets/venues/tigre-island-room.jpg
 ---
 

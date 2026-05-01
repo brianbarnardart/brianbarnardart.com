@@ -1,7 +1,7 @@
 ---
 layout: article
 title: The Green Turtle
-subtitle: Fernandina Beach, FL
+subtitle: 14 South 3rd Street, (904) 321-2324
 cover_image: /assets/venues/the-green-turtle.jpg
 ---
 
