@@ -16,7 +16,7 @@ The work was started in 2025 with the intention to be displayed at a business.  
 
 ---
 
-> "When I was a kid, my dad and grandfather had shrimp boats.  My grandfather (Carl Tipton, a.k.a. "Captain Tip") had 'The Pryor' — a famous boat downtown.  My dad (Captain Russell Barnard) had a smaller boat, referred to as the 'Mini Boat'.  Once my dad caught a manta ray in his nets bigger than his boat.  He had to cut the riggings and nets so that a literal sea monster wouldn't take him down!"
+> "When I was a kid, my dad and grandfather had shrimp boats.  My grandfather (Carl Tipton, a.k.a. "Captain Tip") had ['The Pryor'](https://www.floridamemory.com/items/show/131295) — a famous boat downtown.  My dad (Captain Russell Barnard) had a smaller boat, referred to as the 'Mini Boat'.  Once my dad caught a manta ray in his nets bigger than his boat.  He had to cut the riggings and nets so that a literal sea monster wouldn't take him down!"
 >
 > "Later the next year, damage from that incident caused my dad's shrimp boat to sink in a storm in the channel near Fort Clinch.  He went down with the boat, but fortunately the air trapped inside pushed out the windshield and my dad was able to escape to safety and swim to shore!  The boat was given to a salvage crew in exchange for removal, and that was the end of my father's shrimping career.  My grandfather worked until his death in 1997."
 >
