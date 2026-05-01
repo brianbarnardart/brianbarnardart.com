@@ -12,7 +12,7 @@ If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)*
 
 {% include figure.html image="/assets/paintings/green-turtle-mural.jpg" caption="(part of) The Green Turtle mural, Fernandina Beach" %}
 
-A Bachelor of Arts from FSU, Brian works primarily in acrylics and mixed media.  His influences range from street art and graffiti, to Alice and Wonderland and Grateful Dead album covers.  Inhabiting the works are his seemingly endless cast of characters with an inner life. Creatures that know more than they let on...
+A Bachelor of Arts [from FSU](https://cfa.fsu.edu/), Brian works primarily in acrylics and mixed media.  His influences range from street art and graffiti, to Alice and Wonderland and Grateful Dead album covers.  Inhabiting the works are his seemingly endless cast of characters with an inner life. Creatures that know more than they let on...
 
 {% include callout.html quote="...characters with an inner life. [Creatures that know more than they let on...](/characters/frog-king/)" side="right" %}
 
