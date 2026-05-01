@@ -32,6 +32,20 @@ Minimal error page shell — just `<html>`, `<head>` (via `head.html` so fonts,
 favicon, and CSS still load), and a centred content card. No site header, nav,
 or footer. Used only by `404.md`.
 
+**Analytics:** Unlike the other layouts, `404.html` includes `analytics.html`
+directly (in production only) rather than inheriting it from `default.html`.
+However, `404.md` sets `window.goatcounter = { no_onload: true }` *before*
+`count.js` loads, which suppresses GoatCounter's automatic pageview. Instead,
+`404.md` fires a single custom **event** on `window.load` with:
+
+- `path`: `404: /the/bad/path` (the pathname that was not found)
+- `title`: the full URL
+- `event: true` (marks it as an event, not a pageview)
+
+This keeps 404 hits out of your regular page-traffic stats while still making
+them visible in the GoatCounter events list, where broken links can be spotted
+and fixed.
+
 ### `default.html`
 
 The outermost shell rendered for every page. It:
