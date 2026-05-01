@@ -17,7 +17,7 @@ This psychedelic scene encodes the signature Brian Barnard style.  It's his best
 
 > "Wild Mountain Fox Jam was created in 2019 and displayed at Rain Dogs in a group Art Show that year.  Rain Dogs was one of the fixtures of Five Points in the Riverside area of Jacksonville."
 >
-> "This piece represents nature, music and magic: three topics that are common in my work.  The Nymph brings music into the world with her spirit guide the Fox, while watching over the magic of the natural world. "
+> "This piece represents nature, music and magic: three topics that are common in my work.  The Nymph brings music into the world with her spirit guide the Fox, while watching over the magic of the natural world."
 >
 > "Being from Florida, mountainous environments are extra magical to me!"
 >
