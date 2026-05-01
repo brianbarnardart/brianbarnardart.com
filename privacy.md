@@ -1,0 +1,102 @@
+---
+layout: default
+title: Privacy
+permalink: /privacy/
+---
+
+## Your Privacy Matters
+
+This site respects you: it collects minimal, anonymous analytics.  And you can turn even that off, right here, right now.
+
+**Analytics status in this browser:** <span id="tracking-status">checking…</span>
+
+<p>
+  <button id="tracking-off" class="form-submit">Turn tracking OFF</button>
+  <button id="tracking-on" class="form-submit">Turn tracking ON</button>
+</p>
+
+<p id="tracking-confirm" aria-live="polite"></p>
+
+
+### What data is collected?
+
+This site uses **[GoatCounter](https://www.goatcounter.com/)** for basic analytics — things like which pages are visited and roughly where visitors come from (by country, not address). That's it.
+
+GoatCounter does **not**:
+
+- Use cookies
+- Track you across other websites
+- Build an advertising profile on you
+- Sell your data to anyone
+- Share your data with Google, Meta, or any other third party
+
+GoatCounter is open source, independently operated, and funded by its users — not by selling your attention or your data.
+
+
+### Why GoatCounter instead of Google Analytics?
+
+The short version: **Google Analytics is free because *you* are the product.**
+
+Google Analytics gives site owners detailed visitor data in exchange for Google receiving that data too — adding it to the profile Google builds on you *across every site that uses it*.
+
+GoatCounter is open source and allows you to save the analytics only on your own servers.  For smaller sites like this one, they also offer a community-funded service where they store your data of what's being clicked for you (but still not the personal profile of the person who visited it).
+
+This site uses GoatCounter because understanding which pages people visit is genuinely useful — but not at the cost of your privacy.
+
+
+### Contact form submissions
+
+When you use the contact form, your name, email address, and message are sent to **[FormSpark](https://formspark.io/)** (a form processing service) and forwarded to Brian's email. A record that the form was submitted is also logged in GoatCounter — including your email address in the event title — as a backup to catch any messages that may not have gotten through. This is the only case where personally identifiable information appears in analytics.
+
+
+### Embedded YouTube videos
+
+The video clips on this site are embedded using YouTube's **privacy-enhanced mode** (`youtube-nocookie.com`). With standard YouTube embeds, YouTube sets cookies in your browser the moment the page loads — even if you never touch the video. The nocookie domain changes that: no cookies are set until you actually click play.
+
+Once you do play a video, YouTube will know it was watched (that's unavoidable with any streaming service), but it won't have been silently tracking your visit just because the page loaded.
+
+
+### Turning off tracking
+
+The button at the top of this page sets a flag in your browser's local storage (`skipgc = t`). GoatCounter's script checks for this flag and skips counting your visits when it is set. No data is sent. The flag stays set until you turn tracking back on, or until you clear your browser's local storage for this site.
+
+(This is also useful for Brian and the web developers to turn off self-views so that their own visits don't inflate the traffic numbers.)
+
+<script>
+(function () {
+  var status = document.getElementById('tracking-status');
+  var confirm = document.getElementById('tracking-confirm');
+  var btnOff = document.getElementById('tracking-off');
+  var btnOn = document.getElementById('tracking-on');
+
+  function isSkipping() {
+    return localStorage.getItem('skipgc') === 't';
+  }
+
+  function updateStatus() {
+    if (isSkipping()) {
+      status.textContent = 'OFF — this browser is not being tracked.';
+      btnOff.disabled = true;
+      btnOn.disabled = false;
+    } else {
+      status.textContent = 'ON — this browser is being tracked.';
+      btnOff.disabled = false;
+      btnOn.disabled = true;
+    }
+  }
+
+  btnOff.addEventListener('click', function () {
+    localStorage.setItem('skipgc', 't');
+    confirm.textContent = 'Tracking turned OFF. GoatCounter will no longer count visits from this browser.';
+    updateStatus();
+  });
+
+  btnOn.addEventListener('click', function () {
+    localStorage.removeItem('skipgc');
+    confirm.textContent = 'Tracking turned ON. GoatCounter will count visits from this browser again.';
+    updateStatus();
+  });
+
+  updateStatus();
+}());
+</script>
