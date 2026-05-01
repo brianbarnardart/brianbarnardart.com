@@ -1,6 +1,6 @@
 ---
 layout: home
-title: About
+title: Brian Barnard Art
 image: /assets/paintings/wild-mountain-fox-jam.jpg
 ---
 
