@@ -11,9 +11,11 @@ nav: 1
 
 Brian's booth is number 375, right between [the Green Turtle](/venues/the-green-turtle/) and Florida House.  He'll be there all day Saturday and Sunday *(May 2-3)*.  It'll be next to Greg's Burger Tent, which will be moving up there for the weekend — so come grab some food and talk some art!
 
-*Sorry to disappoint anyone hoping for whimsical paintings of anthropomorphic shrimp. [But that's been taken care of by basically everyone else in town...](https://www.fbnewsleader.com/local/painting-town)* 🦐🦐🦐
+> "Sorry to disappoint anyone hoping for whimsical paintings of anthropomorphic shrimp. [But that's been taken care of by basically everyone else in town...](https://www.fbnewsleader.com/local/painting-town)"
+>
+> 🦐🦐🦐
 
-If you'll be around earlier, he's also planning to do live painting (unless it rains) at the Turtle Thursday Night with [Gilberto '77](https://www.gilberto77.com/), and Friday Night with [The Honey Badgers](https://www.facebook.com/p/The-Honey-Badgers-Amelia-Island-61561513436394/).
+If you'll be here before the 2nd, he's doing live painting at the Turtle Thursday Night with [Gilberto '77](https://www.gilberto77.com/).
 
 ### Check **[BrianBarnardArt on Facebook](https://www.facebook.com/brianbarnardart/)**
 
