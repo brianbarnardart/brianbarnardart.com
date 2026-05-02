@@ -50,7 +50,9 @@ This site uses GoatCounter because understanding which pages people visit is gen
 
 ### Contact form submissions
 
-When you use the contact form, your name, email address, and message are sent to **[FormSpark](https://formspark.io/)** (a form processing service) and forwarded to Brian's email. A record that the form was submitted is also logged in GoatCounter — including your email address in the event title — as a backup to catch any messages that may not have gotten through. This is the only case where personally identifiable information appears in analytics.
+When you use the contact form, your name, email address, and message are sent to **[FormSpark](https://formspark.io/)** (a form processing service) and forwarded to Brian's email. A record that the form was submitted is also logged in GoatCounter — including your email address in the event title — as a backup to catch any messages that may not have gotten through.
+
+This is the only case where personally identifiable information appears in analytics.  (But you typed it in and pushed a 'send' button, so...not that surprising that it was sent somewhere!  Having GoatCounter record that fact just helps double-check that the middlemen actually passed it on to Brian.)
 
 
 ### Embedded YouTube videos
