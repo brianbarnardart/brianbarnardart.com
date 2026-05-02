@@ -8,7 +8,7 @@ image: /assets/icons/astro-death-head.png
 
 ## Your Visit... *Your Business*.
 
-This site respects you: it collects minimal, anonymous analytics.  And you can turn even that off, right here, right now.
+This site respects you: it collects minimal, anonymous click counts.  And you can turn even that off, right here, right now.
 
 **Analytics status in this browser:** <span id="tracking-status">checking…</span>
 
@@ -43,7 +43,7 @@ The short version: **Google Analytics is free because *you* are the product.**
 
 Google Analytics gives site owners detailed visitor data in exchange for Google receiving that data too — adding it to the profile Google builds on you *across every site that uses it*.
 
-GoatCounter is open source and allows you to save the analytics only on your own servers.  For smaller sites like this one, they also offer a community-funded service where they store your data of what's being clicked for you (but still not the personal profile of the person who visited it).
+GoatCounter is open source and allows you to run it on your own servers.  For smaller sites like this one, they also offer a community-funded service where they store your data of what's being clicked for you (but still not the personal profile of the person who visited it).
 
 This site uses GoatCounter because understanding which pages people visit is genuinely useful — but not at the cost of your privacy.
 
