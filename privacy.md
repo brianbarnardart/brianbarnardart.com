@@ -64,9 +64,9 @@ Once you do play a video, YouTube will know it was watched (that's unavoidable w
 
 ### Turning off tracking
 
-The button at the top of this page sets a flag in your browser's local storage (`skipgc = t`). GoatCounter's script checks for this flag and skips counting your visits when it is set. No data is sent. The flag stays set until you turn tracking back on, or until you clear your browser's local storage for this site.
+The button at the top of this page sets a flag in your browser's local storage (`skipgc = t`). GoatCounter's script checks for this flag and skips counting your visits when it is set. No data is sent. The flag stays set until you turn tracking back on, or until you clear your browser's local storage for `brianbarnardart.com`.
 
-(This is also useful for Brian and the web developers to turn off self-views so that their own visits don't inflate the traffic numbers.)
+(This is also useful for the site developers to turn off self-views so that their own visits don't inflate the traffic numbers.)
 
 <script>
 (function () {

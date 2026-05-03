@@ -38,4 +38,4 @@ Due to a busy live painting schedule *(and the risk of spending weeks on an idea
 {% endfor %}
 </div>
 
-*Note that the most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to [come to a live painting event](/events/), where one or two unique smaller pieces are made just about every weekend!*
+*The most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to [come to a live painting event](/events/), where one or two unique smaller pieces are made just about every weekend!*
