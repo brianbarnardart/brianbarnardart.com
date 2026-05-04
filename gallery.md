@@ -6,7 +6,7 @@ description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and
 nav: 2
 ---
 
-Due to a busy live painting schedule *(and the risk of spending weeks on an idea no one has put up money for)*, large pieces are [most often done by commission](/commissions/).  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
+Due to a busy live painting schedule, large pieces are [most often done by commission](/commissions/).  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
 
 **This new page is skeletal while image hosting gets figured out.  Come see Brian's [Shrimp Fest 2026 booth](https://brianbarnardart.com/events/) (May 2nd & 3rd)  Website development will resume once things die down a bit...**
 

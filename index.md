@@ -12,9 +12,9 @@ If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)*
 
 {% include figure.html image="/assets/paintings/green-turtle-mural.jpg" caption="(part of) The Green Turtle mural, Fernandina Beach" %}
 
-A Bachelor of Arts [from FSU](https://cfa.fsu.edu/), Brian works primarily in acrylics and mixed media.  His influences range from street art and graffiti, to Alice and Wonderland and Grateful Dead album covers.  Inhabiting the works are his seemingly endless cast of characters with an inner life. Creatures that know more than they let on...
+A Bachelor of Arts [from FSU](https://cfa.fsu.edu/), Brian makes acrylic paintings that incorporate nature, music and magic.  He's influenced by everything from Alice and Wonderland to street art and Grateful Dead album covers.  Inhabiting the works are his seemingly endless cast of characters with an inner life: creatures that know more than they let on...
 
-{% include callout.html quote="...characters with an inner life. [Creatures that know more than they let on...](/characters/frog-king/)" side="right" %}
+{% include callout.html quote="characters with an inner life: [creatures that know more than they let on...](/characters/frog-king/)" side="right" %}
 
 He has been doing live performance painting since 2008: setting up an easel, working through a set, and letting the night find its way onto the picture.  Visitors wanting to remember their night can bid to purchase the pieces, which are typically signed by a band as well.  In addition to events the Turtle, you often find him accompanying acts during ticketed concerts at [The Tigre Island Room](/venues/tigre-island-room/).
 
@@ -33,7 +33,7 @@ He has been doing live performance painting since 2008: setting up an easel, wor
 </div>
 {% endcomment %}
 
-This site is Brian's official home on the Internet — and you can **[contact him using the form here](/contact/)**.  But if you're a YouTuber, a Facebooker, or an Instagrammer then feel free to connect there *(having social media followers never hurts... or does it?)* 🤔
+This site is Brian's official home on the Internet — and you can **[contact him using the form here](/contact/)**.  But if you're a YouTuber, a Facebooker, or an Instagrammer then feel free to connect there *(having social media doesn't hurt... or does it?)* 🤔
 
 Have a look around, and hope to see you out sometime!
 
