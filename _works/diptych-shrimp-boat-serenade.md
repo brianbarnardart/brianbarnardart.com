@@ -22,6 +22,6 @@ order: 3
 >
 > "Later the next year, damage from that incident caused my dad's shrimp boat to sink in a storm in the channel near Fort Clinch.  He went down with the boat, but fortunately the air trapped inside pushed out the windshield and my dad was able to escape to safety and swim to shore!  The boat was given to a salvage crew in exchange for removal, and that was the end of my father's shrimping career.  My grandfather worked until his death in 1997."
 >
-> "Diptych Shrimp Boat Serenade connects me to my childhood.  The Turtle represents the everyday working man: fisherman, artist, craftsman.  Enjoying life when he can, in-between the daily struggles.  The local small town life as a fairy tale, of sorts."
+> "The piece connects me to my childhood.  The Turtle represents the everyday working man: fisherman, artist, craftsman.  Enjoying life when he can, in-between the daily struggles.  The local small town life as a fairy tale, of sorts."
 >
 > — Brian Barnard

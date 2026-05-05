@@ -35,6 +35,6 @@ He has been doing live performance painting since 2008: setting up an easel, wor
 
 This site is Brian's official home on the Internet — and you can **[contact him using the form here](/contact/)**.  But if you're a YouTuber, a Facebooker, or an Instagrammer then feel free to connect there *(having social media doesn't hurt... or does it?)* 🤔
 
-Have a look around, and hope to see you out sometime!
+Have a look around, and **[check the FAQ](/faq/)** for common questions.  Hope to see you out there!
 
 {% include shorts-grid.html %}

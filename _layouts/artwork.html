@@ -75,7 +75,7 @@ layout: default
     </div>
     <div class="artwork-details">
       <h1>{{ page.title }}</h1>
-      {% if page.medium %}     <p class="artwork-meta"><strong>Medium:</strong> {{ page.medium }}</p>{% endif %}
+      {% if page.medium %}     <p class="artwork-meta"><strong>{{ page.medium }}</strong></p>{% endif %}
       {% if page.dimensions %}  <p class="artwork-meta"><strong>Size:</strong> {{ page.dimensions }}</p>{% endif %}
       {% if page.year %}        <p class="artwork-meta"><strong>Year:</strong> {{ page.year }}</p>{% endif %}
 
