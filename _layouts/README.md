@@ -89,7 +89,7 @@ Layout for items in the `_works/` collection. Renders:
   panel showing `medium`, `dimensions`, `year`, and `price`
 - If `price:` is set in front matter: an inquiry form via `contact-form.html`
 - If `price:` is absent: a "this piece has found a home" note with a link to
-  the commissions page
+  the contact page
 
 **Front matter fields for `_works/` items:**
 

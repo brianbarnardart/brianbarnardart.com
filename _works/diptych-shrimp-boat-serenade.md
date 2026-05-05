@@ -12,7 +12,7 @@ order: 3
 
 **[This is a "diptych"](https://en.wikipedia.org/wiki/Diptych)**: two large panels that can be positioned however you like *(on the same wall, on opposing walls, on a corner...)*  But the suggestion is to mount them with a bit of a gap — to make an implicit frame that gives closure over the palette cycling from browns to blues.  Here Brian is pushing on the boundaries of that gap and the alignments, creating more nuance than a painting that's simply been cut in half.
 
-The work was started in 2025 with the intention to be displayed at a business.  But that business's ownership changed, which left the unfinished parts in limbo.  The sections were picked back up, and iterated on with extremely high levels of detail, to serve as the flagship piece for the 2026 Fernandina Shrimp Festival.
+The work was started in 2025 with the intention to be displayed at a business.  But that business's ownership changed, which left the unfinished parts in limbo.  The sections were picked back up, and iterated on with extremely high levels of detail, to debut on the website in time to promote the 2026 Fernandina Shrimp Festival.
 
 ---
 
