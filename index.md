@@ -8,13 +8,13 @@ image: /assets/paintings/wild-mountain-fox-jam.jpg
 
 A Fernandina native *(and son of a shrimper)*, **Brian Barnard** is a familiar sight in the local art and music scene.  Creative director of [The Inkwell](/venues/the-inkwell/), he moves between the studio and painting at concerts or other events — anywhere the energy of a moment is worth capturing.
 
-If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)**, you've probably already seen Brian's work — the murals wrapping around the fences are his. It's become part of the venue's identity, and for a lot of people it's the first introduction to his style.
+If you've been to **[downtown's famous Green Turtle](/venues/the-green-turtle/)**, you've probably already seen Brian's work — the evolving murals wrapping around the fences are his. It's become part of the venue's identity, and for a lot of people it's the first introduction to his style.
 
-{% include figure.html image="/assets/paintings/green-turtle-mural.jpg" caption="(part of) The Green Turtle mural, Fernandina Beach" %}
+{% include figure.html image="/assets/paintings/green-turtle-mural.jpg" caption="(part of) The Green Turtle mural, Fernandina Beach (as it looked in 2023)" %}
 
 A Bachelor of Arts [from FSU](https://cfa.fsu.edu/), Brian makes acrylic paintings that incorporate nature, music and magic.  He's influenced by everything from Alice and Wonderland to street art and Grateful Dead album covers.  Inhabiting the works are his seemingly endless cast of characters with an inner life: creatures that know more than they let on...
 
-{% include callout.html quote="characters with an inner life: [creatures that know more than they let on...](/characters/frog-king/)" side="right" %}
+{% include callout.html quote='"...characters with an inner life: [creatures that know more than they let on...](/characters/frog-king/)"' side="right" %}
 
 He has been doing live performance painting since 2008: setting up an easel, working through a set, and letting the night find its way onto the picture.  Visitors wanting to remember their night can bid to purchase the pieces, which are typically signed by a band as well.  In addition to events the Turtle, you often find him accompanying acts during ticketed concerts at [The Tigre Island Room](/venues/tigre-island-room/).
 

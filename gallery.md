@@ -6,9 +6,9 @@ description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and
 nav: 2
 ---
 
-Due to a busy live painting schedule, large pieces are being painted more rarely than in the past.  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
+Due to a busy live painting schedule, large pieces aren't being made as frequently as they were in the past.  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
 
-**This new page is skeletal while image hosting gets figured out.  Now that Shrimp Fest 2026 is over and things have died down a bit, website development should resume shortly...**
+**This page is skeletal while image hosting gets figured out (brianbarnardart.com launched in a preview state for Shrimp Fest 2026, but that's over so web development should resume shortly)**
 
 <div class="gallery-grid">
 {% assign ordered_works = "" | split: "" %}
@@ -38,4 +38,4 @@ Due to a busy live painting schedule, large pieces are being painted more rarely
 {% endfor %}
 </div>
 
-*The most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to [come to a live painting event](/events/), where one or two unique smaller pieces are made just about every weekend!*
+*Brian loves seeing his art popping up in unexpected places...and wants nearly anyone to be able to afford something more than a print.  So the most accessible way to become a member of the [Brian Barnard Art Collector's Club](https://www.facebook.com/groups/BrianBarnardArtCollectorsClub/) is to [come to a live painting event](/events/).  One or two unique smaller pieces are made just about every weekend — while you watch!*
