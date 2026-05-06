@@ -6,7 +6,7 @@ permalink: /privacy/
 image: /assets/icons/astro-death-head.png
 ---
 
-## Your Visit... *Your Business*.
+# Your Visit... *Your Business*
 
 This site respects your privacy.  (Did you notice your browser didn't have to ask "Accept Cookies?")  It collects minimal, anonymous click counts.  And you can turn even that off, right here, right now.
 

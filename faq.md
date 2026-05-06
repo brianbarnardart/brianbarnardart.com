@@ -6,6 +6,8 @@ description: Frequently asked questions about Brian Barnard's art, live painting
 image: /assets/brian-showing-off-painting.jpg
 ---
 
+# B.B.F.A.Q.
+
 ### How do I buy a painting I saw at a live event?
 
 Pieces created during a live painting session are typically available for purchase by bid at the time the band stops playing.  Stick around until the set wraps up, or chat with Brian directly — he's usually right there at the easel!

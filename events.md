@@ -5,6 +5,8 @@ permalink: /events/
 nav: 1
 ---
 
+# Events
+
 ### Check **[BrianBarnardArt on Facebook](https://www.facebook.com/brianbarnardart/)**
 
 {% include figure.html image="/assets/events/shrimp-festival-2026.jpg" side="right" link="https://brianbarnardart.com/works/diptych-shrimp-boat-serenade/" caption="It was nice meeting everyone at **Shrimp Fest 2026!**" %}

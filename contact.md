@@ -5,6 +5,8 @@ permalink: /contact/
 nav: 3
 ---
 
+# Contact
+
 {% include figure.html image="/assets/venues/tigre-island-room-2.jpg" side="right" link="https://www.fernandinaobserver.org/stories/whale-baby-boom-brings-celebration-and-hope-to-fernandina-beach,102047" caption="**[Supporting the North Atlantic Right Whales](https://www.fernandinaobserver.org/stories/whale-baby-boom-brings-celebration-and-hope-to-fernandina-beach,102047)**" %}
 
 Interested in a piece, a special project, or just want to say hi?

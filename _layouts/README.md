@@ -65,6 +65,16 @@ The outermost shell rendered for every page. It:
   are not reached by the script and must carry their own `target` and `rel`
   attributes.
 
+### `page.html`
+
+Used by standalone pages (`faq.md`, `gallery.md`, `contact.md`, `events.md`,
+`privacy.md`, etc.). Overrides minima's default `page.html` to **not**
+auto-inject `page.title` as an `<h1>` in the body — the page content is
+responsible for its own heading if one is wanted.
+
+The `.post-content` wrapper is kept so that minima's CSS rules (e.g. bold `###`
+headings) apply normally.
+
 ### `home.html`
 
 Used by `index.md`. Wraps page content in an `<article>` tag and hides the

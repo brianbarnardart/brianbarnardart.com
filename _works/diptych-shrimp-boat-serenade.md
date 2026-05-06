@@ -10,9 +10,9 @@ price: "$7,500 (2 panels)"
 order: 3
 ---
 
-[This is a "diptych"](https://en.wikipedia.org/wiki/Diptych): two large panels that are placed side-by-side.  Here Brian experiments with the boundary's colors and alignments, creating more nuance than a painting that's simply been cut in half.  So he suggests hanging it with a bit of a gap and a skew — to match the eyeline on Elder Tree, and make an implicit frame that gives closure over the palette cycling from browns to blues.
+[This is a "diptych"](https://en.wikipedia.org/wiki/Diptych): two large panels that are placed side-by-side.  Here Brian experiments with the boundary's colors and alignments, creating more nuance than a painting that's simply been cut in half.
 
-(But that's just a suggestion.  You can align them level if you like that better, or put them on opposing walls, etc.)
+He suggests hanging it with a bit of a gap and a skew — to match the eyeline on Elder Tree, and make an implicit frame that gives closure over the palette cycling from browns to blues.  But that's just a suggestion.  (You can align them level if you like that better, or put them on opposing walls, etc.)
 
 **At 72" x 48", this a bit large for most walls!  But it offers collectors the opportunity to have the closest thing to a Brian Barnard mural in their own home...**
 
