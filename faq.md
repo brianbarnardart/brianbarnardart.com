@@ -17,9 +17,9 @@ Many event pieces are also signed by the performing musicians, so that makes the
 
 Historically, Brian has done many custom projects.  However, there are some caveats.
 
-He had this to say:
-
 {% include figure.html image="/assets/brian-showing-off-painting.jpg" side="right" alt="Brian shows off a work to a small group" %}
+
+He had this to say:
 
 > "Comissions are tricky.  In the past I took on situations where people had ideas of what they wanted that might not be things that were in my wheelhouse, but they wanted to see how I'd approach their subject.  This meant a lot more discussion and back-and-forth, potentially with feedback in multiple stages of the piece and changing direction to try to make the client happy.  Even if they didn't micro-manage, I'd be saddled with doubt about whether I was getting their specifics right."
 >
@@ -40,7 +40,7 @@ You can use the **[contact form](/contact/)** to inquire about commissions if th
 
 Selling art is a dynamic business, and live paintings are especially so.  They hold the most meaning for people attending the performances where they were made.  But also if someone walks by and wants a piece but you don't sell it to them you may not see them again.
 
-So only art that whose agreed price has been paid can be held for later pickup.  Otherwise the piece needs to be kept available for anyone who wants to take the plunge and buy it.
+So only art for which the agreed price has been paid can be held for later pickup.  Otherwise the piece needs to be kept available for anyone who wants to take the plunge and buy it.
 
 
 ### Where can I see the available paintings for sale?

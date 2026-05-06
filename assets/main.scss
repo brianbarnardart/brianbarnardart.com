@@ -146,6 +146,9 @@ body {
   // `body { font-size: 16px }` so body text inherits the scaled value too.
   html { font-size: 112.5%; } // 1rem = 18px instead of 16px
   body { font-size: 1rem; line-height: 1.75; }
+
+  // At the larger mobile font size h3 needs extra weight to stand out.
+  .article-body h3, .post-content h3 { font-weight: 800; }
 }
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────
@@ -826,6 +829,7 @@ body.error-page {
   h1, h2, h3, h4, h5, h6 {
     clear: both;
   }
+
 }
 
 // ── Desktop Asymmetric "Scattered Papers" Layout ────────────────────────────

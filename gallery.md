@@ -8,7 +8,7 @@ nav: 2
 
 Due to a busy live painting schedule, large pieces aren't being made as frequently as they were in the past.  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
 
-**This page is skeletal while image hosting gets figured out (brianbarnardart.com launched in a preview state for Shrimp Fest 2026, but that's over so web development should resume shortly)**
+**This page is skeletal while image hosting gets figured out (brianbarnardart.com launched in a preview state for Shrimp Fest 2026 — web development should resume shortly)**
 
 <div class="gallery-grid">
 {% assign ordered_works = "" | split: "" %}
