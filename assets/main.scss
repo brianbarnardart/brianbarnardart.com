@@ -141,12 +141,11 @@ body {
     font-size: 1rem;
   }
 
-  // Larger, more readable body text on small screens — set on body so all
-  // content (callouts, artwork pages, etc.) inherits consistently.
-  body {
-    font-size: 1.125rem; // ~18px
-    line-height: 1.75;
-  }
+  // Scale the root element on small screens so all rem values in the
+  // stylesheet lift proportionally, then override minima's hardcoded
+  // `body { font-size: 16px }` so body text inherits the scaled value too.
+  html { font-size: 112.5%; } // 1rem = 18px instead of 16px
+  body { font-size: 1rem; line-height: 1.75; }
 }
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────
@@ -486,11 +485,8 @@ body {
 
 // ── 404 error page ──────────────────────────────────────────────────────────
 
+// Background pattern already set on body; only the layout differs.
 body.error-page {
-  background-color: #e6e6e6;
-  background-image: url('/assets/repeat.jpg');
-  background-size: 128px 128px;
-  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -661,10 +657,6 @@ body.error-page {
 }
 
 // ── Article pages (venues, bands, interests, events, charities) ─────────────
-
-.article-page {
-  // Inherits .page-content padding from minima/wrapper
-}
 
 .article-header {
   margin-bottom: 1.5rem;
