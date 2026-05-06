@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Privacy
 description: Your Privacy Matters
 permalink: /privacy/
@@ -8,16 +8,16 @@ image: /assets/icons/astro-death-head.png
 
 ## Your Visit... *Your Business*.
 
-This site respects you: it collects minimal, anonymous click counts.  And you can turn even that off, right here, right now.
+This site respects your privacy.  (Did you notice your browser didn't have to ask "Accept Cookies?")  It collects minimal, anonymous click counts.  And you can turn even that off, right here, right now.
 
-**Analytics status in this browser:** <span id="tracking-status">checking…</span>
+**For this browser:** <span id="counting-status">checking…</span>
 
 <p>
-  <button id="tracking-off" class="form-submit">Turn tracking OFF</button>
-  <button id="tracking-on" class="form-submit">Turn tracking ON</button>
+  <button id="counting-off" class="form-submit">Turn counters OFF</button>
+  <button id="counting-on" class="form-submit">Turn counters ON</button>
 </p>
 
-<p id="tracking-confirm" aria-live="polite"></p>
+<p id="counting-confirm" aria-live="polite"></p>
 
 
 ## What data is collected?
@@ -62,18 +62,18 @@ The video clips on this site are embedded using YouTube's **privacy-enhanced mod
 Once you do play a video, YouTube will know it was watched (that's unavoidable with any streaming service), but it won't have been silently tracking your visit just because the page loaded.
 
 
-### Turning off tracking
+### Turning off counting
 
-The button at the top of this page sets a flag in your browser's local storage (`skipgc = t`). GoatCounter's script checks for this flag and skips counting your visits when it is set. No data is sent. The flag stays set until you turn tracking back on, or until you clear your browser's local storage for `brianbarnardart.com`.
+The button at the top of this page sets a flag in your browser's local storage (`skipgc = t`). GoatCounter's script checks for this flag and skips counting your visits when it is set. No data is sent. The flag stays set until you turn counting back on, or until you clear your browser's local storage for `brianbarnardart.com`.
 
 (This is also useful for the site developers to turn off self-views so that their own visits don't inflate the traffic numbers.)
 
 <script>
 (function () {
-  var status = document.getElementById('tracking-status');
-  var confirm = document.getElementById('tracking-confirm');
-  var btnOff = document.getElementById('tracking-off');
-  var btnOn = document.getElementById('tracking-on');
+  var status = document.getElementById('counting-status');
+  var confirm = document.getElementById('counting-confirm');
+  var btnOff = document.getElementById('counting-off');
+  var btnOn = document.getElementById('counting-on');
 
   function isSkipping() {
     return localStorage.getItem('skipgc') === 't';
@@ -81,11 +81,11 @@ The button at the top of this page sets a flag in your browser's local storage (
 
   function updateStatus() {
     if (isSkipping()) {
-      status.textContent = 'OFF — this browser is not being tracked.';
+      status.textContent = 'OFF — this browser is not being counted.';
       btnOff.disabled = true;
       btnOn.disabled = false;
     } else {
-      status.textContent = 'ON — this browser is being tracked.';
+      status.textContent = 'ON — this browser is being counted.';
       btnOff.disabled = false;
       btnOn.disabled = true;
     }
@@ -93,13 +93,13 @@ The button at the top of this page sets a flag in your browser's local storage (
 
   btnOff.addEventListener('click', function () {
     localStorage.setItem('skipgc', 't');
-    confirm.textContent = 'Tracking turned OFF. GoatCounter will no longer count visits from this browser.';
+    confirm.textContent = 'Counting turned OFF. GoatCounter will no longer count visits from this browser.';
     updateStatus();
   });
 
   btnOn.addEventListener('click', function () {
     localStorage.removeItem('skipgc');
-    confirm.textContent = 'Tracking turned ON. GoatCounter will count visits from this browser again.';
+    confirm.textContent = 'Counting turned ON. GoatCounter will count visits from this browser again.';
     updateStatus();
   });
 

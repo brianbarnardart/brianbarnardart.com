@@ -10,7 +10,7 @@ image: /assets/brian-showing-off-painting.jpg
 
 Pieces created during a live painting session are typically available for purchase by bid at the time the band stops playing.  Stick around until the set wraps up, or chat with Brian directly — he's usually right there at the easel!
 
-Many event pieces are also signed by the performing musicians, so that makes them an even better souvenir of a specific night.
+Most all event pieces are also signed by the performing musicians, so that makes them an even better souvenir of a specific night.
 
 
 ### Do you accept commissions?
@@ -85,11 +85,11 @@ Brian has been doing live performance painting since **2008** — setting up an 
 Brian earned a Bachelor of Arts from [Florida State University's College of Fine Arts](https://cfa.fsu.edu/).
 
 
-### Did Brian discover he had a 13-year-old son?
+### Did Brian discover he had a 13-year-old son? 😲
 
 That was a [2026 April Fools' joke on Facebook that got out of hand](https://www.facebook.com/photo.php?fbid=27124680217132704&set=a.184233698270721&type=3), based on Brian's resemblance to Gabe McDaniel.  The post was edited to clarify that it was a joke — but only after a large number of people took it seriously!
 
-(Gabe is the son of fellow Inkwell artist [Tina McDaniel](https://www.facebook.com/BleuEngel/), and her husband Mike.  Or at least that's what we're being told to believe... 🤔)
+(Gabe is the son of fellow Inkwell artist [Tina McDaniel](https://www.facebook.com/BleuEngel/), and her husband Mike.  Or at least that's what we're being told to believe...)
 
 
 ### I have a question that isn't answered here.
