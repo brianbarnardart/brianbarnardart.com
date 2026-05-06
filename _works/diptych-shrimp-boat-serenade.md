@@ -10,15 +10,15 @@ price: "$7,500 (2 panels)"
 order: 3
 ---
 
-[This is a "diptych"](https://en.wikipedia.org/wiki/Diptych): two large panels that are placed side-by-side.  Here Brian experiments with the boundary's colors and alignments, creating more nuance than a painting that's simply been cut in half.
+[This is a "diptych"](https://en.wikipedia.org/wiki/Diptych): two large panels that are placed side-by-side.  Here Brian experiments with the colors and alignments, creating more nuance than a painting that's simply been cut in half.  The split is acknowledged but not taken as gospel, with blues from the right seeping onto the left, and the browns appearing in the water on the right as light and variation.
 
-He suggests hanging it with a bit of a gap and a skew — to match the eyeline on Elder Tree, and make an implicit frame that gives closure over the palette cycling from browns to blues.  But that's just a suggestion.  (You can align them level if you like that better, or put them on opposing walls, etc.)
+He suggests hanging it with a bit of a gap and a skew — to match the eyeline on Elder Tree, and make an implicit frame that gives closure over the palette cycling.  But that's just a suggestion.  (You can align them level if you like that better, or put them on opposing walls, etc.)
 
-**At 72" x 48", this a bit large for most walls!  But it offers collectors the opportunity to have the closest thing to a Brian Barnard mural in their own home...**
+**At 72" x 48", this is rather large for most walls!  But it offers collectors the opportunity to have the closest thing to a Brian Barnard mural in their own home...**
 
 ---
 
-> "Diptych Shrimp Boat Serenade was started in 2025, with the intention to be displayed at a business.  The ownership changed and this left the unfinished parts in limbo.  It was resumed in 2026, and unveiled as the promotional piece for the `brianbarnardart.com` website launch (during the [nearly rained-out Shrimp Festival](https://www.shrimpfestival.com/history/)!)  So part of the painting's lore is how it commemorates the weekend that I became captain of my own virtual vessel, setting sail on the Internet. ⛵"
+> "Diptych Shrimp Boat Serenade was started in 2025, with the intention to be displayed at a business.  The ownership changed and this left the unfinished parts in limbo.  It was resumed in 2026, and unveiled as the promotional piece for the brianbarnardart.com website launch (during the [nearly rained-out Shrimp Festival!](https://www.shrimpfestival.com/history/))  So part of the painting's lore is how it commemorates the weekend that I became captain of my own virtual vessel."
 >
 > "When I was a kid, my dad and grandfather had shrimp boats.  My grandfather (Carl Tipton, a.k.a. "Captain Tip") had ['The Pryor'](https://www.floridamemory.com/items/show/131295) — a famous boat downtown.  My dad (Captain Russell Barnard) had a smaller boat, referred to as the 'Mini Boat'.  Once my dad caught a manta ray in his nets bigger than his boat.  He had to cut the riggings and nets so that a literal sea monster wouldn't take him down!"
 >

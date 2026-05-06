@@ -1,6 +1,6 @@
 ---
 layout: page
-title: B.B.F.A.Q.
+title: FAQ
 permalink: /faq/
 description: Frequently asked questions about Brian Barnard's art, live painting events, commissions, and more.
 image: /assets/brian-showing-off-painting.jpg
@@ -24,27 +24,23 @@ That was a [2026 April Fools' post on Facebook](https://www.facebook.com/photo.p
 Gabe is the son of fellow Inkwell instructor [Tina McDaniel](https://www.facebook.com/BleuEngel/) and her husband Mike.  (Or at least that's what we're being told to believe!)
 
 
-### Do you accept commissions?
+### Does Brian accept commissions?
 
-Historically, Brian has done many custom projects.  But experience has led him to be more cautious in which ones to take on.
+Yes — but with a firm condition.
 
-{% include figure.html image="/assets/brian-showing-off-painting.jpg" side="right" alt="Brian shows off a work to a small group" %}
+Past commissions could turn into rounds of revisions and client approvals, that burned time and squeezed out independent studio work.  Pieces could stop feeling like his art and started feeling like a service job with an easel.
 
-In 2026, he has this to say about it:
+{% include figure.html image="/assets/brian-showing-off-painting.jpg" side="right" caption="custom painting for [Dillon Basse of **flipturn**](https://en.wikipedia.org/wiki/Flipturn_(band))" %}
 
-> "Comissions are tricky.  In the past I took on situations where people had ideas of what they wanted that might not be things that were in my wheelhouse, but they wanted to see how I'd approach their subject.  This meant a lot more discussion and back-and-forth, potentially with feedback in multiple stages of the piece and changing direction to try to make the client happy.  Even if they didn't micro-manage, I'd be saddled with doubt about whether I was getting their specifics right."
->
-> "Because I wanted people to be happy (and needed the money!) I would do it.  But this was stressful and leading me to deadlines that would drag on, to where the dollars-and-enjoyment-per-hour wasn't at all competitive with live painting.  I was struggling with the tension of making a work within outside constraints that I'd feel good about.  And this left me with no time to do independent larger pieces, so I didn't have much to sell at booths or my website (besides a few straggler live paintings that didn't sell at their performances).  That meant I had almost no showpieces for a couple of years."
->
-> "This wasn't working.  So I had to draw the line: **commissioned paintings must be under an agreement that my artistic judgment is what is being sought, and what is being paid for.**  If it is — and I can work with a mindset as if I was doing studio work that I'd want to use to promote myself on my site — then doing it with a buyer already lined up can be a good thing and not a burden."
->
->  "Also: I hate having to raise rates to where it makes it prohibitive for my fans to get the art they want, but I can't price studio works or commissions at the same rate people see during live paintings; they're truly a different beast.  But in the same vein: if you want to guide the theme and palette of a live piece (and will pre-pay for an amount we agree on) it may be that I can use your request in the live painting.  It changes the dynamic significantly when I know that after 5 consecutive hours, I'm going to be handing you the work, and that one is done and paid for!"
->
-> — Brian Barnard
+The rule now:
 
-You can use the **[contact form](/contact/)** to inquire about commissions if the above fits.  But be aware that as of May 2006, Brian has a backlog of work that will keep him busy until August (at least).
+> **"My artistic judgment is what's being hired — not my ability to execute someone else's instructions."**
 
+Within that agreement, a commission can actually be a good thing: the piece is already sold before the first brushstroke, which is a different kind of security than painting something large and hoping the right buyer shows up. If you can work with that — giving Brian a theme, a mood, a palette to play with rather than a blueprint to follow — use the **[contact form](/contact/)** to start the conversation.
 
+*As of May 2026, there's a backlog running through at least August — factor that into any timeline.*
+
+**A note on live painting commissions:** if you want to steer a live piece rather than a studio work, pre-paying a reserved amount changes the dynamic significantly. Brian knows who he's painting it for, which focuses the night rather than complicating it.  Get there early, or send a message in advance!
 
 
 ### Can I claim a painting that I'd like to buy later?
@@ -59,26 +55,27 @@ So only art for which the agreed price has been paid can be held for later picku
 Studio works and notable past pieces are planned to be listed in the **[Gallery](/gallery/)** as the website develops.  Inventory changes over time, so check back periodically — or follow [Facebook: @brianbarnardart](https://www.facebook.com/brianbarnardart/) for announcements.
 
 
-### Where can I see you paint next?
+### Where can I see the next live painting event?
 
 Brian paints regularly at [The Green Turtle](/venues/the-green-turtle/) and [The Tigre Island Room](/venues/tigre-island-room/) in downtown Fernandina, and at [The Inkwell](/venues/the-inkwell/) (about 7 minutes from downtown, free parking).
 
 The best way to stay up to date is to check the **[Events page](/events/)** or follow [Facebook: @brianbarnardart](https://www.facebook.com/brianbarnardart/) for the latest schedule.
 
 
-### What is the Tuesday sketching class?
-
-Brian runs a guided sketching class most Tuesday evenings at [The Inkwell](/venues/the-inkwell/).  It's a relaxed, informal session — no experience necessary.  Check the [Inkwell Events page](https://www.theinkwellamelia.com/events) for the current schedule and any changes.
-
-
-### What medium do you work in?
+### What mediums does Brian work in?
 
 Primarily **acrylic on canvas**.  The fast drying time makes acrylics ideal for live painting, and the bold, vivid colours suit the style.
+
+Sketching is of course used as a prototyping tool.  Brian also runs a guided sketching class most Tuesday evenings at [The Inkwell](/venues/the-inkwell/).  *(It's a relaxed, informal session — no experience necessary.  Check the [Inkwell Events page](https://www.theinkwellamelia.com/events) for the current schedule and any changes.)*
+
+But as of 2026, only acrylic paintings are being pursued in works intended for sale.
 
 
 ### Are the Green Turtle murals for sale?
 
-The murals on the fence at [The Green Turtle](/venues/the-green-turtle/) are part of the venue itself and are not for sale as individual pieces.  They are an evolving, ongoing work — Brian continues to add to and update them over time.
+The murals at [The Green Turtle](/venues/the-green-turtle/) are part of the venue itself and are not for sale as individual pieces.  At least not as far as we know...the owners commissioned the work, and would be their prerogative to pull up the fence and replace it.  No harm in asking, I guess?  `¯\_(ツ)_/¯`
+
+In any case they are an evolving, ongoing work — Brian continues to add to and update them over time.
 
 
 ### How do I get one of the Fox Jam postcards?
