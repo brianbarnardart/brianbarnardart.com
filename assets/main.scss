@@ -140,6 +140,13 @@ body {
     padding: 0.45em 1em;
     font-size: 1rem;
   }
+
+  // Larger, more readable body text on small screens — set on body so all
+  // content (callouts, artwork pages, etc.) inherits consistently.
+  body {
+    font-size: 1.125rem; // ~18px
+    line-height: 1.75;
+  }
 }
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────

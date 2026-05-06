@@ -80,6 +80,11 @@ Free [Wild Mountain Fox Jam](https://brianbarnardart.com/works/wild-mountain-fox
 Brian has been doing live performance painting since **2008** — setting up an easel, working through a set, and letting the energy of the night find its way onto the canvas.
 
 
+### Where did Brian study art?
+
+Brian earned a Bachelor of Arts from [Florida State University's College of Fine Arts](https://cfa.fsu.edu/).
+
+
 ### Did Brian discover he had a 13-year-old son?
 
 That was a [2026 April Fools' joke on Facebook that got out of hand](https://www.facebook.com/photo.php?fbid=27124680217132704&set=a.184233698270721&type=3), based on Brian's resemblance to Gabe McDaniel.  The post was edited to clarify that it was a joke — but only after a large number of people took it seriously!
