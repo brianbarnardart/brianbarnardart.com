@@ -13,13 +13,22 @@ Pieces created during a live painting session are typically available for purcha
 Most all event pieces are also signed by the performing musicians, so that makes them an even better souvenir of a specific night.
 
 
+### Did Brian discover he had a 13-year-old son?!? 😲
+
+{% include figure.html image="/assets/brian-and-gabe.jpg" side="left" alt="BB Mini" maxwidth="22%" %}
+
+That was a [2026 April Fools' post on Facebook](https://www.facebook.com/photo.php?fbid=27124680217132704&set=a.184233698270721&type=3), based on Gabe McDaniel's resemblance to Brian.  It was edited later to clarify that it was a joke — but only after a large number of people took it seriously.
+
+Gabe is the son of fellow Inkwell instructor [Tina McDaniel](https://www.facebook.com/BleuEngel/) and her husband Mike.  (Or at least that's what we're being told to believe!)
+
+
 ### Do you accept commissions?
 
-Historically, Brian has done many custom projects.  However, there are some caveats.
+Historically, Brian has done many custom projects.  But experience has led him to be more cautious in which ones to take on.
 
 {% include figure.html image="/assets/brian-showing-off-painting.jpg" side="right" alt="Brian shows off a work to a small group" %}
 
-He had this to say:
+In 2026, he has this to say about it:
 
 > "Comissions are tricky.  In the past I took on situations where people had ideas of what they wanted that might not be things that were in my wheelhouse, but they wanted to see how I'd approach their subject.  This meant a lot more discussion and back-and-forth, potentially with feedback in multiple stages of the piece and changing direction to try to make the client happy.  Even if they didn't micro-manage, I'd be saddled with doubt about whether I was getting their specifics right."
 >
@@ -83,13 +92,6 @@ Brian has been doing live performance painting since **2008** — setting up an 
 ### Where did Brian study art?
 
 Brian earned a Bachelor of Arts from [Florida State University's College of Fine Arts](https://cfa.fsu.edu/).
-
-
-### Did Brian discover he had a 13-year-old son? 😲
-
-That was a [2026 April Fools' joke on Facebook that got out of hand](https://www.facebook.com/photo.php?fbid=27124680217132704&set=a.184233698270721&type=3), based on Brian's resemblance to Gabe McDaniel.  The post was edited to clarify that it was a joke — but only after a large number of people took it seriously!
-
-(Gabe is the son of fellow Inkwell artist [Tina McDaniel](https://www.facebook.com/BleuEngel/), and her husband Mike.  Or at least that's what we're being told to believe...)
 
 
 ### I have a question that isn't answered here.

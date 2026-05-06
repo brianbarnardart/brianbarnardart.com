@@ -9,7 +9,7 @@ nav: 3
 
 Interested in a piece, a special project, or just want to say hi?
 
-**[Facebook: @brianbarnardart](https://www.facebook.com/brianbarnardart/)**, or use the form below!  For fast answers to common questions, visit the **[F.A.Q.](/faq/)**
+**[Facebook: @brianbarnardart](https://www.facebook.com/brianbarnardart/)**, or use the form below!  For fast answers to common questions, **[visit the F.A.Q.](/faq/)**
 
 {% comment %}
 **[LinkedIn](https://www.linkedin.com/in/brian-barnard-60b7b543)**  ; pending account recovery
