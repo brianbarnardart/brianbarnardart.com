@@ -13,8 +13,8 @@ This site respects your privacy.  (Did you notice your browser didn't have to as
 **For this browser:** <span id="counting-status">checking…</span>
 
 <p>
-  <button id="counting-off" class="form-submit">Turn counters OFF</button>
-  <button id="counting-on" class="form-submit">Turn counters ON</button>
+  <button id="counting-off" class="form-submit">Counters OFF</button>
+  <button id="counting-on" class="form-submit">Counters ON</button>
 </p>
 
 <p id="counting-confirm" aria-live="polite"></p>
