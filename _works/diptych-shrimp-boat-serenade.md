@@ -18,12 +18,12 @@ He suggests hanging it with a bit of a gap and a skew — to match the eyeline o
 
 ---
 
-> "Diptych Shrimp Boat Serenade was started in 2025, with the intention to be displayed at a business.  The ownership changed and this left the unfinished parts in limbo.  It was resumed in 2026, and unveiled as the promotional piece for the brianbarnardart.com website launch during the [nearly rained-out Shrimp Festival!](https://www.shrimpfestival.com/history/)  So part of the painting's lore is how it commemorates the weekend that I became captain of my own virtual vessel (a sketch of the turtle became the repeating tile in the background of the site, too.)"
+> "Diptych Shrimp Boat Serenade was started in 2025, with the intention to be displayed at a business.  The ownership changed and this left the unfinished parts in limbo.  It was resumed in 2026, and unveiled as the promotional piece for the brianbarnardart.com website launch during the [nearly rained-out Shrimp Festival!](https://www.shrimpfestival.com/history/)  So part of the painting's lore is how it commemorates the weekend that I became captain of my own virtual vessel (a sketch of Funky Tortoise as a repeating tile was used in the background of the site, too.)"
 >
 > "When I was a kid, my dad and grandfather had shrimp boats.  My grandfather (Carl Tipton, a.k.a. "Captain Tip") had ['The Pryor'](https://www.floridamemory.com/items/show/131295) — a famous boat downtown.  My dad (Captain Russell Barnard) had a smaller boat, referred to as the 'Mini Boat'.  Once my dad caught a manta ray in his nets bigger than his boat.  He had to cut the riggings and nets so that a literal sea monster wouldn't take him down!"
 >
 > "Later the next year, damage from that incident caused my dad's shrimp boat to sink in a storm in the channel near Fort Clinch.  He went down with the boat, but fortunately the air trapped inside pushed out the windshield and my dad was able to escape to safety and swim to shore!  The boat was given to a salvage crew in exchange for removal, and that was the end of my father's shrimping career.  My grandfather worked until his death in 1997."
 >
-> "The piece connects me to my childhood.  The Turtle represents the everyday working man: fisherman, artist, craftsman.  Enjoying life when he can, in-between the daily struggles.  The local small town life as a fairy tale, of sorts."
+> "The piece connects me to my childhood.  The tortoise represents the everyday working man: fisherman, artist, craftsman.  Enjoying life when he can, in-between the daily struggles.  The local small town life as a fairy tale, of sorts."
 >
 > — Brian Barnard

@@ -10,9 +10,9 @@ image: /assets/brian-showing-off-painting.jpg
 
 ### How do I buy a painting I saw at a live event?
 
-Pieces created during a live painting session are typically available for purchase by bid at the time the band stops playing.  Stick around until the set wraps up, or chat with Brian directly — he's usually right there at the easel!
+Pieces created during a live painting session are typically available for purchase by bid at the time the band stops playing.  Stick around until the set wraps up, or chat with Brian directly — he's usually right up by the performers!
 
-Most all event pieces are also signed by the performing musicians, so that makes them an even better souvenir of a specific night.
+Most all event pieces are also signed by the musicians, so that makes them an even better souvenir of a specific night.
 
 
 ### Did Brian discover he had a 13-year-old son?!? 😲
@@ -32,7 +32,7 @@ Past commissions could turn into rounds of revisions and client approvals, that 
 
 {% include figure.html image="/assets/brian-showing-off-painting.jpg" side="right" caption="custom painting for [Dillon Basse of **flipturn**](https://en.wikipedia.org/wiki/Flipturn_(band))" %}
 
-The rule now:
+So he had to make a rule:
 
 > **"My artistic judgment is what's being hired — not my ability to execute someone else's instructions."**
 
@@ -78,19 +78,16 @@ The murals at [The Green Turtle](/venues/the-green-turtle/) are part of the venu
 In any case they are an evolving, ongoing work — Brian continues to add to and update them over time.
 
 
-### How do I get one of the Fox Jam postcards?
+### How do I get one of the postcards with the Fox?
 
 Free [Wild Mountain Fox Jam](https://brianbarnardart.com/works/wild-mountain-fox-jam/) postcards are available at Brian's table during live painting sessions.  Stop by and say hello!
 
 
-### How long have you been doing live painting?
-
-Brian has been doing live performance painting since **2008** — setting up an easel, working through a set, and letting the energy of the night find its way onto the canvas.
-
-
 ### Where did Brian study art?
 
-Brian earned a Bachelor of Arts from [Florida State University's College of Fine Arts](https://cfa.fsu.edu/).
+Brian earned a Bachelor of Arts from [Florida State University's College of Fine Arts](https://cfa.fsu.edu/) in 2004.
+
+He has been doing live performance painting since 2008.
 
 
 ### I have a question that isn't answered here.
