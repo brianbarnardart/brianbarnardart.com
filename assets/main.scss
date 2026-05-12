@@ -1006,6 +1006,12 @@ body.error-page {
   // Article figure captions
   .article-figure figcaption { color: #777; }
 
+  // Inline code and code blocks — minima's defaults use a light gray background
+  // which becomes a pale rectangle in dark mode.
+  code             { background-color: #2a2a2a; color: #d8d8d8; }
+  pre              { background-color: #1e1e1e; color: #d8d8d8; border-color: #333; }
+  pre > code       { background-color: transparent; }
+
   // Article subtitle (venues, bands, etc.)
   .article-subtitle { color: #888; }
 
