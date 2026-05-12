@@ -799,11 +799,10 @@ body.error-page {
 
 .frog-king {
   transform: translateZ(0); // pre-promote to GPU compositing layer (see notes above)
-  // Canvas is a CSS system color that resolves to the OS background in both
-  // light and dark mode. Setting it here fills the GPU compositing layer that
-  // translateZ(0) creates, so transparent PNG pixels composite against the
-  // correct colour instead of appearing as a dark/gray rectangle in dark mode.
-  background-color: Canvas;
+  // Fills the GPU compositing layer that translateZ(0) creates so transparent
+  // PNG pixels always composite against the card background rather than black.
+  // The dark mode block below overrides this to #1c1c1c.
+  background-color: #fdfdfd;
 
   a {
     display: block;
@@ -999,6 +998,10 @@ body.error-page {
     border-left-color: #4d8fd4;
     color: #ccc;
   }
+
+  // Frog King — override the Canvas fallback, which resolves to white in some
+  // browsers' dark mode instead of the system dark surface.  Match the card bg.
+  .frog-king { background-color: #1c1c1c; }
 
   // Article figure captions
   .article-figure figcaption { color: #777; }
