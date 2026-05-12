@@ -1043,7 +1043,7 @@ body.error-page {
   // Footer
   .footer-socials a   { color: #777; &:hover { color: #7aadff; } }
   .footer-links       { color: #666; a { color: #666; &:hover { color: #7aadff; } } }
-  .footer-home-link a { color: #555; &:hover { color: #7aadff; } }
+  // .footer-home-link: sits over the background texture (no background change), keep light-mode color
 
   // 404 error page
   .error-content { background-color: #1c1c1c; }
