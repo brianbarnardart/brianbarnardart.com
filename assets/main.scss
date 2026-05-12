@@ -920,3 +920,142 @@ body.error-page {
     z-index: 10;
   }
 }
+
+// ── Dark mode ────────────────────────────────────────────────────────────────
+//
+// Activated automatically by the OS/browser prefers-color-scheme preference;
+// no user action needed.  Every explicit light colour above is re-declared
+// here so the result feels considered rather than accidentally inverted.
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: #0d0d0d;
+    background-image: none;  // repeat.png is light-toned; skip it on a dark canvas
+    color: #d8d8d8;
+  }
+
+  // Override minima's hardcoded dark link colours
+  a         { color: #7aadff; }
+  a:visited { color: #b39ddf; }
+
+  // Headings — minima inherits these from its compiled $text-color (dark)
+  h1, h2, h3, h4, h5, h6 { color: #eee; }
+
+  // Page card backgrounds
+  .site-header,
+  .page-content,
+  .site-footer {
+    background-color: #1c1c1c;
+  }
+
+  .site-header { border-color: #333; }
+
+  .site-title,
+  .site-title:visited { color: #bbb; }
+
+  // Nav buttons — lighten the dark fill slightly so they read as buttons
+  .site-nav .page-link,
+  .site-nav .page-link:not(:last-child) { background-color: #3d3d3d; color: #ddd; }
+  .site-nav .page-link:visited          { background-color: #3d3d3d; color: #ddd; }
+  .site-nav .page-link:hover            { background-color: #111; color: #ddd; border-color: #666; }
+  // Keep the face-photo on Contact hover; border is already transparent in that rule
+  .site-nav .page-link:last-child:hover { border-color: transparent; }
+
+  // Prev/next artwork navigation
+  .artwork-nav       { border-bottom-color: #333; }
+  .artwork-nav-label { color: #666; }
+  .artwork-nav-title { color: #bbb; }
+  .artwork-nav-arrow { color: #555; }
+
+  // Gallery grid
+  .gallery-thumb          { background: #2a2a2a; }
+  .gallery-badge--sold    { background: #2a2a2a; color: #777; }
+  .gallery-badge--price   { background: #162916; color: #5dab5d; }
+  .gallery-badge--enquire { background: #121e36; color: #7aadff; }
+
+  // Artwork detail page
+  .artwork-meta         { color: #aaa; }
+  .artwork-status--sold { background: #2a2a2a; color: #888; }
+  .artwork-status--available {
+    background: #162916;
+    color: #5dab5d;
+    &:hover, &:visited, &:active { color: #5dab5d; }
+  }
+  .artwork-description {
+    blockquote {
+      background: #142030;
+      border-left-color: #4d8fd4;
+      color: #ccc;
+    }
+    hr { border-top-color: #333; }
+  }
+  .artwork-inquiry   { border-top-color: #333; }
+  .artwork-sold-note { border-top-color: #333; p { color: #aaa; } }
+
+  // Pull-quote callout
+  .article-callout {
+    background: #142030;
+    border-left-color: #4d8fd4;
+    color: #ccc;
+  }
+
+  // Article figure captions
+  .article-figure figcaption { color: #777; }
+
+  // Article subtitle (venues, bands, etc.)
+  .article-subtitle { color: #888; }
+
+  // Short captions
+  .short-caption { color: #777; }
+
+  // Contact form
+  .contact-form .form-field {
+    label     { color: #ccc; }
+    .optional { color: #666; }
+    input, textarea {
+      background-color: #252525;
+      border-color: #444;
+      color: #ddd;
+      &:focus { border-color: #777; }
+    }
+  }
+  .form-submit {
+    background: #444;
+    &:hover { background: #555; }
+  }
+  .form-status.form-status--ok  { color: #5dab5d; }
+  .form-status.form-status--err { color: #f17575; }
+
+  // Footer
+  .footer-socials a   { color: #777; &:hover { color: #7aadff; } }
+  .footer-links       { color: #666; a { color: #666; &:hover { color: #7aadff; } } }
+  .footer-home-link a { color: #555; &:hover { color: #7aadff; } }
+
+  // 404 error page
+  .error-content { background-color: #1c1c1c; }
+
+  // Desktop scattered-papers — swap the card colour and deepen shadows
+  @media (min-width: 900px) {
+    .site-title {
+      background-color: #1c1c1c !important;
+      border-color: #333;
+      border-top-color: #555;
+      box-shadow: -2px 4px 12px rgba(0,0,0,0.5);
+    }
+    .site-nav {
+      background-color: #1c1c1c !important;
+      border-color: #333;
+      border-top-color: #555;
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+    }
+    .page-content {
+      border-color: #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+    .site-footer {
+      border-color: #252525;
+      box-shadow: 4px 5px 12px rgba(0,0,0,0.5);
+    }
+  }
+}
