@@ -939,6 +939,7 @@ body.error-page {
   // Override minima's hardcoded dark link colours
   a         { color: #7aadff; }
   a:visited { color: #b39ddf; }
+  a:hover   { color: #c8dcff; }
 
   // Headings — minima inherits these from its compiled $text-color (dark)
   h1, h2, h3, h4, h5, h6 { color: #eee; }
