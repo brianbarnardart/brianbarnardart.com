@@ -13,7 +13,9 @@ The film's color palette, its mix of grandiosity and squalor, and the way it fin
 
 {% include figure.html image="/assets/interests/lebowski-brian-and-beth.jpg" caption="Brian ('The Dude') and Beth (Walter)" side="left" %}
 
-> "For my 46th birthday, [The Inkwell](/venues/the-inkwell/) hosted a Lebowski-themed party, with attendees dressed in costume.  Congratulations to Stephen (who won a signed print for winning the costume contest, as 'Best Dude').  It was awesome, thanks to everyone who came!"
+> "For my 46th birthday, [The Inkwell](/venues/the-inkwell/) hosted a Lebowski-themed party, with attendees dressed as characters from the movie.  I offered one of my signed prints as the prize for the constume contest.
+>
+> Congratulations to [Stephen K Webster](https://www.youtube.com/shorts/xswtWYKLx-w) (who was the crowd favorite as 'Best Dude').  It was awesome, thanks to everyone who came!"
 >
 > — Brian Barnard
 
