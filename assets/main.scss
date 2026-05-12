@@ -381,19 +381,6 @@ body {
   line-height: 1.7;
   max-width: 680px;
 
-  blockquote {
-    margin: 1.5rem 0;
-    padding: 0.9rem 1.4rem;
-    border-left: 4px solid #2a7ae2;
-    background: #f3f7ff;
-    border-radius: 0 4px 4px 0;
-    font-size: 1.15rem;
-    font-style: italic;
-    color: #333;
-    line-height: 1.5;
-    &::before { content: none; }
-  }
-
   hr {
     border: none;
     border-top: 1px solid #e0e0e0;
@@ -673,6 +660,22 @@ body.error-page {
   color: #666;
   font-size: 1.05rem;
   margin: 0 0 0.5rem;
+}
+
+// Shared blockquote style — used inside both artwork descriptions and article bodies
+.artwork-description blockquote,
+.article-body blockquote {
+  overflow: hidden; // BFC: keeps background box from extending behind floated figures
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.4rem;
+  border-left: 4px solid #2a7ae2;
+  background: #f3f7ff;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.5;
+  &::before { content: none; }
 }
 
 // Article body — clearfix so floated figures don't escape the container
@@ -981,14 +984,15 @@ body.error-page {
     color: #5dab5d;
     &:hover, &:visited, &:active { color: #5dab5d; }
   }
-  .artwork-description {
+  .artwork-description,
+  .article-body {
     blockquote {
       background: #142030;
       border-left-color: #4d8fd4;
       color: #ccc;
     }
-    hr { border-top-color: #333; }
   }
+  .artwork-description hr { border-top-color: #333; }
   .artwork-inquiry   { border-top-color: #333; }
   .artwork-sold-note { border-top-color: #333; p { color: #aaa; } }
 
