@@ -7,12 +7,27 @@
 
 // ── Global background ───────────────────────────────────────────────────────
 
+// After ~70 s of stillness the pattern stirs and glides one full tile
+// diagonally.  Because the tile repeats at exactly 400 × 400 px, the end
+// position is visually identical to the start — the loop is seamless and
+// the moment feels more like a quiet discovery than a disruption.
+//
+// Timing breakdown at 90 s:
+//   0 – 70.2 s  (78 %): perfectly static
+//   70.2 – 90 s (22 %): ease-in-out drift → background "wakes up, wanders, settles"
+@keyframes bg-creep {
+  0%, 78% { background-position: 0 0; }
+  100%    { background-position: 400px -400px; }  // turtle gesture is up, right
+}
+
 body {
   // Repeating pattern to fill wide margins
   background-color: #e6e6e6;
   background-image: url('/assets/repeat.png');
   background-size: 400px 400px;
   background-attachment: fixed;
+  // Long-cycle drift easter egg — only reveals itself if you linger
+  animation: bg-creep 90s ease-in-out infinite;
 }
 
 // Wrap main functional sections into "page" block resembling stacked art paper
