@@ -12,6 +12,16 @@ want to share, so check that out if you have not heard of it before!)
 
 ---
 
+## Want to use this method for your own site?
+
+See **[HOWTO.md](HOWTO.md)** for a guide to setting up your own website using
+GitHub Pages, Jekyll, and a custom domain name. It covers what everything costs,
+what the risks are and why they're manageable, and when this approach is (and
+isn't) a good fit — written for someone who is comfortable learning by doing but
+doesn't need a computer science background.
+
+---
+
 ## How this site works
 
 This site is hosted on **[GitHub Pages](https://pages.github.com/)** using a
