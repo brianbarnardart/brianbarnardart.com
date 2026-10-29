@@ -39,7 +39,7 @@ and say:
 ### `head.html`
 
 The `<head>` block for every page. Sets charset, viewport, and page title
-(`Brian Barnard | Page Title` for inner pages; just the site title on the home
+(`Page Title | Brian Barnard Art` for inner pages; just the site title on the home
 page). Also pulls in SEO meta, the main stylesheet, the RSS feed link, and
 `custom-head.html`.
 
