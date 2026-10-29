@@ -2,6 +2,8 @@
 layout: page
 title: Events
 permalink: /events/
+description: See where Brian Barnard is painting live in Fernandina Beach, including recurring nights at The Green Turtle, The Tigre Island Room, and The Inkwell.
+image: /assets/events/shrimp-festival-2026.jpg
 nav: 1
 ---
 

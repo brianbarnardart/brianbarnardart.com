@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+description: Contact Brian Barnard about original paintings, commissions, live painting events, or special art projects in Fernandina Beach and beyond.
 nav: 3
 image: /assets/venues/tigre-island-room-2.jpg
 ---
