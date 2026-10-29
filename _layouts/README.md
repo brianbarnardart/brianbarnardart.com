@@ -51,6 +51,7 @@ and fixed.
 The outermost shell rendered for every page. It:
 
 - includes `head.html`, `header.html`, and `footer.html`
+- includes an inline site-wide prints call-to-action ribbon (hidden on `/prints/`)
 - wraps `{{ content }}` in `<main>`
 - includes `lightbox.html` once (so individual layouts and pages never need to)
 - runs a JavaScript snippet at `DOMContentLoaded` that automatically adds

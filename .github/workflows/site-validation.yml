@@ -75,6 +75,12 @@ jobs:
             assert_contains "$tmp_dir/contact.html" "<title>Contact | Brian Barnard Art</title>" "contact title"
             assert_contains "$tmp_dir/contact.html" "<link rel=\"canonical\" href=\"${BASE_URL}/contact/\"" "contact canonical"
             assert_contains "$tmp_dir/contact.html" "meta name=\"description\"" "contact meta description"
+
+            fetch_200 "/prints/" "$tmp_dir/prints.html"
+            assert_contains "$tmp_dir/prints.html" "<title>Prints | Brian Barnard Art</title>" "prints title"
+            assert_contains "$tmp_dir/prints.html" "<link rel=\"canonical\" href=\"${BASE_URL}/prints/\"" "prints canonical"
+            assert_contains "$tmp_dir/prints.html" "meta name=\"description\"" "prints meta description"
+            assert_contains "$tmp_dir/prints.html" "Send Print Request" "prints form submit button"
           }
 
           attempt=1

@@ -57,10 +57,12 @@ website. There is no database and no server-side code to maintain.
 | `Gemfile` | Ruby gem versions — Jekyll, minima, plugins |
 | `_config.yml` | Site-wide settings (title, URL, theme, etc.) |
 | `_data/*.yml` | Structured data files (e.g. the Shorts video list) |
+| `_data/prints.yml` | Current print offerings shown on the Prints page |
 | `_includes/` | Reusable HTML fragments — see [`_includes/README.md`](_includes/README.md) |
 | `_layouts/` | Page templates — see [`_layouts/README.md`](_layouts/README.md) |
 | `assets/main.scss` | Custom CSS/SCSS that extends the theme |
 | `index.md` | The home page |
+| `prints.md` | The `/prints/` page and print-request workflow |
 | `contact.md` | The `/contact/` page |
 | `CNAME` | Tells GitHub Pages to serve this repo at `brianbarnardart.com` |
 

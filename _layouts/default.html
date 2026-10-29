@@ -10,6 +10,12 @@
 
   <body>
 
+    {%- unless page.url == "/prints/" -%}
+      <a href="{{ '/prints/' | relative_url }}" class="prints-ribbon" aria-label="Get prints">
+        Get Prints
+      </a>
+    {%- endunless -%}
+
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">

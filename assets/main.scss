@@ -30,6 +30,52 @@ body {
   animation: bg-creep 90s ease-in-out infinite;
 }
 
+@keyframes prints-ribbon-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prints-ribbon {
+  position: fixed;
+  top: 2.7rem;
+  right: -3.9rem;
+  display: inline-block;
+  padding: 0.5rem 4.2rem;
+  background: #2a7ae2;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transform: rotate(45deg);
+  transform-origin: center;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+  z-index: 1500;
+  opacity: 0;
+  animation: prints-ribbon-reveal 0.55s ease-out 8s forwards;
+  transition: background 0.2s ease;
+
+  &:hover,
+  &:focus-visible,
+  &:visited,
+  &:active {
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: #155bbb;
+    text-decoration: none;
+  }
+}
+
 // Wrap main functional sections into "page" block resembling stacked art paper
 //
 .site-header,
@@ -164,6 +210,13 @@ body {
 
   // At the larger mobile font size h3 needs extra weight to stand out.
   .article-body h3, .post-content h3 { font-weight: 800; }
+
+  .prints-ribbon {
+    top: 2.2rem;
+    right: -4.6rem;
+    padding: 0.45rem 4.2rem;
+    font-size: 0.72rem;
+  }
 }
 
 // ── Artwork prev/next navigation ────────────────────────────────────────────
@@ -972,6 +1025,12 @@ body.error-page {
   .site-title:visited { color: #bbb; }
   .site-title:hover   { color: #7aadff; }
 
+  .prints-ribbon {
+    background: #4d8fd4;
+    &:hover,
+    &:focus-visible { background: #3473b6; }
+  }
+
   // Nav buttons — lighten the dark fill slightly so they read as buttons
   .site-nav .page-link,
   .site-nav .page-link:not(:last-child) { background-color: #3d3d3d; color: #ddd; }
@@ -1000,6 +1059,7 @@ body.error-page {
     color: #5dab5d;
     &:hover, &:visited, &:active { color: #5dab5d; }
   }
+
   .artwork-description,
   .article-body {
     blockquote {
@@ -1008,6 +1068,7 @@ body.error-page {
       color: #ccc;
     }
   }
+
   .artwork-description hr { border-top-color: #333; }
   .artwork-inquiry   { border-top-color: #333; }
   .artwork-sold-note { border-top-color: #333; p { color: #aaa; } }
@@ -1049,6 +1110,7 @@ body.error-page {
       &:focus { border-color: #777; }
     }
   }
+
   .form-submit {
     background: #444;
     &:hover { background: #555; }
@@ -1086,5 +1148,13 @@ body.error-page {
       border-color: #252525;
       box-shadow: 4px 5px 12px rgba(0,0,0,0.5);
     }
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prints-ribbon {
+    animation: none;
+    opacity: 1;
   }
 }

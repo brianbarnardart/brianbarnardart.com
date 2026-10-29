@@ -2,7 +2,7 @@
 layout: article
 title: Frog King
 subtitle: Site Ambassador & Practitioner of Magic
-description: Meet Frog King, the mascot of Brian Barnard Art: a signature character featured in Brian's paintings, site branding, and merchandise.
+description: "Meet Frog King, the mascot of Brian Barnard Art: a signature character featured in Brian's paintings, site branding, and merchandise."
 image: /assets/characters/frog-king-320x430.png
 cover_image: /assets/characters/frog-king-320x430.png
 ---
