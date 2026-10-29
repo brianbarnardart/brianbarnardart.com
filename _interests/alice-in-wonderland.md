@@ -2,6 +2,9 @@
 layout: article
 title: Alice in Wonderland
 subtitle: Through the looking glass
+description: Alice in Wonderland is a recurring influence in Brian Barnard's art, especially its surreal characters and playful, dreamlike visual logic.
+sitemap: false
+noindex: true
 cover_image: /assets/interests/alice-in-wonderland.jpg
 ---
 

@@ -2,6 +2,8 @@
 layout: article
 title: Tigre Island Room
 subtitle: 10 North 2nd Street, (904) 578-3703
+description: Tigre Island Room is a downtown Fernandina Beach music venue where Brian Barnard frequently appears for live painting sessions.
+image: /assets/venues/tigre-island-room.jpg
 cover_image: /assets/venues/tigre-island-room.jpg
 ---
 

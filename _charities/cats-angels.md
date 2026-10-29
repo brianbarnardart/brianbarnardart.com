@@ -2,6 +2,8 @@
 layout: article
 title: Cat's Angels
 subtitle: Rescue and advocacy for cats in Nassau County
+sitemap: false
+noindex: true
 cover_image: /assets/charities/cats-angels.jpg
 ---
 

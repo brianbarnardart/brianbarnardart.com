@@ -2,6 +2,8 @@
 layout: article
 title: Live Painting
 subtitle: Painting in real time at live events
+sitemap: false
+noindex: true
 cover_image: /assets/events/live-painting.jpg
 ---
 

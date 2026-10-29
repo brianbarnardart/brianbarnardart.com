@@ -41,7 +41,8 @@ and say:
 The `<head>` block for every page. Sets charset, viewport, and page title
 (`Page Title | Brian Barnard Art` for inner pages; just the site title on the home
 page). Also pulls in SEO meta, the main stylesheet, the RSS feed link, and
-`custom-head.html`.
+`custom-head.html`. If a page sets `noindex: true` in front matter, this include
+adds `<meta name="robots" content="noindex, nofollow">`.
 
 ### `header.html`
 

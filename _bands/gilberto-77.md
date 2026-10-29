@@ -2,6 +2,8 @@
 layout: article
 title: Gilberto 77
 subtitle: Latin jazz and beyond
+sitemap: false
+noindex: true
 cover_image: /assets/bands/gilberto-77.jpg
 ---
 

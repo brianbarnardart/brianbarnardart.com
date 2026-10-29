@@ -2,6 +2,9 @@
 layout: article
 title: Grateful Dead
 subtitle: The long strange trip
+description: Grateful Dead music and iconography are longstanding inspirations in Brian Barnard's visual style, live painting energy, and character work.
+sitemap: false
+noindex: true
 cover_image: /assets/interests/grateful-dead.jpg
 ---
 

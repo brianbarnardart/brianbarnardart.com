@@ -2,6 +2,8 @@
 layout: article
 title: Right Whale Ambassadors
 subtitle: Protecting North Atlantic right whales
+sitemap: false
+noindex: true
 cover_image: /assets/charities/right-whale-ambassadors.jpg
 ---
 

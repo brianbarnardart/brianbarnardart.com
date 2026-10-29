@@ -2,6 +2,8 @@
 layout: article
 title: The Inkwell
 subtitle: 1925 South 14th Street, (904) 556-9090
+description: The Inkwell is Brian Barnard's creative home base in Fernandina Beach for live painting, music, classes, and community art events.
+image: /assets/venues/the-inkwell.jpg
 cover_image: /assets/venues/the-inkwell.jpg
 ---
 

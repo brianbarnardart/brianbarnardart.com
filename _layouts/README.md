@@ -90,6 +90,11 @@ interests, and characters. Renders:
 - An article header with `title` and optional `subtitle`
 - The page body (`{{ content }}`)
 
+Useful front matter flags for draft/speculative collection pages:
+
+- `noindex: true` — emits a robots meta tag to discourage indexing
+- `sitemap: false` — excludes the page from `sitemap.xml`
+
 ### `artwork.html`
 
 Layout for items in the `_works/` collection. Renders:

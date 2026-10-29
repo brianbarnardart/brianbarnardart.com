@@ -2,6 +2,8 @@
 layout: article
 title: Brian Ernst
 subtitle: ""
+sitemap: false
+noindex: true
 cover_image: /assets/bands/brian-ernst.jpg
 ---
 

@@ -2,6 +2,8 @@
 layout: article
 title: The Big Lebowski
 subtitle: Coen Brothers, 1998
+description: The Big Lebowski is one of Brian Barnard's key visual influences, inspiring character studies, prints, and themed live art events.
+image: /assets/paintings/dude-in-store.jpg
 cover_image: /assets/paintings/dude-in-store.jpg
 ---
 

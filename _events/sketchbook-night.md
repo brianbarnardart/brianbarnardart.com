@@ -2,6 +2,8 @@
 layout: article
 title: Sketchbook Night
 subtitle: Gathering to draw, share, and create
+sitemap: false
+noindex: true
 cover_image: /assets/events/sketchbook-night.jpg
 ---
 

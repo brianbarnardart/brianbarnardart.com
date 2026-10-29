@@ -2,6 +2,8 @@
 layout: article
 title: The Green Turtle
 subtitle: 14 South 3rd Street, (904) 321-2324
+description: The Green Turtle Tavern is a core Fernandina Beach venue where Brian Barnard regularly paints live and created the well-known fence murals.
+image: /assets/venues/the-green-turtle.jpg
 cover_image: /assets/venues/the-green-turtle.jpg
 ---
 

@@ -2,6 +2,8 @@
 layout: article
 title: 1blackfrend
 subtitle: ""
+sitemap: false
+noindex: true
 cover_image: /assets/bands/1blackfrend.jpg
 ---
 
