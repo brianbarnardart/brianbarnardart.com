@@ -9,3 +9,24 @@
 <link rel="apple-touch-icon" href="/assets/icons/favicon-192x192.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#ffffff">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author | escape }}",
+  "url": "{{ site.url }}{{ site.baseurl | default: '' }}/",
+  "image": "{{ site.url }}{{ '/assets/brian-face.png' | relative_url }}",
+  "jobTitle": "Artist and live painter",
+  "description": "{{ site.description | escape }}",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Fernandina Beach, Florida"
+  },
+  "sameAs": [
+    "https://www.facebook.com/brianbarnardart/",
+    "https://www.instagram.com/brianbarnardart/",
+    "https://www.youtube.com/@brianbarnardart"
+  ]
+}
+</script>
