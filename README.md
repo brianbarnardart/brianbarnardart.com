@@ -29,6 +29,10 @@ This site is hosted on **[GitHub Pages](https://pages.github.com/)** using a
 the workflow installs dependencies, runs **Jekyll**, and publishes the result at
 `https://brianbarnardart.com`.
 
+After deploy completes, a second workflow validates the live site (including
+robots/sitemap and key SEO metadata) with retry/backoff to account for brief
+publish propagation delays.
+
 ---
 
 ## Jekyll

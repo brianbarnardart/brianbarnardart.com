@@ -1,0 +1,100 @@
+name: Validate live site
+
+on:
+  workflow_run:
+    workflows: ["Deploy Jekyll site to GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: https://brianbarnardart.com
+      MAX_ATTEMPTS: "8"
+      INITIAL_WAIT_SECONDS: "20"
+    steps:
+      - name: Validate deployed pages with retry
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          assert_contains() {
+            local file="$1"
+            local needle="$2"
+            local label="$3"
+            if ! grep -Fq "$needle" "$file"; then
+              echo "Missing expected content for: $label"
+              echo "Expected snippet: $needle"
+              return 1
+            fi
+          }
+
+          fetch_200() {
+            local path="$1"
+            local output_file="$2"
+            local url="${BASE_URL}${path}"
+            local code
+            code="$(curl -sS -L -o "$output_file" -w "%{http_code}" "$url")"
+            if [[ "$code" != "200" ]]; then
+              echo "Expected HTTP 200 for ${url}, got ${code}"
+              return 1
+            fi
+          }
+
+          validate_once() {
+            local tmp_dir
+            tmp_dir="$(mktemp -d)"
+            trap 'rm -rf "$tmp_dir"' RETURN
+
+            fetch_200 "/robots.txt" "$tmp_dir/robots.txt"
+            assert_contains "$tmp_dir/robots.txt" "User-agent: *" "robots user-agent"
+            assert_contains "$tmp_dir/robots.txt" "Allow: /" "robots allow"
+            assert_contains "$tmp_dir/robots.txt" "Sitemap: ${BASE_URL}/sitemap.xml" "robots sitemap"
+
+            fetch_200 "/sitemap.xml" "$tmp_dir/sitemap.xml"
+            assert_contains "$tmp_dir/sitemap.xml" "<urlset" "sitemap root element"
+            assert_contains "$tmp_dir/sitemap.xml" "${BASE_URL}/events/" "sitemap includes events"
+
+            fetch_200 "/" "$tmp_dir/home.html"
+            assert_contains "$tmp_dir/home.html" "<title>Brian Barnard Art</title>" "home title"
+            assert_contains "$tmp_dir/home.html" "<link rel=\"canonical\" href=\"${BASE_URL}/\"" "home canonical"
+            assert_contains "$tmp_dir/home.html" "meta name=\"description\"" "home meta description"
+            assert_contains "$tmp_dir/home.html" "meta property=\"og:image\"" "home og:image"
+
+            fetch_200 "/events/" "$tmp_dir/events.html"
+            assert_contains "$tmp_dir/events.html" "<title>Events | Brian Barnard Art</title>" "events title"
+            assert_contains "$tmp_dir/events.html" "<link rel=\"canonical\" href=\"${BASE_URL}/events/\"" "events canonical"
+            assert_contains "$tmp_dir/events.html" "meta name=\"description\"" "events meta description"
+
+            fetch_200 "/contact/" "$tmp_dir/contact.html"
+            assert_contains "$tmp_dir/contact.html" "<title>Contact | Brian Barnard Art</title>" "contact title"
+            assert_contains "$tmp_dir/contact.html" "<link rel=\"canonical\" href=\"${BASE_URL}/contact/\"" "contact canonical"
+            assert_contains "$tmp_dir/contact.html" "meta name=\"description\"" "contact meta description"
+          }
+
+          attempt=1
+          max_attempts="${MAX_ATTEMPTS}"
+          base_wait="${INITIAL_WAIT_SECONDS}"
+
+          while [[ "$attempt" -le "$max_attempts" ]]; do
+            echo "Validation attempt ${attempt}/${max_attempts}"
+            if validate_once; then
+              echo "Live site validation passed."
+              exit 0
+            fi
+
+            if [[ "$attempt" -eq "$max_attempts" ]]; then
+              echo "Live site validation failed after ${max_attempts} attempts."
+              exit 1
+            fi
+
+            sleep_seconds=$((attempt * base_wait))
+            echo "Validation not ready yet; retrying in ${sleep_seconds}s..."
+            sleep "$sleep_seconds"
+            attempt=$((attempt + 1))
+          done
