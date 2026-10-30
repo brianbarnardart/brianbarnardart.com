@@ -30,7 +30,8 @@ This site is hosted on **[GitHub Pages](https://pages.github.com/)** using a
 **GitHub Actions** workflow. Every time a change is pushed to the `main` branch,
 the workflow installs dependencies, enforces SEO front-matter coverage for
 indexable pages (`description` + `image`), runs **Jekyll**, validates internal
-links for sitemap-indexed pages, and publishes the result at
+links for sitemap-indexed pages, performs a soft-fail external link audit, and
+publishes the result at
 `https://brianbarnardart.com`.
 
 After deploy completes, a second workflow validates the live site (including

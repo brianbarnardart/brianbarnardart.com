@@ -189,6 +189,116 @@ jobs:
           puts "Internal link validation passed for indexable pages."
           RUBY
 
+      - name: Audit external links (soft fail)
+        continue-on-error: true
+        run: |
+          ruby - <<'RUBY'
+          require "uri"
+          require "net/http"
+          require "set"
+
+          site_root = File.expand_path("_site")
+          sitemap_path = File.join(site_root, "sitemap.xml")
+
+          abort("Missing _site/sitemap.xml; cannot audit external links.") unless File.exist?(sitemap_path)
+
+          sitemap = File.read(sitemap_path)
+          locs = sitemap.scan(/<loc>([^<]+)<\/loc>/).flatten
+
+          html_files = []
+          locs.each do |loc|
+            begin
+              uri = URI.parse(loc)
+            rescue URI::InvalidURIError
+              next
+            end
+
+            path = uri.path.to_s
+            path = "/" if path.empty?
+
+            html_file =
+              if path == "/"
+                File.join(site_root, "index.html")
+              elsif path.end_with?("/")
+                File.join(site_root, path.sub(%r{^/}, ""), "index.html")
+              else
+                File.join(site_root, path.sub(%r{^/}, ""))
+              end
+
+            html_files << html_file if File.file?(html_file)
+          end
+
+          external_urls = Set.new
+          html_files.uniq.each do |html_file|
+            html = File.read(html_file)
+            html.scan(/(?:href|src)=["']([^"']+)["']/i).flatten.each do |raw|
+              next if raw.nil? || raw.empty?
+              target = raw.strip
+              next unless target.match?(/\Ahttps?:\/\//i)
+              external_urls << target
+            end
+          end
+
+          def request_status(url, method: :head, redirects: 5)
+            uri = URI.parse(url)
+            raise "unsupported scheme" unless uri.is_a?(URI::HTTP)
+
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = (uri.scheme == "https")
+            http.open_timeout = 8
+            http.read_timeout = 8
+
+            path = uri.request_uri
+            req =
+              if method == :head
+                Net::HTTP::Head.new(path, { "User-Agent" => "brianbarnardart-link-checker/1.0" })
+              else
+                Net::HTTP::Get.new(path, { "User-Agent" => "brianbarnardart-link-checker/1.0" })
+              end
+
+            res = http.request(req)
+            code = res.code.to_i
+
+            if code >= 300 && code < 400 && redirects > 0
+              location = res["location"]
+              raise "redirect without location header" if location.nil? || location.strip.empty?
+              redirected = URI.join(url, location).to_s
+              return request_status(redirected, method: method, redirects: redirects - 1)
+            end
+
+            if method == :head && (code == 405 || code == 501)
+              return request_status(url, method: :get, redirects: redirects)
+            end
+
+            code
+          end
+
+          failures = []
+          checked = 0
+
+          external_urls.each do |url|
+            checked += 1
+            begin
+              code = request_status(url)
+              unless code >= 200 && code < 400
+                failures << "#{url} -> HTTP #{code}"
+              end
+            rescue StandardError => e
+              failures << "#{url} -> #{e.class}: #{e.message}"
+            end
+          end
+
+          puts "External links checked: #{checked}"
+
+          if failures.any?
+            puts "External link audit found potential issues (soft-fail):"
+            failures.each { |f| puts "  - #{f}" }
+            exit 1
+          end
+
+          puts "External link audit passed."
+          RUBY
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
