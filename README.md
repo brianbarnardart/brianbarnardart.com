@@ -67,6 +67,7 @@ website. There is no database and no server-side code to maintain.
 | `_config.yml` | Site-wide settings (title, URL, theme, etc.) |
 | `_data/*.yml` | Structured data files (e.g. the Shorts video list) |
 | `_data/prints.yml` | Current print offerings shown on the Prints page |
+| `_data/lebowski_prints.yml` | Print offerings for `/prints/the-big-lebowski/` |
 | `_includes/` | Reusable HTML fragments — see [`_includes/README.md`](_includes/README.md) |
 | `_layouts/` | Page templates — see [`_layouts/README.md`](_layouts/README.md) |
 | `assets/main.scss` | Custom CSS/SCSS that extends the theme |
@@ -255,4 +256,5 @@ fulfillment model.
 
 Additional print category pages can live under `prints/` with permalinks like
 `/prints/the-big-lebowski/`; the main `/prints/` page auto-lists discovered
-subpages.
+subpages. Category pages can read from their own `_data/*_prints.yml` files
+using the same entry shape as `_data/prints.yml`.
