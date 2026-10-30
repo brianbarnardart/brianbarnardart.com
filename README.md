@@ -20,6 +20,8 @@ what the risks are and why they're manageable, and when this approach is (and
 isn't) a good fit — written for someone who is comfortable learning by doing but
 doesn't need a computer science background.
 
+For the project's live search plan, see **[SEO-STRATEGY.md](SEO-STRATEGY.md)**.
+
 ---
 
 ## How this site works
