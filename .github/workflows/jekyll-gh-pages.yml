@@ -91,6 +91,104 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Validate internal links on indexable pages
+        run: |
+          ruby - <<'RUBY'
+          require "uri"
+
+          site_root = File.expand_path("_site")
+          sitemap_path = File.join(site_root, "sitemap.xml")
+          failures = []
+
+          unless File.exist?(sitemap_path)
+            abort("Missing _site/sitemap.xml; cannot validate internal links.")
+          end
+
+          sitemap = File.read(sitemap_path)
+          locs = sitemap.scan(/<loc>([^<]+)<\/loc>/).flatten
+
+          path_exists_in_site = lambda do |path|
+            clean = path.split("#", 2).first.split("?", 2).first
+            normalized = clean.start_with?("/") ? clean : "/#{clean}"
+            return true if normalized == "/"
+
+            direct = File.join(site_root, normalized.sub(%r{^/}, ""))
+            index = File.join(site_root, normalized.sub(%r{^/}, ""), "index.html")
+
+            File.file?(direct) || File.file?(index)
+          end
+
+          html_files = []
+
+          locs.each do |loc|
+            begin
+              uri = URI.parse(loc)
+            rescue URI::InvalidURIError
+              failures << "Invalid sitemap URL: #{loc}"
+              next
+            end
+
+            path = uri.path.to_s
+            path = "/" if path.empty?
+
+            html_file =
+              if path == "/"
+                File.join(site_root, "index.html")
+              elsif path.end_with?("/")
+                File.join(site_root, path.sub(%r{^/}, ""), "index.html")
+              else
+                File.join(site_root, path.sub(%r{^/}, ""))
+              end
+
+            if File.file?(html_file)
+              html_files << html_file
+            else
+              failures << "Sitemap URL does not map to generated file: #{loc} -> #{html_file}"
+            end
+          end
+
+          html_files.uniq.each do |html_file|
+            html = File.read(html_file)
+            source_path = html_file.sub("#{site_root}/", "")
+            page_dir = File.dirname(html_file)
+
+            links = html.scan(/(?:href|src)=["']([^"']+)["']/i).flatten
+            links.each do |raw|
+              next if raw.nil? || raw.empty?
+              target = raw.strip
+              next if target.start_with?("#", "mailto:", "tel:", "javascript:", "data:")
+              next if target.start_with?("//")
+              next if target.match?(/\Ahttps?:\/\//i)
+
+              if target.start_with?("/")
+                unless path_exists_in_site.call(target)
+                  failures << "#{source_path}: broken absolute internal link #{target}"
+                end
+              else
+                rel = target.split("#", 2).first.split("?", 2).first
+                next if rel.empty?
+                candidate = File.expand_path(rel, page_dir)
+                unless candidate.start_with?(site_root)
+                  failures << "#{source_path}: relative link escapes site root #{target}"
+                  next
+                end
+
+                exists = File.file?(candidate)
+                exists ||= File.file?(File.join(candidate, "index.html")) if File.directory?(candidate)
+                failures << "#{source_path}: broken relative internal link #{target}" unless exists
+              end
+            end
+          end
+
+          if failures.any?
+            puts "Internal link validation failed:"
+            failures.each { |f| puts "  - #{f}" }
+            exit 1
+          end
+
+          puts "Internal link validation passed for indexable pages."
+          RUBY
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
