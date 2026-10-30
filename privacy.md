@@ -68,12 +68,31 @@ The button at the top of this page sets a flag in your browser's local storage (
 
 (This is also useful for the site developers to turn off self-views so that their own visits don't inflate the traffic numbers.)
 
+### Calls-to-action timer (Prints banner)
+
+The **Get Prints** banner uses local storage to avoid showing too often after you click it.
+
+If clicked, it is hidden for 1 hour using `printsRibbonDismissUntil`.
+
+**For this browser:** <span id="prints-cta-status">checking…</span>
+
+<p>
+  <button id="prints-cta-reset" class="form-submit">Reset Prints Timer</button>
+</p>
+
+<p id="prints-cta-confirm" aria-live="polite"></p>
+
 <script>
 (function () {
   var status = document.getElementById('counting-status');
   var confirm = document.getElementById('counting-confirm');
   var btnOff = document.getElementById('counting-off');
   var btnOn = document.getElementById('counting-on');
+  var ctaStatus = document.getElementById('prints-cta-status');
+  var ctaConfirm = document.getElementById('prints-cta-confirm');
+  var ctaReset = document.getElementById('prints-cta-reset');
+  var ctaDismissKey = 'printsRibbonDismissUntil';
+  var ctaSeenKey = 'printsRibbonSeenThisSession';
 
   function isSkipping() {
     return localStorage.getItem('skipgc') === 't';
@@ -103,6 +122,46 @@ The button at the top of this page sets a flag in your browser's local storage (
     updateStatus();
   });
 
+  function readCtaDismissUntil() {
+    var raw = localStorage.getItem(ctaDismissKey);
+    var parsed = parseInt(raw || '0', 10);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function formatRemaining(ms) {
+    var totalMinutes = Math.ceil(ms / 60000);
+    var hours = Math.floor(totalMinutes / 60);
+    var minutes = totalMinutes % 60;
+    if (hours > 0) {
+      return hours + 'h ' + minutes + 'm';
+    }
+    return minutes + 'm';
+  }
+
+  function updateCtaStatus() {
+    if (!ctaStatus) return;
+    var now = Date.now();
+    var dismissUntil = readCtaDismissUntil();
+
+    if (dismissUntil > now) {
+      ctaStatus.textContent = 'Hidden until ' + new Date(dismissUntil).toLocaleString() + ' (' + formatRemaining(dismissUntil - now) + ' remaining).';
+    } else {
+      ctaStatus.textContent = 'Ready to show (no active hide timer).';
+    }
+  }
+
+  if (ctaReset) {
+    ctaReset.addEventListener('click', function () {
+      localStorage.removeItem(ctaDismissKey);
+      sessionStorage.removeItem(ctaSeenKey);
+      if (ctaConfirm) {
+        ctaConfirm.textContent = 'Prints timer reset. Reload any page to test banner behavior from a clean state.';
+      }
+      updateCtaStatus();
+    });
+  }
+
   updateStatus();
+  updateCtaStatus();
 }());
 </script>

@@ -15,6 +15,18 @@ Pieces created during a live painting session are typically available for purcha
 Most all event pieces are also signed by the musicians, so that makes them an even better souvenir of a specific night.
 
 
+### How do I buy prints of Brian's work?
+
+The cheapest and most fun way to get a print of Brian's work is to [come see a
+live painting show in Fernandina!](/events/)  He always has an assortment of
+prints with him, so you can avoid shipping costs (and he'll likely cut you a
+deal if you buy more than one...)* 💸🙂
+
+You can also **[order prints here from the site](/prints/)**.  There isn't a
+"store" per se, but you can make your requests in writing.  Someone will get
+back to you about the total cost and shipping based on your ZIP code.
+
+
 ### Did Brian discover he had a 13-year-old son?!? 😲
 
 {% include figure.html image="/assets/brian-and-gabe.jpg" side="left" alt="BB Mini" maxwidth="22%" %}

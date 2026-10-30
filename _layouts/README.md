@@ -54,12 +54,14 @@ and fixed.
 The outermost shell rendered for every page. It:
 
 - includes `head.html`, `header.html`, and `footer.html`
-- includes an inline site-wide prints call-to-action ribbon (hidden on `/prints/`)
+- includes an inline site-wide prints call-to-action ribbon (hidden on `/prints/` and `/gallery/`)
 - wraps `{{ content }}` in `<main>`
 - includes `lightbox.html` once (so individual layouts and pages never need to)
 - runs a JavaScript snippet at `DOMContentLoaded` that automatically adds
   `target="_blank"` and `rel="noopener noreferrer"` to any link whose hostname
-  differs from the site's hostname
+  differs from the site's hostname, and manages prints-ribbon visibility state
+  (`sessionStorage` keeps it visible after first reveal while browsing, and
+  `localStorage` suppresses it for 1 hour after a click)
 
   **Consequence:** you do not need to write `target="_blank"` yourself in
   Markdown or HTML for external links — it is handled for you.

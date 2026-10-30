@@ -80,6 +80,16 @@ body {
     background: #155bbb;
     text-decoration: none;
   }
+
+  &.prints-ribbon--visible {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.prints-ribbon--suppressed {
+    display: none;
+  }
 }
 
 // Wrap main functional sections into "page" block resembling stacked art paper

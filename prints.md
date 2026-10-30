@@ -11,7 +11,7 @@ image: /assets/prints/fox-jam-print-fake.jpg
 Selling prints online is very new for Brian, and his team is handling print
 requests personally.  This way we can confirm availability, make sure you're
 getting the right piece(s), and coordinate shipping directly.  It's also a
-chance to say hello to Brian, and how you found out about his work.
+chance to say hello, and how you found out about his work.
 
 <sub>(Doing it this way also may be because we don't really know a good way of
 making an online store. 🙈  *BUT* the personal touch is preferable anyway!)</sub>
