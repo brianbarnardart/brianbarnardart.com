@@ -34,6 +34,17 @@ jobs:
             fi
           }
 
+          assert_not_contains() {
+            local file="$1"
+            local needle="$2"
+            local label="$3"
+            if grep -Fq "$needle" "$file"; then
+              echo "Unexpected content found for: $label"
+              echo "Unexpected snippet: $needle"
+              return 1
+            fi
+          }
+
           fetch_200() {
             local path="$1"
             local output_file="$2"
@@ -59,6 +70,8 @@ jobs:
             fetch_200 "/sitemap.xml" "$tmp_dir/sitemap.xml"
             assert_contains "$tmp_dir/sitemap.xml" "<urlset" "sitemap root element"
             assert_contains "$tmp_dir/sitemap.xml" "${BASE_URL}/events/" "sitemap includes events"
+            assert_not_contains "$tmp_dir/sitemap.xml" "${BASE_URL}/404.html" "sitemap excludes 404 page"
+            assert_not_contains "$tmp_dir/sitemap.xml" "${BASE_URL}/bands/1blackfrend/" "sitemap excludes draft band page"
 
             fetch_200 "/" "$tmp_dir/home.html"
             assert_contains "$tmp_dir/home.html" "<title>Brian Barnard Art</title>" "home title"
@@ -81,6 +94,12 @@ jobs:
             assert_contains "$tmp_dir/prints.html" "<link rel=\"canonical\" href=\"${BASE_URL}/prints/\"" "prints canonical"
             assert_contains "$tmp_dir/prints.html" "meta name=\"description\"" "prints meta description"
             assert_contains "$tmp_dir/prints.html" "Send Print Request" "prints form submit button"
+
+            fetch_200 "/404.html" "$tmp_dir/404.html"
+            assert_contains "$tmp_dir/404.html" "<meta name=\"robots\" content=\"noindex, nofollow\">" "404 noindex meta"
+
+            fetch_200 "/bands/1blackfrend/" "$tmp_dir/draft-band.html"
+            assert_contains "$tmp_dir/draft-band.html" "<meta name=\"robots\" content=\"noindex, nofollow\">" "draft page noindex meta"
           }
 
           attempt=1

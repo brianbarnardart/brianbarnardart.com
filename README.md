@@ -30,8 +30,9 @@ the workflow installs dependencies, runs **Jekyll**, and publishes the result at
 `https://brianbarnardart.com`.
 
 After deploy completes, a second workflow validates the live site (including
-robots/sitemap and key SEO metadata) with retry/backoff to account for brief
-publish propagation delays.
+robots/sitemap, key SEO metadata, and noindex/sitemap exclusions for draft or
+utility pages) with retry/backoff to account for brief publish propagation
+delays.
 
 ---
 
