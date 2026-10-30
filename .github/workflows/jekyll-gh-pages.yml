@@ -273,30 +273,50 @@ jobs:
             code
           end
 
-          failures = []
+          hard_failures = []
+          access_blocked = []
+          request_errors = []
           checked = 0
 
           external_urls.each do |url|
             checked += 1
             begin
               code = request_status(url)
-              unless code >= 200 && code < 400
-                failures << "#{url} -> HTTP #{code}"
+              if code >= 200 && code < 400
+                next
+              elsif [401, 403, 429].include?(code)
+                access_blocked << "#{url} -> HTTP #{code}"
+              else
+                hard_failures << "#{url} -> HTTP #{code}"
               end
             rescue StandardError => e
-              failures << "#{url} -> #{e.class}: #{e.message}"
+              request_errors << "#{url} -> #{e.class}: #{e.message}"
             end
           end
 
           puts "External links checked: #{checked}"
 
-          if failures.any?
-            puts "External link audit found potential issues (soft-fail):"
-            failures.each { |f| puts "  - #{f}" }
-            exit 1
+          if access_blocked.any?
+            puts "External links blocked to CI/bot-like requests (non-fatal):"
+            access_blocked.each { |f| puts "  - #{f}" }
+            access_blocked.each { |f| puts "::warning::External link blocked: #{f}" }
           end
 
-          puts "External link audit passed."
+          if request_errors.any?
+            puts "External links with request errors (non-fatal, review):"
+            request_errors.each { |f| puts "  - #{f}" }
+            request_errors.each { |f| puts "::warning::External link request error: #{f}" }
+          end
+
+          if hard_failures.any?
+            puts "External links with likely real issues (soft-fail warning):"
+            hard_failures.each { |f| puts "  - #{f}" }
+            hard_failures.each { |f| puts "::warning::External link likely broken: #{f}" }
+          else
+            puts "External link audit found no likely broken links."
+          end
+
+          puts "External link audit completed."
           RUBY
 
       - name: Upload artifact

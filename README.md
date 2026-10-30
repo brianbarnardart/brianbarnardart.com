@@ -34,6 +34,9 @@ links for sitemap-indexed pages, performs a soft-fail external link audit, and
 publishes the result at
 `https://brianbarnardart.com`.
 
+The external link audit reports warnings (including CI-blocked 401/403/429
+responses) but does not fail deployment.
+
 After deploy completes, a second workflow validates the live site (including
 robots/sitemap, key SEO metadata, and noindex/sitemap exclusions for draft or
 utility pages) with retry/backoff to account for brief publish propagation
