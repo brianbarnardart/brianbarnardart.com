@@ -351,11 +351,18 @@ body {
   border-radius: 4px;
   background: #f0f0f0;
 
+  .lightbox-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    image-rendering: high-quality;
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
     transition: transform 0.2s ease;
   }
 }
@@ -364,6 +371,12 @@ body {
   margin: 0.4rem 0 0.2rem;
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.prints-note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #666;
 }
 
 .gallery-badge {
@@ -1047,6 +1060,7 @@ body.error-page {
 
   // Gallery grid
   .gallery-thumb          { background: #2a2a2a; }
+  .prints-note            { color: #888; }
   .gallery-badge--sold    { background: #2a2a2a; color: #777; }
   .gallery-badge--price   { background: #162916; color: #5dab5d; }
   .gallery-badge--enquire { background: #121e36; color: #7aadff; }

@@ -229,3 +229,21 @@ Chat apps and iMessage use that to pull the preview thumbnail.
      title: A description of the video
    ```
 4. Commit and push. The video appears on the home page automatically.
+
+## Updating print offerings
+
+The Prints page reads from `_data/prints.yml`.
+
+Each entry supports:
+
+```yaml
+- title: Print title
+  url: /works/some-piece/ # optional
+  image: /assets/path-to-image.jpg
+  thumb: /assets/path-to-thumb.jpg # optional; falls back to image
+  alt: Accessible alt text for the print image
+  notes: Optional short line (e.g. "Signed print")
+```
+
+When available, use "in-hand" photos for `image` to emphasize the personal
+fulfillment model.
