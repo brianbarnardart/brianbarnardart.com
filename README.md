@@ -252,3 +252,7 @@ Each entry supports:
 
 When available, use "in-hand" photos for `image` to emphasize the personal
 fulfillment model.
+
+Additional print category pages can live under `prints/` with permalinks like
+`/prints/the-big-lebowski/`; the main `/prints/` page auto-lists discovered
+subpages.

@@ -55,6 +55,11 @@ The outermost shell rendered for every page. It:
 
 - includes `head.html`, `header.html`, and `footer.html`
 - includes an inline site-wide prints call-to-action ribbon (hidden on `/prints/` and `/gallery/`)
+  - default target: `/prints/`
+  - context target: `/prints/<current-page-slug>/` when that page exists
+    (detected across both `site.pages` and `site.documents`, and tolerant of
+    trailing-slash/non-trailing-slash/`.html` URL variants)
+  - optional override: set `prints_url: /some/path/` in page front matter
 - wraps `{{ content }}` in `<main>`
 - includes `lightbox.html` once (so individual layouts and pages never need to)
 - runs a JavaScript snippet at `DOMContentLoaded` that automatically adds

@@ -5,6 +5,7 @@ subtitle: Coen Brothers, 1998
 description: The Big Lebowski is one of Brian Barnard's key visual influences, inspiring character studies, prints, and themed live art events.
 image: /assets/paintings/dude-in-store.jpg
 cover_image: /assets/paintings/dude-in-store.jpg
+prints_url: /prints/the-big-lebowski/
 ---
 
 {% include figure.html image="/assets/paintings/dude-in-store.jpg" caption="The Dude abides" side="right" %}
@@ -23,4 +24,4 @@ The film's color palette, its mix of grandiosity and squalor, and the way it fin
 
 There are about ten different prints inspired by the film: some are available **[at his shows and booths](/events/)**, if they're in stock.
 
-A way to order prints on the web is coming.  *(Like, we'll do it when we get around to it, man.  Kind of got a lot going on right now...just, chill.)*
+If you want to request one online, use **[The Big Lebowski Prints](/prints/the-big-lebowski/)** page.

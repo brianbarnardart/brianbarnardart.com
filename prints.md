@@ -46,6 +46,15 @@ making an online store. 🙈  *BUT* the personal touch is preferable anyway!)</s
 *(The idea is that Brian would have his hand in photographs holding prints in
 front of one of his murals, but it is being prototyped with postcards.)*
 
+{% assign _print_sections = site.pages | where_exp: "p", "p.url != '/prints/' and p.url contains '/prints/' and p.title and p.noindex != true and p.sitemap != false" | sort: "title" %}
+{% if _print_sections and _print_sections.size > 0 %}
+## Print Categories
+
+{% for section in _print_sections %}
+- **[{{ section.title }}]({{ section.url | relative_url }})**
+{% endfor %}
+{% endif %}
+
 ## How ordering works
 
 1. Send your request through the form below (include print title(s), quantity, and shipping ZIP code).
