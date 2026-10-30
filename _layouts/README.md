@@ -32,6 +32,9 @@ Minimal error page shell — just `<html>`, `<head>` (via `head.html` so fonts,
 favicon, and CSS still load), and a centred content card. No site header, nav,
 or footer. Used only by `404.md`.
 
+`404.md` should stay out of search indexing and sitemap output (`noindex: true`,
+`sitemap: false` in front matter).
+
 **Analytics:** Unlike the other layouts, `404.html` includes `analytics.html`
 directly (in production only) rather than inheriting it from `default.html`.
 However, `404.md` sets `window.goatcounter = { no_onload: true }` *before*

@@ -2,7 +2,7 @@
 layout: home
 title: Brian Barnard Art
 description: Brian Barnard is a Fernandina Beach artist known for live painting, murals, and original acrylic works inspired by music, nature, and local culture.
-image: /assets/paintings/wild-mountain-fox-jam.jpg
+image: /assets/characters/frog-king-320x430.png
 ---
 
 {% include figure.html image="/assets/characters/frog-king-320x430.png" side="left" maxwidth="160px" link="/characters/frog-king/" class="frog-king" %}

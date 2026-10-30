@@ -3,6 +3,7 @@ layout: page
 title: Gallery
 permalink: /gallery/
 description: Paintings by Fernandina Beach artist Brian Barnard — acrylics and mixed media available for purchase.
+image: /assets/paintings/wild-mountain-fox-jam.jpg
 nav: 2
 ---
 
