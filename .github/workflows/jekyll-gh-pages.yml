@@ -31,6 +31,61 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Enforce SEO front-matter coverage
+        run: |
+          ruby - <<'RUBY'
+          require "yaml"
+
+          def truthy?(value)
+            value == true || value.to_s.strip.downcase == "true"
+          end
+
+          def falsey?(value)
+            value == false || value.to_s.strip.downcase == "false"
+          end
+
+          failures = []
+          markdown_files = Dir.glob("**/*.md").reject do |path|
+            path.start_with?(".git/", "_site/", "vendor/")
+          end
+
+          markdown_files.each do |path|
+            raw = File.read(path)
+            next unless raw.start_with?("---\n")
+
+            match = raw.match(/\A---\s*\n(.*?)\n---\s*\n/m)
+            next unless match
+
+            begin
+              fm = YAML.safe_load(match[1], permitted_classes: [], aliases: false) || {}
+            rescue Psych::SyntaxError => e
+              failures << "#{path}: invalid YAML front matter (#{e.message})"
+              next
+            end
+
+            next unless fm["layout"]
+
+            noindex = truthy?(fm["noindex"])
+            sitemap_false = falsey?(fm["sitemap"])
+            indexable = !(noindex || sitemap_false)
+            next unless indexable
+
+            description = fm["description"].to_s.strip
+            image = fm["image"].to_s.strip
+
+            failures << "#{path}: missing description for indexable page" if description.empty?
+            failures << "#{path}: missing image for indexable page" if image.empty?
+          end
+
+          if failures.any?
+            puts "SEO front-matter validation failed:"
+            failures.each { |f| puts "  - #{f}" }
+            exit 1
+          end
+
+          puts "SEO front-matter validation passed."
+          RUBY
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:

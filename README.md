@@ -26,8 +26,9 @@ doesn't need a computer science background.
 
 This site is hosted on **[GitHub Pages](https://pages.github.com/)** using a
 **GitHub Actions** workflow. Every time a change is pushed to the `main` branch,
-the workflow installs dependencies, runs **Jekyll**, and publishes the result at
-`https://brianbarnardart.com`.
+the workflow installs dependencies, enforces SEO front-matter coverage for
+indexable pages (`description` + `image`), runs **Jekyll**, and publishes the
+result at `https://brianbarnardart.com`.
 
 After deploy completes, a second workflow validates the live site (including
 robots/sitemap, key SEO metadata, and noindex/sitemap exclusions for draft or
