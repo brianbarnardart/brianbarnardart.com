@@ -4,7 +4,6 @@ title: Prints
 permalink: /prints/
 description: Order signed Brian Barnard art prints directly through a personal request form with current offerings listed in one place.
 image: /assets/paintings/wild-mountain-fox-jam.jpg
-nav: 3
 ---
 
 # Prints

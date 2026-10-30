@@ -11,6 +11,8 @@ nav: 2
 
 Due to a busy live painting schedule, large pieces aren't being made as frequently as they were in the past.  But the plan is that any available studio works will be listed for sale here, displayed among the historical greatest hits!
 
+**Prints are available — [see current offerings and request prints](/prints/).**
+
 **This page is skeletal while image hosting gets figured out (brianbarnardart.com launched in a preview state for Shrimp Fest 2026 — web development should resume shortly)**
 
 <div class="gallery-grid">
