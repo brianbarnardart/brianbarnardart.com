@@ -10,7 +10,7 @@
 
   <body>
 
-    {%- unless page.url == "/prints/" -%}
+    {%- unless page.url == "/prints/" or page.url == "/gallery/" -%}
       <a href="{{ '/prints/' | relative_url }}" class="prints-ribbon" aria-label="Get prints">
         Get Prints
       </a>

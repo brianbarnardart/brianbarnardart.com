@@ -2,30 +2,21 @@
 layout: page
 title: Prints
 permalink: /prints/
-description: Order signed Brian Barnard art prints directly through a personal request form with current offerings listed in one place.
-image: /assets/paintings/wild-mountain-fox-jam.jpg
+description: Order Art Prints Directly from Brian Barnard via personal request.
+image: /assets/prints/fox-jam-print-fake.jpg
 ---
 
 # Prints
 
-The cheapest *(and most fun)* way to get a print of Brian's work is to come see
-a live painting show in Fernandina!  He always has an assortment of prints with
-him, so you can avoid shipping costs (and he'll likely cut you a deal if you
-buy more than one...) 💸🙂
-
-Selling prints online is very new for Brian, and he is handling print requests
-personally.  So he can confirm availability, make sure you're getting the right
-piece(s), and coordinate shipping directly.  It's also a chance to say hello
-and how you found out about his work.
+Selling prints online is very new for Brian, and his team is handling print
+requests personally.  This way we can confirm availability, make sure you're
+getting the right piece(s), and coordinate shipping directly.  It's also a
+chance to say hello to Brian, and how you found out about his work.
 
 <sub>(Doing it this way also may be because we don't really know a good way of
 making an online store. 🙈  *BUT* the personal touch is preferable anyway!)</sub>
 
-## Current Print Offerings
-
-**NOTE--THIS IS A PROTOTYPE!  Concept is Brian holding the prints in front of
-various parts of the Green Turtle mural at various angles with his hand in the
-picture.  This is just doing it with a couple of postcards to demo the concept.**
+## Current Offerings (PROTOTYPE!)
 
 {% if site.data.prints and site.data.prints.size > 0 %}
 <div class="gallery-grid">
@@ -51,6 +42,9 @@ picture.  This is just doing it with a couple of postcards to demo the concept.*
 {% else %}
 <p>Print inventory is being updated right now — please use the form below and describe what you're looking for.</p>
 {% endif %}
+
+*(The idea is that Brian would have his hand in photographs holding prints in
+front of one of his murals, but it is being prototyped with postcards.)*
 
 ## How ordering works
 

@@ -33,7 +33,7 @@ body {
 @keyframes prints-ribbon-reveal {
   from {
     opacity: 0;
-    transform: translateY(-0.4rem);
+    transform: translateY(calc(100% + 1rem));
   }
   to {
     opacity: 1;
@@ -43,19 +43,25 @@ body {
 
 .prints-ribbon {
   position: fixed;
-  top: 2.7rem;
-  right: -3.9rem;
-  display: inline-block;
-  padding: 0.5rem 4.2rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: max(0.75rem, env(safe-area-inset-bottom));
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 0.7rem 1.1rem;
   background: #2a7ae2;
   color: #fff;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  transform: rotate(45deg);
-  transform-origin: center;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  border-radius: 10px;
+  transform: translateY(calc(100% + 1rem));
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
   z-index: 1500;
   opacity: 0;
@@ -212,10 +218,10 @@ body {
   .article-body h3, .post-content h3 { font-weight: 800; }
 
   .prints-ribbon {
-    top: 2.2rem;
-    right: -4.6rem;
-    padding: 0.45rem 4.2rem;
-    font-size: 0.72rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.68rem 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1170,5 +1176,6 @@ body.error-page {
   .prints-ribbon {
     animation: none;
     opacity: 1;
+    transform: translateY(0);
   }
 }
