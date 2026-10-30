@@ -41,7 +41,9 @@ For all other work, see **[all print offerings](/prints/)**.
 {% endif %}
 
 *(The idea is that Brian would have his hand in photographs holding prints in
-front of one of his murals, but it is being prototyped with postcards.)*
+front of one of his murals, but it is being prototyped here with AI grafting
+JPGs of photos of his prints onto a blank piece of paper held in front of one
+of his paintings.)*
 
 ## How ordering works
 

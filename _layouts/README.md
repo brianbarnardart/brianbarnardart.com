@@ -32,6 +32,10 @@ Minimal error page shell — just `<html>`, `<head>` (via `head.html` so fonts,
 favicon, and CSS still load), and a centred content card. No site header, nav,
 or footer. Used only by `404.md`.
 
+It also includes the same fixed **Get Prints** ribbon used on normal pages.
+By default it links to `/prints/`, and you can override the target per-page
+with `prints_url:` in front matter (as in `404.md`).
+
 `404.md` should stay out of search indexing and sitemap output (`noindex: true`,
 `sitemap: false` in front matter).
 

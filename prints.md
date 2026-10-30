@@ -13,8 +13,8 @@ requests personally.  This way we can confirm availability, make sure you're
 getting the right piece(s), and coordinate shipping directly.  It's also a
 chance to say hello, and how you found out about his work.
 
-<sub>(Doing it this way also may be because we don't really know a good way of
-making an online store. 🙈  *BUT* the personal touch is preferable anyway!)</sub>
+<sub>(Doing this *might* be because we don't actually know how to make our own
+online store. 🙈  *BUT* the personal touch is preferable anyway!)</sub>
 
 ## Current Offerings (PROTOTYPE!)
 
