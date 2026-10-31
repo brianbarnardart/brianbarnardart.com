@@ -59,7 +59,7 @@ a copyright line with the current year. Icons are pulled from `icons/`.
 
 ### `custom-head.html`
 
-Favicon and web manifest `<link>` tags, plus `Person` JSON-LD structured data,
+Favicon and web manifest `<link>` tags, plus `Person` / `VisualArtist` JSON-LD structured data,
 injected by `head.html`. Kept separate so head-level metadata can be updated
 without touching the full `<head>`.
 

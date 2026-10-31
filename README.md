@@ -12,6 +12,11 @@ want to share, so check that out if you have not heard of it before!)
 
 ---
 
+## Looking after this website?
+
+If you are maintaining or updating this website, see the **[User's Guide & Handover Manual](USER-GUIDE.md)**.
+It covers how to edit pages, add paintings and events, update prints, manage contact forms, and avoid build errors — all written in plain language for browser-based editing without needing software engineering tools.
+
 ## Want to use this method for your own site?
 
 See **[HOWTO.md](HOWTO.md)** for a guide to setting up your own website using

@@ -179,6 +179,9 @@ These do **not** require adding tracking scripts:
   - communicates authenticity ("this comes from Brian directly")
   - supports the non-store, personal-order model
   - can improve click-through and conversion confidence
+- Zero-risk scaling roadmap:
+  - If print demand scales or caretaking requirements shift, migrate from the manual form model to hosted Stripe Payment Links (zero monthly subscription, no database, static architecture preserved).
+  - See `USER-GUIDE.md` Section 7 for the complete step-by-step scaling plan.
 
 ---
 

@@ -13,16 +13,23 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": ["Person", "VisualArtist"],
   "name": "{{ site.author | escape }}",
   "url": "{{ site.url }}{{ site.baseurl | default: '' }}/",
   "image": "{{ site.url }}{{ '/assets/brian-face.png' | relative_url }}",
   "jobTitle": "Artist and live painter",
   "description": "{{ site.description | escape }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fernandina Beach",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
   "homeLocation": {
     "@type": "Place",
     "name": "Fernandina Beach, Florida"
   },
+  "areaServed": "Fernandina Beach, Florida",
   "sameAs": [
     "https://www.facebook.com/brianbarnardart/",
     "https://www.instagram.com/brianbarnardart/",

@@ -9,7 +9,7 @@
     document.querySelectorAll('a[href^="http"]').forEach(function(el) {
 
       // Skip links pointing to our own domain
-      if (el.href.includes('realityhandbook.org')) return;
+      if (el.hostname === window.location.hostname || el.href.includes('brianbarnardart.com')) return;
 
       el.addEventListener('click', function() {
         window.goatcounter.count({

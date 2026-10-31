@@ -47,3 +47,6 @@ collections:
 exclude:
   - README.md
   - LICENSE
+  - USER-GUIDE.md
+  - HOWTO.md
+  - SEO-STRATEGY.md
