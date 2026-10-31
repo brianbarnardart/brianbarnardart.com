@@ -9,11 +9,15 @@
 {% if include.items and include.items.size > 0 %}
 <div class="gallery-grid">
 {% for print in include.items %}
-  {% assign _thumb = print.thumb | default: print.image %}
+  {% if print.thumb %}
+    {% assign _thumb = print.thumb %}
+  {% else %}
+    {% capture _thumb %}{% include thumb-url.html image=print.image %}{% endcapture %}
+  {% endif %}
   <div class="gallery-item">
     <div class="gallery-thumb">
       <a class="lightbox-trigger" href="{{ print.image }}" aria-label="View larger print photo">
-        <img src="{{ _thumb }}" alt="{{ print.alt | default: print.title | escape }}" loading="lazy">
+        <img src="{{ _thumb }}" onerror="this.onerror=null;this.src='{{ print.image }}'" alt="{{ print.alt | default: print.title | escape }}" loading="lazy">
       </a>
     </div>
     <p class="gallery-title">

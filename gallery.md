@@ -31,9 +31,10 @@ Due to a busy live painting schedule, large pieces aren't being made as frequent
 {% assign ordered_works = ordered_works | sort: "order" %}
 {% assign all_works = ordered_works | concat: unordered_works %}
 {% for artwork in all_works %}
+  {% capture _thumb %}{% include thumb-url.html image=artwork.image %}{% endcapture %}
   <a href="{{ artwork.url }}" class="gallery-item">
     <div class="gallery-thumb">
-      <img src="{{ artwork.image }}" alt="{{ artwork.title | escape }} by {{ site.author }}" loading="lazy">
+      <img src="{{ _thumb }}" onerror="this.onerror=null;this.src='{{ artwork.image }}'" alt="{{ artwork.title | escape }} by {{ site.author }}" loading="lazy">
     </div>
     <p class="gallery-title">{{ artwork.title }}</p>
     {% if artwork.price %}

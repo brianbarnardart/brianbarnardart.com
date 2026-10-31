@@ -143,12 +143,30 @@ Grid of print offerings, used by `prints.md` and each `prints/*.md` category
 page. Each entry in the list follows the shape documented in `USER-GUIDE.md`
 ("Add a print"): `title`, `image`, optional `thumb`, `url`, `alt`, `notes`,
 plus optional `buy_url` and `price`, which add a **Buy Print (price)** button
-linking to a hosted checkout (e.g. a Stripe Payment Link).
+linking to a hosted checkout (e.g. a Stripe Payment Link). Without `thumb`, the
+grid uses the automatic `-thumb.jpg` copy (see `thumb-url.html`) and falls back
+to the full image if that copy is missing.
 
 | Parameter | Required | Description |
 |---|---|---|
 | `items` | yes | The list to render, e.g. `site.data.prints` |
 | `empty_message` | no | Text shown when the list is empty |
+
+### `thumb-url.html`
+
+Prints the address of the small copy of a picture: `/assets/x/foo.png` becomes
+`/assets/x/foo-thumb.jpg`. The copies are made during deployment by
+`scripts/make-thumbnails.py` (called from `.github/workflows/jekyll-gh-pages.yml`),
+so they don't exist when running `jekyll serve` locally. Callers add an
+`onerror` fallback to the full image. Used by `gallery.md` and `prints-grid.html`.
+Full `https://` addresses are returned unchanged.
+
+| Parameter | Required | Description |
+|---|---|---|
+| `image` | yes | Path or URL of the full-size picture |
+
+Use it with `capture`:
+`{% raw %}{% capture _thumb %}{% include thumb-url.html image=artwork.image %}{% endcapture %}{% endraw %}`
 
 ### `prints-ribbon.html`
 

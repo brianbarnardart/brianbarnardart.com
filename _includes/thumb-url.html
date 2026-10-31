@@ -1,0 +1,15 @@
+{% comment %}
+  !!! Documented in _includes/README.md
+  !!! Humans (or AI): if you change this file, update the README too!
+
+  Usage: {% capture _thumb %}{% include thumb-url.html image=artwork.image %}{% endcapture %}
+  Prints the address of the small copy that scripts/make-thumbnails.py makes
+  during deployment: /assets/x/foo.jpg becomes /assets/x/foo-thumb.jpg.
+  Remote (https://...) pictures are returned unchanged.
+{% endcomment %}
+{%- if include.image contains "://" -%}
+{{- include.image -}}
+{%- else -%}
+{%- assign _parts = include.image | split: "." -%}
+{{- _parts | pop | join: "." }}-thumb.jpg
+{%- endif -%}

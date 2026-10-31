@@ -105,6 +105,14 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      # Makes small "-thumb.jpg" copies for galleries and shrinks any picture
+      # over 2000 px, in the built site only (originals are never touched).
+      # See scripts/make-thumbnails.py and USER-GUIDE.md "Preparing images".
+      - name: Make thumbnails
+        run: |
+          pip install --quiet pillow
+          python scripts/make-thumbnails.py _site
+
       - name: Validate internal links on indexable pages
         run: |
           ruby - <<'RUBY'

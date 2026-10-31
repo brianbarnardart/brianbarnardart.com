@@ -341,8 +341,14 @@ Edit `_config.yml`:
 
 ## 7. Preparing images
 
-Phone and camera photos are often **3–10 MB**. That's far too big: pages
-crawl on phones, and every image stays in the site's history forever, even
+**Thumbnails are automatic.** Each time the site publishes, GitHub makes a
+small copy of every picture for the Gallery and Prints grids, and shrinks any
+picture wider than 2000 pixels. Your original file is never changed. So you
+no longer have to fuss over exact sizes, but smaller uploads still publish
+faster and keep the project light.
+
+Phone and camera photos are often **3–10 MB**. That's far too big to keep
+in GitHub, because every file stays in the project history forever, even
 if deleted later. **Aim for under 500 KB per image.**
 
 **Easiest way, free and in your browser:** [squoosh.app](https://squoosh.app)
