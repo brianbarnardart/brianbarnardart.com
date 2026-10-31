@@ -10,34 +10,7 @@
 
   <body>
 
-    {%- unless page.url == "/prints/" or page.url == "/gallery/" -%}
-      {%- assign _prints_target = "/prints/" -%}
-      {%- if page.prints_url -%}
-        {%- assign _prints_target = page.prints_url -%}
-      {%- else -%}
-        {%- assign _url_parts = page.url | split: "/" -%}
-        {%- assign _slug_index = _url_parts.size | minus: 2 -%}
-        {%- if _slug_index >= 1 -%}
-          {%- assign _slug = _url_parts[_slug_index] -%}
-          {%- if _slug and _slug != "" and _slug != "prints" -%}
-            {%- assign _candidate_base = "/prints/" | append: _slug -%}
-            {%- assign _candidate = _candidate_base | append: "/" -%}
-            {%- assign _candidate_no_slash = _candidate_base -%}
-            {%- assign _candidate_html = _candidate_base | append: ".html" -%}
-            {%- assign _candidate_index = _candidate | append: "index.html" -%}
-            {%- assign _candidate_page = site.pages | where_exp: "p", "p.url == _candidate or p.url == _candidate_no_slash or p.url == _candidate_html or p.url == _candidate_index" | first -%}
-            {%- assign _candidate_doc = site.documents | where_exp: "d", "d.url == _candidate or d.url == _candidate_no_slash or d.url == _candidate_html or d.url == _candidate_index" | first -%}
-            {%- if _candidate_page or _candidate_doc -%}
-              {%- assign _prints_target = _candidate -%}
-            {%- endif -%}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endif -%}
-
-      <a href="{{ _prints_target | relative_url }}" class="prints-ribbon" aria-label="Get prints">
-        Get Prints
-      </a>
-    {%- endunless -%}
+    {%- include prints-ribbon.html -%}
 
     {%- include header.html -%}
 
@@ -70,55 +43,6 @@
             // noopener prevents the new tab from accessing window.opener;
             // noreferrer additionally suppresses the Referer header.
             link.setAttribute("rel", "noopener noreferrer");
-          }
-        });
-
-        var ribbon = document.querySelector(".prints-ribbon");
-        if (!ribbon) return;
-
-        var dismissKey = "printsRibbonDismissUntil";
-        var seenKey = "printsRibbonSeenThisSession";
-        var now = Date.now();
-        var dismissUntil = 0;
-
-        try {
-          dismissUntil = parseInt(localStorage.getItem(dismissKey) || "0", 10);
-        } catch (e) {
-          dismissUntil = 0;
-        }
-
-        if (dismissUntil > now) {
-          ribbon.classList.add("prints-ribbon--suppressed");
-          return;
-        }
-
-        try {
-          if (sessionStorage.getItem(seenKey) === "1") {
-            ribbon.classList.add("prints-ribbon--visible");
-          }
-        } catch (e) {
-          // Continue with default delayed reveal behavior.
-        }
-
-        var finalizeRibbonVisible = function () {
-          ribbon.classList.add("prints-ribbon--visible");
-          try { sessionStorage.setItem(seenKey, "1"); } catch (e) {}
-        };
-
-        if (window.getComputedStyle(ribbon).animationName === "none") {
-          finalizeRibbonVisible();
-        } else if (!ribbon.classList.contains("prints-ribbon--visible")) {
-          ribbon.addEventListener("animationend", function handleReveal() {
-            finalizeRibbonVisible();
-            ribbon.removeEventListener("animationend", handleReveal);
-          });
-        }
-
-        ribbon.addEventListener("click", function () {
-          try {
-            localStorage.setItem(dismissKey, String(Date.now() + (60 * 60 * 1000)));
-          } catch (e) {
-            // Ignore storage errors and proceed with navigation.
           }
         });
       });

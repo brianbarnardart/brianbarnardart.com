@@ -12,7 +12,7 @@ in its front matter.
 ## Layout hierarchy
 
 ```
-default.html          ← base shell: <html>, <head>, <header>, <footer>, lightbox, external-link script
+default.html          ← base shell: <html>, <head>, prints ribbon, <header>, <footer>, lightbox, external-link script
 ├── home.html         ← home page: wraps content in <article>; hides the back-to-home footer link
 ├── article.html      ← collection items: prev/next nav + article header + body
 ├── artwork.html      ← _works/: hero image, metadata panel, inquiry form or sold note
@@ -32,9 +32,9 @@ Minimal error page shell — just `<html>`, `<head>` (via `head.html` so fonts,
 favicon, and CSS still load), and a centred content card. No site header, nav,
 or footer. Used only by `404.md`.
 
-It also includes the same fixed **Get Prints** ribbon used on normal pages.
-By default it links to `/prints/`, and you can override the target per-page
-with `prints_url:` in front matter (as in `404.md`).
+It also includes the same fixed **Get Prints** ribbon used on normal pages
+(`_includes/prints-ribbon.html`). `404.md` points it at the Lebowski prints
+with `prints_url:` in front matter.
 
 `404.md` should stay out of search indexing and sitemap output (`noindex: true`,
 `sitemap: false` in front matter).
@@ -58,19 +58,13 @@ and fixed.
 The outermost shell rendered for every page. It:
 
 - includes `head.html`, `header.html`, and `footer.html`
-- includes an inline site-wide prints call-to-action ribbon (hidden on `/prints/` and `/gallery/`)
-  - default target: `/prints/`
-  - context target: `/prints/<current-page-slug>/` when that page exists
-    (detected across both `site.pages` and `site.documents`, and tolerant of
-    trailing-slash/non-trailing-slash/`.html` URL variants)
-  - optional override: set `prints_url: /some/path/` in page front matter
+- includes `prints-ribbon.html`, the site-wide **Get Prints** ribbon (target
+  rules and visibility behavior are documented in `_includes/README.md`)
 - wraps `{{ content }}` in `<main>`
 - includes `lightbox.html` once (so individual layouts and pages never need to)
 - runs a JavaScript snippet at `DOMContentLoaded` that automatically adds
   `target="_blank"` and `rel="noopener noreferrer"` to any link whose hostname
-  differs from the site's hostname, and manages prints-ribbon visibility state
-  (`sessionStorage` keeps it visible after first reveal while browsing, and
-  `localStorage` suppresses it for 1 hour after a click)
+  differs from the site's hostname
 
   **Consequence:** you do not need to write `target="_blank"` yourself in
   Markdown or HTML for external links — it is handled for you.
@@ -120,6 +114,14 @@ Layout for items in the `_works/` collection. Renders:
 - If `price:` is set in front matter: an inquiry form via `contact-form.html`
 - If `price:` is absent: a "this piece has found a home" note with a link to
   the contact page
+- `VisualArtwork` JSON-LD (name, image, medium, size, year) whose `creator`
+  points at the Person `@id` from `_includes/custom-head.html`
+
+The main image's alt text is generated as "*Title*, *medium* by Brian
+Barnard" for accessibility and image search.
+
+Works in `_works/archive/` still get pages at `/works/<name>/` but are left
+out of the Gallery grid and the previous/next navigation.
 
 **Front matter fields for `_works/` items:**
 

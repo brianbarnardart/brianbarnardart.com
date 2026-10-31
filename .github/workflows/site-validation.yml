@@ -74,7 +74,9 @@ jobs:
             assert_not_contains "$tmp_dir/sitemap.xml" "${BASE_URL}/bands/1blackfrend/" "sitemap excludes draft band page"
 
             fetch_200 "/" "$tmp_dir/home.html"
-            assert_contains "$tmp_dir/home.html" "<title>Brian Barnard Art</title>" "home title"
+            # Prefix only, so editing `tagline:` in _config.yml doesn't break this check.
+            assert_contains "$tmp_dir/home.html" "<title>Brian Barnard Art" "home title"
+            assert_contains "$tmp_dir/home.html" "\"@id\": \"${BASE_URL}/#person\"" "home Person structured data"
             assert_contains "$tmp_dir/home.html" "<link rel=\"canonical\" href=\"${BASE_URL}/\"" "home canonical"
             assert_contains "$tmp_dir/home.html" "meta name=\"description\"" "home meta description"
             assert_contains "$tmp_dir/home.html" "meta property=\"og:image\"" "home og:image"
@@ -123,3 +125,31 @@ jobs:
             sleep "$sleep_seconds"
             attempt=$((attempt + 1))
           done
+
+      # IndexNow tells Bing (and Yandex, Seznam, Naver...) that pages changed,
+      # so they recrawl in hours instead of weeks.  Google does not use it.
+      # The key is public by design: search engines verify ownership by
+      # fetching https://brianbarnardart.com/<key>.txt, which lives in the repo
+      # root.  If you ever change the key, rename that file to match.
+      - name: Notify IndexNow (Bing etc.) of current sitemap URLs
+        continue-on-error: true
+        shell: bash
+        env:
+          INDEXNOW_KEY: 16d033cbf1bf4f3c0ab471fe39d21ce1
+        run: |
+          set -euo pipefail
+          urls_json="$(curl -sS "${BASE_URL}/sitemap.xml" \
+            | grep -o '<loc>[^<]*</loc>' \
+            | sed -e 's#<loc>##' -e 's#</loc>##' \
+            | jq -R . | jq -s .)"
+          echo "Submitting $(echo "$urls_json" | jq length) URLs to IndexNow"
+          jq -n \
+            --arg host "${BASE_URL#https://}" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "${BASE_URL}/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$urls_json" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}' \
+          | curl -sS -X POST "https://api.indexnow.org/indexnow" \
+              -H "Content-Type: application/json; charset=utf-8" \
+              --data-binary @- \
+              -w "IndexNow HTTP status: %{http_code} (200/202 = accepted)\n"

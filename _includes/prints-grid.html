@@ -1,0 +1,35 @@
+{%- comment -%}
+  !!! Documented in _includes/README.md
+  !!! Humans (or AI): if you change this file, update the README too!
+
+  Usage:  {% include prints-grid.html items=site.data.prints %}
+          (optional: empty_message="Shown when the list is empty")
+{%- endcomment -%}
+
+{% if include.items and include.items.size > 0 %}
+<div class="gallery-grid">
+{% for print in include.items %}
+  {% assign _thumb = print.thumb | default: print.image %}
+  <div class="gallery-item">
+    <div class="gallery-thumb">
+      <a class="lightbox-trigger" href="{{ print.image }}" aria-label="View larger print photo">
+        <img src="{{ _thumb }}" alt="{{ print.alt | default: print.title | escape }}" loading="lazy">
+      </a>
+    </div>
+    <p class="gallery-title">
+      {% if print.url %}
+        <a href="{{ print.url | relative_url }}">{{ print.title }}</a>
+      {% else %}
+        {{ print.title }}
+      {% endif %}
+    </p>
+    {% if print.notes %}<p class="prints-note">{{ print.notes }}</p>{% endif %}
+    {% if print.buy_url %}
+      <a class="form-submit prints-buy" href="{{ print.buy_url }}">Buy Print{% if print.price %} ({{ print.price }}){% endif %}</a>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+{% else %}
+<p>{{ include.empty_message | default: "Print inventory is being updated right now — please use the form below and describe what you're looking for." }}</p>
+{% endif %}

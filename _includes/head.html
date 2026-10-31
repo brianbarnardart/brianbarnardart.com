@@ -7,7 +7,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- if page.url == "/" or page.title == nil or page.title == site.title -%}
+  {%- comment -%}
+    The home page title carries site.tagline (set in _config.yml) because the
+    <title> is the strongest on-page signal for "which Brian Barnard?" --
+    especially for Bing, which weighs literal title words heavily.
+  {%- endcomment -%}
+  {%- if page.url == "/" and site.tagline -%}
+    <title>{{ site.title }} | {{ site.tagline | escape }}</title>
+  {%- elsif page.url == "/" or page.title == nil or page.title == site.title -%}
     <title>{{ site.title }}</title>
   {%- else -%}
     <title>{{ page.title }} | {{ site.title }}</title>

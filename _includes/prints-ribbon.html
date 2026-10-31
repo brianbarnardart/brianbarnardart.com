@@ -1,0 +1,87 @@
+{%- comment -%}
+  !!! Documented in _includes/README.md
+  !!! Humans (or AI): if you change this file, update the README too!
+{%- endcomment -%}
+
+{%- unless page.url == "/prints/" or page.url == "/gallery/" -%}
+  {%- comment -%}
+    Target priority: prints_url front matter, then /prints/<this-page's-slug>/
+    if such a category page exists, then plain /prints/.  Pages already inside
+    /prints/ (category pages) always point back to the main /prints/ page.
+  {%- endcomment -%}
+  {%- assign _prints_target = "/prints/" -%}
+  {%- if page.prints_url -%}
+    {%- assign _prints_target = page.prints_url -%}
+  {%- elsif page.url contains "/prints/" -%}
+    {%- assign _prints_target = "/prints/" -%}
+  {%- else -%}
+    {%- assign _slug = page.url | split: "/" | last -%}
+    {%- if _slug and _slug != "" -%}
+      {%- assign _candidate = "/prints/" | append: _slug | append: "/" -%}
+      {%- assign _candidate_page = site.pages | where: "url", _candidate | first -%}
+      {%- if _candidate_page -%}
+        {%- assign _prints_target = _candidate -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+
+<a href="{{ _prints_target | relative_url }}" class="prints-ribbon" aria-label="Get prints">
+  Get Prints
+</a>
+
+<script>
+  // Ribbon visibility: slides in after a delay on first view, stays visible
+  // for the rest of the browsing session (sessionStorage), and hides for one
+  // hour after being clicked (localStorage).  privacy.md can reset the timer.
+  document.addEventListener("DOMContentLoaded", function () {
+    var ribbon = document.querySelector(".prints-ribbon");
+    if (!ribbon) return;
+
+    var dismissKey = "printsRibbonDismissUntil";
+    var seenKey = "printsRibbonSeenThisSession";
+    var now = Date.now();
+    var dismissUntil = 0;
+
+    try {
+      dismissUntil = parseInt(localStorage.getItem(dismissKey) || "0", 10);
+    } catch (e) {
+      dismissUntil = 0;
+    }
+
+    if (dismissUntil > now) {
+      ribbon.classList.add("prints-ribbon--suppressed");
+      return;
+    }
+
+    try {
+      if (sessionStorage.getItem(seenKey) === "1") {
+        ribbon.classList.add("prints-ribbon--visible");
+      }
+    } catch (e) {
+      // Continue with default delayed reveal behavior.
+    }
+
+    var finalizeRibbonVisible = function () {
+      ribbon.classList.add("prints-ribbon--visible");
+      try { sessionStorage.setItem(seenKey, "1"); } catch (e) {}
+    };
+
+    if (window.getComputedStyle(ribbon).animationName === "none") {
+      finalizeRibbonVisible();
+    } else if (!ribbon.classList.contains("prints-ribbon--visible")) {
+      ribbon.addEventListener("animationend", function handleReveal() {
+        finalizeRibbonVisible();
+        ribbon.removeEventListener("animationend", handleReveal);
+      });
+    }
+
+    ribbon.addEventListener("click", function () {
+      try {
+        localStorage.setItem(dismissKey, String(Date.now() + (60 * 60 * 1000)));
+      } catch (e) {
+        // Ignore storage errors and proceed with navigation.
+      }
+    });
+  });
+</script>
+{%- endunless -%}

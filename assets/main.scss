@@ -401,6 +401,14 @@ body {
   color: #666;
 }
 
+// "Buy Print" button, shown when a _data/*prints.yml entry has buy_url:
+.prints-buy {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
 .gallery-badge {
   display: inline-block;
   font-size: 0.78rem;

@@ -10,15 +10,29 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#ffffff">
 
+{%- comment -%}
+  Person structured data.  This is what tells search engines *which*
+  Brian Barnard this site is about.  The "@id" lets other JSON-LD blocks
+  (e.g. VisualArtwork in artwork.html) point back to this same person.
+  Values go through `jsonify` (not `escape`) so quotes/apostrophes come out
+  as valid JSON instead of HTML entities like &#39;.
+  When a new official profile exists (e.g. LinkedIn), add it to sameAs.
+{%- endcomment -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Person", "VisualArtist"],
-  "name": "{{ site.author | escape }}",
-  "url": "{{ site.url }}{{ site.baseurl | default: '' }}/",
-  "image": "{{ site.url }}{{ '/assets/brian-face.png' | relative_url }}",
-  "jobTitle": "Artist and live painter",
-  "description": "{{ site.description | escape }}",
+  "@type": "Person",
+  "@id": "{{ site.url }}/#person",
+  "name": {{ site.author | jsonify }},
+  "url": {{ "/" | absolute_url | jsonify }},
+  "image": {{ "/assets/brian-face.png" | absolute_url | jsonify }},
+  "jobTitle": "Artist, live painter, and muralist",
+  "description": {{ site.description | strip | jsonify }},
+  "knowsAbout": ["Live painting", "Murals", "Acrylic painting"],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Florida State University"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Fernandina Beach",
@@ -29,7 +43,6 @@
     "@type": "Place",
     "name": "Fernandina Beach, Florida"
   },
-  "areaServed": "Fernandina Beach, Florida",
   "sameAs": [
     "https://www.facebook.com/brianbarnardart/",
     "https://www.instagram.com/brianbarnardart/",

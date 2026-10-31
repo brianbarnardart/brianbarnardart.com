@@ -18,30 +18,7 @@ online store. 🙈  *BUT* the personal touch is preferable anyway!)</sub>
 
 ## Current Offerings (PROTOTYPE!)
 
-{% if site.data.prints and site.data.prints.size > 0 %}
-<div class="gallery-grid">
-{% for print in site.data.prints %}
-  {% assign _thumb = print.thumb | default: print.image %}
-  <div class="gallery-item">
-    <div class="gallery-thumb">
-      <a class="lightbox-trigger" href="{{ print.image }}" aria-label="View larger print photo">
-        <img src="{{ _thumb }}" alt="{{ print.alt | default: print.title }}" loading="lazy">
-      </a>
-    </div>
-    <p class="gallery-title">
-      {% if print.url %}
-        <a href="{{ print.url | relative_url }}">{{ print.title }}</a>
-      {% else %}
-        {{ print.title }}
-      {% endif %}
-    </p>
-    {% if print.notes %}<p class="prints-note">{{ print.notes }}</p>{% endif %}
-  </div>
-{% endfor %}
-</div>
-{% else %}
-<p>Print inventory is being updated right now — please use the form below and describe what you're looking for.</p>
-{% endif %}
+{% include prints-grid.html items=site.data.prints %}
 
 *(The idea is that Brian would have his hand in photographs holding prints in
 front of one of his murals, but it is being prototyped with postcards.)*

@@ -70,7 +70,7 @@ layout: default
   <div class="artwork-hero">
     <div class="artwork-image-wrap">
       <a class="lightbox-trigger" href="{{ page.image }}" aria-label="View larger image">
-        <img src="{{ page.image }}" alt="{{ page.title }}">
+        <img src="{{ page.image }}" alt="{{ page.title | escape }}{% if page.medium %}, {{ page.medium | downcase }}{% endif %} by {{ site.author }}">
       </a>
     </div>
     <div class="artwork-details">
@@ -108,3 +108,34 @@ layout: default
   {% endunless %}
 
 </article>
+
+{%- comment -%}
+  VisualArtwork structured data: helps image search connect each painting
+  to the Person defined in _includes/custom-head.html (via the shared "@id").
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": {{ page.title | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "image": {{ page.image | absolute_url | jsonify }},
+  {%- if page.description %}
+  "description": {{ page.description | jsonify }},
+  {%- endif %}
+  {%- if page.medium %}
+  "artMedium": {{ page.medium | jsonify }},
+  {%- endif %}
+  {%- if page.dimensions %}
+  "size": {{ page.dimensions | jsonify }},
+  {%- endif %}
+  {%- if page.year %}
+  "dateCreated": {{ page.year | append: "" | jsonify }},
+  {%- endif %}
+  "creator": {
+    "@type": "Person",
+    "@id": "{{ site.url }}/#person",
+    "name": {{ site.author | jsonify }}
+  }
+}
+</script>

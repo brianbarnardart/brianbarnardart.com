@@ -21,7 +21,7 @@ files silently replace their Minima equivalents:
 | File | Replaces Minima's… | Why |
 |---|---|---|
 | `head.html` | `head.html` | Custom title format, favicon, web manifest |
-| `header.html` | `header.html` | SVG signature logo; nav built from `nav:` front matter |
+| `header.html` | `header.html` | SVG signature logo (with `aria-label`); nav built from `nav:` front matter |
 | `footer.html` | `footer.html` | Custom social links layout and copyright |
 
 ---
@@ -39,16 +39,17 @@ and say:
 ### `head.html`
 
 The `<head>` block for every page. Sets charset, viewport, and page title
-(`Page Title | Brian Barnard Art` for inner pages; just the site title on the home
-page). Also pulls in SEO meta, the main stylesheet, the RSS feed link, and
-`custom-head.html`. If a page sets `noindex: true` in front matter, this include
+(`Page Title | Brian Barnard Art` for inner pages; `Brian Barnard Art | <tagline>`
+on the home page, where `tagline` comes from `_config.yml`). Also pulls in SEO
+meta, the main stylesheet, the RSS feed link, and `custom-head.html`. If a page sets `noindex: true` in front matter, this include
 adds `<meta name="robots" content="noindex, nofollow">`.
 
 ### `header.html`
 
-The site header. Renders the SVG signature as the home link, then builds the
-navigation bar from any page that has a `nav:` number in its front matter,
-sorted ascending by that number.
+The site header. Renders the SVG signature as the home link (the SVG has no
+text, so the link carries an `aria-label` naming Brian for screen readers and
+crawlers), then builds the navigation bar from any page that has a `nav:`
+number in its front matter, sorted ascending by that number.
 
 ### `footer.html`
 
@@ -59,9 +60,15 @@ a copyright line with the current year. Icons are pulled from `icons/`.
 
 ### `custom-head.html`
 
-Favicon and web manifest `<link>` tags, plus `Person` / `VisualArtist` JSON-LD structured data,
+Favicon and web manifest `<link>` tags, plus `Person` JSON-LD structured data,
 injected by `head.html`. Kept separate so head-level metadata can be updated
 without touching the full `<head>`.
+
+The Person block has `"@id": "<site.url>/#person"`, so other structured data
+can refer to the same entity (the `VisualArtwork` block in `artwork.html`
+does). Values are emitted with `jsonify`, not `escape`, because HTML entities
+like `&#39;` are not decoded inside JSON. The `sameAs` list must match the
+social links in `footer.html`.
 
 ### `contact-form.html`
 
@@ -81,6 +88,7 @@ auto-resizes the textarea.
 | `message_placeholder` | no | Placeholder text for the message textarea |
 | `submit_text` | no | Button label (default: `Send`) |
 | `success_message` | no | Message shown on successful send (default: `Thanks for your message! 😊`) |
+| `error_message` | no | Message shown on failure (default: `Something went wrong! 😕`) |
 
 #### Double-checking form submissions with GoatCounter
 
@@ -128,6 +136,39 @@ Pull-quote / callout block for article pages.
 Lightbox overlay and JavaScript. Included once by `default.html` — you never
 need to add it manually. Activated by any `<a class="lightbox-trigger">` link,
 which `figure.html` adds automatically. No parameters.
+
+### `prints-grid.html`
+
+Grid of print offerings, used by `prints.md` and each `prints/*.md` category
+page. Each entry in the list follows the shape documented in `USER-GUIDE.md`
+("Add a print"): `title`, `image`, optional `thumb`, `url`, `alt`, `notes`,
+plus optional `buy_url` and `price`, which add a **Buy Print (price)** button
+linking to a hosted checkout (e.g. a Stripe Payment Link).
+
+| Parameter | Required | Description |
+|---|---|---|
+| `items` | yes | The list to render, e.g. `site.data.prints` |
+| `empty_message` | no | Text shown when the list is empty |
+
+### `prints-ribbon.html`
+
+The fixed **Get Prints** call-to-action ribbon plus its show/hide script.
+Included by both `default.html` and `404.html`. Hidden on `/prints/` and
+`/gallery/`.
+
+Link target, in priority order:
+
+1. `prints_url:` in the page's front matter
+2. `/prints/` if the page is itself under `/prints/`
+3. `/prints/<last URL segment>/` if such a page exists (e.g.
+   `/interests/the-big-lebowski/` → `/prints/the-big-lebowski/`)
+4. `/prints/`
+
+Visibility: slides in after a delay, stays visible for the rest of the
+browsing session (`sessionStorage` key `printsRibbonSeenThisSession`), and is
+hidden for one hour after a click (`localStorage` key
+`printsRibbonDismissUntil`). `privacy.md` shows and resets that timer, so
+keep the key names in sync.
 
 ### `shorts-grid.html`
 

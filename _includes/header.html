@@ -5,7 +5,8 @@
 
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+    {%- comment -%} The signature SVG has no text, so aria-label gives the link a name for screen readers and crawlers. {%- endcomment -%}
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" aria-label="{{ site.author }} — home">
       {%- include signature.svg -%}
     </a>
 

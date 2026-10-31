@@ -12,254 +12,78 @@ want to share, so check that out if you have not heard of it before!)
 
 ---
 
-## Looking after this website?
+## Where to start
 
-If you are maintaining or updating this website, see the **[User's Guide & Handover Manual](USER-GUIDE.md)**.
-It covers how to edit pages, add paintings and events, update prints, manage contact forms, and avoid build errors — all written in plain language for browser-based editing without needing software engineering tools.
-
-## Want to use this method for your own site?
-
-See **[HOWTO.md](HOWTO.md)** for a guide to setting up your own website using
-GitHub Pages, Jekyll, and a custom domain name. It covers what everything costs,
-what the risks are and why they're manageable, and when this approach is (and
-isn't) a good fit — written for someone who is comfortable learning by doing but
-doesn't need a computer science background.
-
-For the project's live search plan, see **[SEO-STRATEGY.md](SEO-STRATEGY.md)**.
+| You are… | Read |
+|---|---|
+| **Looking after this website** (updating events, adding paintings and prints, keeping accounts current) | **[USER-GUIDE.md](USER-GUIDE.md)**: plain-language caretaker's manual, no programming needed |
+| Working on search visibility | [SEO-STRATEGY.md](SEO-STRATEGY.md) |
+| An AI assistant (or someone directing one) | [AGENTS.md](AGENTS.md) |
+| Wanting to build your own site this way | [HOWTO.md](HOWTO.md): GitHub Pages + Jekyll + custom domain, costs and risks |
+| Changing templates or reusable components | [`_layouts/README.md`](_layouts/README.md), [`_includes/README.md`](_includes/README.md) |
 
 ---
 
 ## How this site works
 
-This site is hosted on **[GitHub Pages](https://pages.github.com/)** using a
-**GitHub Actions** workflow. Every time a change is pushed to the `main` branch,
-the workflow installs dependencies, enforces SEO front-matter coverage for
-indexable pages (`description` + `image`), runs **Jekyll**, validates internal
-links for sitemap-indexed pages, performs a soft-fail external link audit, and
-publishes the result at
-`https://brianbarnardart.com`.
+The site is built by **[Jekyll](https://jekyllrb.com/)** (a static site
+generator) with the **[Minima](https://github.com/jekyll/minima)** theme, and
+hosted on **[GitHub Pages](https://pages.github.com/)**. There's no database
+and no server-side code. The only external services are
+[FormSpark](https://formspark.io) (form delivery) and
+[GoatCounter](https://www.goatcounter.com) (cookie-free analytics).
 
-The external link audit reports warnings (including CI-blocked 401/403/429
-responses) but does not fail deployment.
+Every push to `main` runs [`.github/workflows/jekyll-gh-pages.yml`](.github/workflows/jekyll-gh-pages.yml):
 
-After deploy completes, a second workflow validates the live site (including
-robots/sitemap, key SEO metadata, and noindex/sitemap exclusions for draft or
-utility pages) with retry/backoff to account for brief publish propagation
-delays.
+1. **SEO front-matter check** (blocking): every indexable `.md` with a
+   `layout` must have `description` and `image`. Pages with `noindex: true`
+   or `sitemap: false` are exempt.
+2. **Oversized image warning** (non-blocking): flags images over 1 MB.
+3. **Jekyll build** (`JEKYLL_ENV=production`).
+4. **Internal link check** (blocking): every `href`/`src` on sitemap pages
+   must resolve to a built file.
+5. **External link audit** (non-blocking): warnings only, since many sites
+   block CI requests.
+6. **Deploy** to GitHub Pages.
 
----
+A failed check means nothing is deployed, so the previous version stays live.
 
-## Jekyll
-
-[Jekyll](https://jekyllrb.com/) is a **static site generator**: it reads a
-folder of plain text files (Markdown, HTML, CSS, YAML) and produces a finished
-website. There is no database and no server-side code to maintain.
-
-### How a page gets to the browser
-
-1. You write content in a `.md` file (Markdown).
-2. Jekyll wraps it in the layout named in that file's front matter (`layout: page`).
-3. The layout lives in `_layouts/` — either a file you create there or one
-   inherited from the theme.
-4. Jekyll writes the finished HTML to `_site/` (never commit that folder;
-   GitHub Pages rebuilds it automatically).
+After a successful deploy, [`.github/workflows/site-validation.yml`](.github/workflows/site-validation.yml)
+fetches the live site (with retry/backoff for propagation delay), checks
+robots/sitemap/title/canonical/meta/structured data and noindex exclusions,
+then submits the sitemap URLs to **IndexNow** (Bing and others). The
+IndexNow key is the `<hex>.txt` file in the repo root and must match
+`INDEXNOW_KEY` in that workflow.
 
 ### Key files and folders
 
 | Path | Purpose |
 |---|---|
-| `Gemfile` | Ruby gem versions — Jekyll, minima, plugins |
-| `_config.yml` | Site-wide settings (title, URL, theme, etc.) |
-| `_data/*.yml` | Structured data files (e.g. the Shorts video list) |
-| `_data/prints.yml` | Current print offerings shown on the Prints page |
-| `_data/lebowski_prints.yml` | Print offerings for `/prints/the-big-lebowski/` |
-| `_includes/` | Reusable HTML fragments — see [`_includes/README.md`](_includes/README.md) |
-| `_layouts/` | Page templates — see [`_layouts/README.md`](_layouts/README.md) |
-| `assets/main.scss` | Custom CSS/SCSS that extends the theme |
-| `index.md` | The home page |
-| `prints.md` | The `/prints/` page and print-request workflow |
-| `contact.md` | The `/contact/` page |
-| `CNAME` | Tells GitHub Pages to serve this repo at `brianbarnardart.com` |
+| `_config.yml` | Site settings: `title`, `tagline` (home `<title>` suffix), `description`, collections |
+| `Gemfile` | Ruby gems: Jekyll, Minima, `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed` |
+| `_layouts/` | Page templates ([README](_layouts/README.md)) |
+| `_includes/` | Reusable fragments and theme overrides ([README](_includes/README.md)) |
+| `_data/*.yml` | Lists: `shorts.yml` (home-page videos), `prints.yml`, `lebowski_prints.yml` |
+| `_works/` | One file per painting (`layout: artwork`). `_works/archive/` = has a page, but hidden from the Gallery |
+| `_venues/`, `_characters/`, `_interests/`, `_events/`, `_bands/`, `_charities/` | Collections using `layout: article` (several are still drafts with `noindex`) |
+| `prints/` | Print category pages, auto-listed on `/prints/` |
+| `assets/main.scss` | Site CSS (extends Minima) |
+| `assets/` | Images, organized by type (`paintings/`, `prints/`, `venues/`, `icons/`…) |
+| `CNAME` | Custom domain for GitHub Pages |
+| `robots.txt`, `site.webmanifest`, `favicon.ico` | Crawl rules, PWA manifest, icon |
+| `.gitattributes` | Forces LF line endings for all text files |
 
-### Useful references
+### Building locally (optional)
 
-- [Jekyll documentation](https://jekyllrb.com/docs/)
-- [Jekyll front matter](https://jekyllrb.com/docs/front-matter/) — the `---` block at the top of every page
-- [Jekyll includes](https://jekyllrb.com/docs/includes/)
-- [Jekyll data files](https://jekyllrb.com/docs/datafiles/)
-- [GitHub Pages documentation](https://docs.github.com/en/pages)
+Not needed for content edits, since GitHub builds everything. For template
+work:
 
----
-
-## The Minima theme
-
-Minima is Jekyll's default bundled theme: a clean, minimal design with a
-header navigation bar, a main content area, and a footer.
-
-### Theme overrides
-
-Jekyll always prefers files in the project folder over the theme's copies.
-See [`_includes/README.md`](_includes/README.md) for the full list of
-overridden files and what each one does.
-
-- [Minima source](https://github.com/jekyll/minima)
-- [Minima README](https://github.com/jekyll/minima/blob/master/README.md)
-
----
-
-## Writing content: Kramdown Markdown
-
-Pages are written in **Markdown**, specifically the
-[Kramdown](https://kramdown.gettalong.org/quickref.html) flavour that Jekyll
-uses by default. Markdown is plain text with simple symbols that become
-formatted HTML.
-
-### Headings
-
-```markdown
-# Heading 1  — big title
-## Heading 2 — section
-### Heading 3 — sub-section
+```sh
+bundle install
+bundle exec jekyll serve      # http://localhost:4000, analytics disabled
 ```
 
-### Emphasis
-
-```markdown
-*italic* or _italic_
-**bold** or __bold__
-~~strikethrough~~
-```
-
-### Links
-
-```markdown
-[link text](https://example.com)               — external link
-[Contact me](/contact/)                         — internal link
-```
-
-### Images
-
-```markdown
-![Description of image](/assets/images/my-photo.jpg)
-```
-
-Images should be placed in `assets/images/` and committed to the repository.
-
-### Lists
-
-```markdown
-- unordered item
-- another item
-
-1. First ordered item
-2. Second item
-```
-
-### Horizontal rule
-
-```markdown
----
-```
-
-### Blockquote
-
-```markdown
-> This text appears indented as a quote.
-```
-
-### Code (inline and block)
-
-````markdown
-Use `backticks` for inline code.
-
-```
-A fenced block for
-multiple lines of code.
-```
-````
-
-### Front matter
-
-Every `.md` page starts with a **front matter** block between `---` lines.
-This is YAML, not Markdown, and it tells Jekyll how to build the page:
-
-```yaml
----
-layout: page
-title: My Page Title
-permalink: /my-page/
----
-```
-
-- `layout` — which template to wrap the content in (almost always `page`)
-- `title` — the page title, shown as a heading and in the browser tab
-- `permalink` — the URL path; if omitted, Jekyll derives it from the filename
-
-Anything below the closing `---` is the page content, written in Markdown.
-
-### Liquid templating
-
-Jekyll passes Markdown files through a templating language called
-**[Liquid](https://shopify.github.io/liquid/)** before converting to HTML.
-This is how `{% include shorts-grid.html %}` works, and how `_data/shorts.yml`
-gets looped over. Most content authors won't need to write Liquid, but
-recognising `{{ }}` (output) and `{% %}` (logic) tags explains what those
-lines in the files mean.
-
----
-
-## Images Shown By Chat Apps and iMessage
-
-`jekyll-seo-tag` reads `image:` from front matter and outputs it as `og:image`.
-Chat apps and iMessage use that to pull the preview thumbnail.
-
----
-
-## Adding a new page
-
-1. Create a new `.md` file in the project root, e.g. `gallery.md`.
-2. Give it front matter:
-   ```yaml
-   ---
-   layout: page
-   title: Gallery
-   permalink: /gallery/
-   ---
-   ```
-3. Write content below the `---`.
-4. Commit and push. The page appears at `https://brianbarnardart.com/gallery/`
-   and Minima automatically adds it to the navigation bar.
-
-## Adding a new Short
-
-1. Open `_data/shorts.yml`.
-2. Copy a YouTube Shorts URL, e.g. `https://www.youtube.com/shorts/AbCdEf12345`.
-3. Add an entry:
-   ```yaml
-   - id: AbCdEf12345
-     title: A description of the video
-   ```
-4. Commit and push. The video appears on the home page automatically.
-
-## Updating print offerings
-
-The Prints page reads from `_data/prints.yml`.
-
-Each entry supports:
-
-```yaml
-- title: Print title
-  url: /works/some-piece/ # optional
-  image: /assets/path-to-image.jpg
-  thumb: /assets/path-to-thumb.jpg # optional; falls back to image
-  alt: Accessible alt text for the print image
-  notes: Optional short line (e.g. "Signed print")
-```
-
-When available, use "in-hand" photos for `image` to emphasize the personal
-fulfillment model.
-
-Additional print category pages can live under `prints/` with permalinks like
-`/prints/the-big-lebowski/`; the main `/prints/` page auto-lists discovered
-subpages. Category pages can read from their own `_data/*_prints.yml` files
-using the same entry shape as `_data/prints.yml`.
+There's no `Gemfile.lock` committed yet, so CI resolves the newest gem
+versions within the `Gemfile` constraints on each build. Committing a lock
+file (generated with `bundle lock --add-platform x86_64-linux`) would pin
+them.

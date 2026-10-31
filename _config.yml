@@ -1,5 +1,8 @@
 title: Brian Barnard Art
-description: Fernandina Beach's live painter and muralist 
+# Appended to the home page's browser-tab/search-result title:
+#   "Brian Barnard Art | Fernandina Beach Artist & Live Painter"
+tagline: Fernandina Beach Artist & Live Painter
+description: Fernandina Beach's live painter and muralist
 url: "https://brianbarnardart.com"
 baseurl: ""
 lang: en-US
@@ -50,3 +53,5 @@ exclude:
   - USER-GUIDE.md
   - HOWTO.md
   - SEO-STRATEGY.md
+  - AGENTS.md
+  - CLAUDE.md

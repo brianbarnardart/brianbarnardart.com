@@ -86,6 +86,20 @@ jobs:
           puts "SEO front-matter validation passed."
           RUBY
 
+      # Soft check: shows a yellow warning (does not block publishing) for any
+      # image over 1 MB.  Phone/camera photos are often 3-10 MB, which makes
+      # pages crawl on mobile and bloats the repository forever.  See
+      # USER-GUIDE.md "Preparing images" for how to shrink them.
+      - name: Warn about oversized images (soft)
+        run: |
+          count=0
+          while IFS= read -r -d '' f; do
+            kb=$(( $(stat -c %s "$f") / 1024 ))
+            echo "::warning file=$f::$f is ${kb} KB. Please resize to under ~1 MB (see USER-GUIDE.md, Preparing images)."
+            count=$((count + 1))
+          done < <(find assets -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' \) -size +1024k -print0)
+          echo "Oversized images: ${count}"
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:

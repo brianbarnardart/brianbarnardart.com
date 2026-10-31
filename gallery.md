@@ -33,7 +33,7 @@ Due to a busy live painting schedule, large pieces aren't being made as frequent
 {% for artwork in all_works %}
   <a href="{{ artwork.url }}" class="gallery-item">
     <div class="gallery-thumb">
-      <img src="{{ artwork.image }}" alt="{{ artwork.title }}" loading="lazy">
+      <img src="{{ artwork.image }}" alt="{{ artwork.title | escape }} by {{ site.author }}" loading="lazy">
     </div>
     <p class="gallery-title">{{ artwork.title }}</p>
     {% if artwork.price %}

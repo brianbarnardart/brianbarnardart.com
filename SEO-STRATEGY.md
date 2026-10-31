@@ -1,196 +1,160 @@
 # SEO strategy for brianbarnardart.com
 
-This document describes the search strategy for this site, with one hard rule:
+One hard rule:
 
-> **No invasive tracking.**
->
-> SEO improvements should come from content quality, technical correctness,
-> crawlability, and clear conversion paths -- not behavioral surveillance.
-
----
-
-## 1) Strategy in one page
-
-### Primary goal
-
-Rank strongly for:
-
-- **Brian Barnard**
-- **Brian Barnard Art**
-- local intent terms around Fernandina Beach live painting / murals
-
-### Secondary goal
-
-Convert visitors into actions:
-
-- print requests (`/prints/`)
-- contact requests (`/contact/`)
-
-### Tertiary goal
-
-Create a durable content base (venues, bands, stories, influences) that builds
-long-tail search visibility over time.
+> **No invasive tracking.** SEO improvements come from content quality,
+> technical correctness, crawlability, and clear conversion paths, not
+> from behavioral surveillance.
 
 ---
 
-## 2) What comes from default Jekyll + plugins vs custom work
+## 1. Goals
 
-### Default / plugin-provided
+1. **Be the answer for "Brian Barnard" / "Brian Barnard art"**, at minimum
+   whenever the search has Fernandina Beach / Amelia Island / Jacksonville
+   context (location, or words like "artist", "painter", "mural").
+2. **Convert visitors** into print requests (`/prints/`) and contacts (`/contact/`).
+3. **Build long-tail visibility** through real pages about paintings,
+   venues, bands, and stories.
 
-- `jekyll-seo-tag` provides canonical/meta/OG scaffolding from front matter.
-- `jekyll-sitemap` generates `sitemap.xml`.
-- `jekyll-feed` generates a feed.
+### The "which Brian Barnard?" problem
 
-### Site customizations
+Other people share the name. Search engines decide which one you mean by
+**entity signals**: consistent facts (name + place + occupation) repeated
+across this site, social profiles, business listings, and especially
+*other* websites that link here. No single tag decides it. Each consistent
+mention adds a little.
 
-- Custom title pattern in head:
-  - Home: `Brian Barnard Art`
-  - Inner pages: `<Page Title> | Brian Barnard Art`
-- Site-wide Person JSON-LD in `_includes/custom-head.html`
-- `robots.txt` with explicit sitemap pointer
-- Front-matter controls for non-index content:
-  - `noindex: true`
-  - `sitemap: false`
-- Print conversion pathway:
-  - `/prints/` page + site CTA ribbon + contact-based ordering
-
----
-
-## 3) Current technical SEO posture
-
-### Crawlability and discovery
-
-- `robots.txt` exists and allows crawl.
-- `robots.txt` points to `https://brianbarnardart.com/sitemap.xml`.
-- `sitemap.xml` is generated automatically on deploy.
-
-### Metadata quality
-
-- Indexable pages are expected to have:
-  - `description`
-  - `image`
-- Social previews use `og:image` from front matter (`jekyll-seo-tag` behavior).
-
-### Entity clarity
-
-- Person structured data identifies Brian Barnard and social profiles.
-- Brand is reinforced in page titles across indexable pages.
-
-### Index hygiene
-
-- Utility/draft/speculative pages can be excluded with:
-  - `noindex: true`
-  - `sitemap: false`
-- `404.md` is intentionally excluded.
+**Status (Oct 2026):** Google ranks the site #1 for both names, even
+logged-out over VPN. Bing is slower. That's typical: Bing has fewer signals
+about a 2026 domain, relies more on literal on-page wording, and gives
+weight to Microsoft-owned LinkedIn for person names.
 
 ---
 
-## 4) CI/CD guardrails
+## 2. What's in place
 
-Two workflows protect SEO:
+### Technical
 
-1. **Build/deploy workflow** (`.github/workflows/jekyll-gh-pages.yml`)
-   - Enforces required SEO front matter on indexable markdown pages
-   - Builds and deploys only if checks pass
+| Item | Where |
+|---|---|
+| `sitemap.xml` (auto-generated; drafts excluded via `sitemap: false`) | `jekyll-sitemap` |
+| `robots.txt` allowing all, pointing at sitemap | `robots.txt` |
+| Canonical URLs, meta description, Open Graph / Twitter cards | `jekyll-seo-tag` from front matter |
+| `<title>`: home = `Brian Barnard Art \| Fernandina Beach Artist & Live Painter`; inner = `Page \| Brian Barnard Art` | `_includes/head.html`, `tagline` in `_config.yml` |
+| `noindex` robots meta for drafts | `noindex: true` front matter |
+| HTTPS, `www` → apex and `http` → `https` 301 redirects | GitHub Pages |
+| **IndexNow** ping to Bing etc. after every successful deploy | `site-validation.yml`, key file in repo root |
 
-2. **Live validation workflow** (`.github/workflows/site-validation.yml`)
-   - Runs after deploy with retry/backoff
-   - Confirms live `robots.txt`, `sitemap.xml`, key metadata, and noindex/sitemap exclusions
+### Structured data (JSON-LD)
 
-This prevents silent regressions.
+- **Person** on every page (`_includes/custom-head.html`) with
+  `"@id": "https://brianbarnardart.com/#person"`: name, image, job title,
+  Fernandina Beach address and home location, FSU alumni, `knowsAbout`,
+  and `sameAs` → Facebook, Instagram, YouTube.
+- **VisualArtwork** on each painting page (`_layouts/artwork.html`): title,
+  image, medium, size, year, and `creator` → the Person `@id` above. This
+  ties painting images to the artist in image search.
+- **WebSite** (emitted automatically by `jekyll-seo-tag`).
 
----
+Validate with the [Schema Markup Validator](https://validator.schema.org/)
+or Google's [Rich Results Test](https://search.google.com/test/rich-results).
 
-## 5) Content model rules (important)
+### Content signals
 
-### Publish-ready pages (indexable)
+- Painting image alt text reads "*Title*, acrylic on canvas by Brian Barnard".
+- Home page copy names Brian, Fernandina, The Green Turtle, The Inkwell, and
+  Tigre Island Room in natural sentences.
+- Venue pages give real addresses and phone numbers.
 
-Use when the page is complete enough to rank:
+### CI guardrails
 
-- clear narrative content
-- real links/media
-- strong front matter (`title`, `description`, `image`, permalink as needed)
-
-### Draft/speculative pages
-
-Use for placeholders or outlines still under development:
-
-```yaml
-noindex: true
-sitemap: false
-```
-
-Move to indexable only when the content is genuinely useful.
-
----
-
-## 6) Non-tracking SEO growth plan
-
-### Phase A -- technical baseline (done)
-
-- sitemap + robots + canonical/title consistency
-- structured data
-- front-matter coverage
-- CI guardrails
-
-### Phase B -- conversion-ready content (in progress)
-
-- Keep `/prints/` clear and personal
-- Keep pricing/availability flow explicit through contact form
-- Maintain current offerings in `_data/prints.yml`
-
-### Phase C -- authority expansion (next)
-
-- Build real pages for:
-  - local venues
-  - bands Brian paints with
-  - "life and times" stories
-- Prioritize depth over volume; avoid thin pages
+- Deploy is blocked if an indexable page lacks `description`/`image`, or if
+  an internal link is broken.
+- Post-deploy check confirms live robots, sitemap, titles, canonicals, meta,
+  Person structured data, and noindex on drafts.
+- Images over 1 MB produce a warning (page speed is a ranking factor, and
+  most visitors are on phones).
 
 ---
 
-## 7) Editorial checklist for any new indexable page
+## 3. Action list
 
-Before publishing, confirm:
+Ordered roughly by impact for the effort. Items marked 🔑 need account access
+and can't be done in this repository.
 
-- [ ] Front matter has `layout`, `title`, `description`, `image`
-- [ ] Content answers a real visitor question
-- [ ] Internal links connect to related pages
-- [ ] Outbound links are credible and relevant
-- [ ] Page is not speculative placeholder text
-- [ ] If draft: set `noindex: true` and `sitemap: false`
+### Off-site: the biggest levers for "which Brian Barnard"
+
+- [ ] 🔑 **Bing Webmaster Tools**: verify the site (easiest: "Import from
+      Google Search Console"), submit `https://brianbarnardart.com/sitemap.xml`,
+      and check the IndexNow page shows submissions arriving.
+- [ ] 🔑 **Google Search Console**: confirm verified; sitemap submitted.
+- [ ] 🔑 **Google Business Profile**: create as a *service-area* business
+      (no public street address needed), category "Artist", area Fernandina
+      Beach / Amelia Island, website link. This is the main local signal.
+- [ ] 🔑 **Bing Places**: import from the Google Business Profile.
+- [ ] 🔑 **Recover LinkedIn** and put `https://brianbarnardart.com` and
+      "Artist, Fernandina Beach" on it. Bing leans heavily on LinkedIn for
+      person-name searches. Then add the URL to `sameAs` and the footer.
+- [ ] 🔑 **Social bios link back.** Facebook, Instagram, and YouTube "About"
+      sections should all link to `https://brianbarnardart.com` and say
+      "Fernandina Beach". Two-way links confirm the `sameAs` claims.
+- [ ] **Ask for links from local sites.** These count far more than anything
+      on-site:
+  - The Inkwell, Tigre Island Room, and Green Turtle websites/pages (an
+    "artist" mention linking here)
+  - Fernandina Observer (the right-whale story) and any future press: ask
+    that articles link the site
+  - Amelia Island tourism / event listings, Shrimp Festival vendor or artist
+    pages, local arts organizations
+  - Bands Brian paints with: a link from their sites or posts
+
+### On-site
+
+- [ ] **Give the home page a visible `<h1>`.** The page currently has no
+      heading text (the signature logo is an image, now with an
+      `aria-label`). Something like "Brian Barnard: Fernandina Beach artist
+      and live painter" as the first line. Bing weighs `<h1>` text heavily.
+- [ ] **Make `/events/` concrete.** A recurring schedule in plain text
+      ("Fridays and Saturdays at The Green Turtle, 14 S 3rd St"; "Tuesday
+      sketch class at The Inkwell") is useful to visitors and to local search.
+      Optional later: `Event` structured data for dated events.
+- [ ] **Fill in or unpublish placeholder drafts.** Several `noindex` pages
+      (`_bands/*`, `_charities/*`, `_events/*`, two `_interests/*`) are
+      publicly reachable with template text ("Add your notes about…") and
+      missing images. Search engines won't rank them, but people can find
+      them. Switch to `published: false` until they're written (and update
+      the `/bands/1blackfrend/` assertion in `site-validation.yml`).
+- [ ] **Decide about `/works/waterfront-jamboree/`.** It's in the sitemap but
+      nothing links to it (archived), and it has one sentence of text.
+      Either expand it or mark it `noindex`/`sitemap: false`.
+- [ ] **Resize large images** (see USER-GUIDE §7). The CI warning lists them.
+- [ ] Add more painting pages with real stories. Every `_works/` page is a
+      new chance to rank for the painting's name and subject.
+
+### Explicitly out of scope
+
+- Cross-site behavioral tracking, ad pixels, surveillance analytics
+- Keyword stuffing, doorway pages, buying links
+- Hiding text from visitors to show search engines
 
 ---
 
-## 8) Bing/Google operational checklist (manual)
+## 4. Checklist for any new public page
 
-These do **not** require adding tracking scripts:
-
-- Verify site in Bing Webmaster Tools and Google Search Console
-- Submit sitemap URL
-- Use URL inspection/submission for key pages after major updates
-- Monitor indexing and crawl errors
-
----
-
-## 9) Future conversion enhancement notes
-
-- "Held-in-hand print photos" are a good trust signal for `/prints/`:
-  - communicates authenticity ("this comes from Brian directly")
-  - supports the non-store, personal-order model
-  - can improve click-through and conversion confidence
-- Zero-risk scaling roadmap:
-  - If print demand scales or caretaking requirements shift, migrate from the manual form model to hosted Stripe Payment Links (zero monthly subscription, no database, static architecture preserved).
-  - See `USER-GUIDE.md` Section 7 for the complete step-by-step scaling plan.
+- [ ] Front matter has `layout`, `title`, `description` (1–2 natural
+      sentences), `image`
+- [ ] Content answers a real visitor question. No placeholder text.
+- [ ] Links to related pages on the site (venues, paintings, prints)
+- [ ] Images resized (< ~500 KB), with descriptive filenames and alt text
+- [ ] If not ready: `noindex: true` + `sitemap: false`, or `published: false`
 
 ---
 
-## 10) Boundaries
+## 5. Measuring (privacy-respecting)
 
-Out of scope unless strategy changes:
-
-- cross-site behavioral tracking
-- ad-tech pixels
-- surveillance-heavy analytics
-
-Privacy-respecting measurement and strong content architecture are the default.
+- **GoatCounter**: page views, referrers (look for venue/news sites
+  sending visitors), 404 events (`404: /path`) to find broken inbound links.
+- **Search Console / Bing Webmaster Tools**: which searches show the site,
+  click-through, indexing errors. These are aggregate data from the
+  search engines, with no scripts on the site.

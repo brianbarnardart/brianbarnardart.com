@@ -7,67 +7,11 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
   <body class="error-page">
-    {%- assign _prints_target = page.prints_url | default: "/prints/" -%}
-    <a href="{{ _prints_target | relative_url }}" class="prints-ribbon" aria-label="Get prints">
-      Get Prints
-    </a>
+    {%- include prints-ribbon.html -%}
 
     <main class="error-content">
       {{ content }}
     </main>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var ribbon = document.querySelector(".prints-ribbon");
-        if (!ribbon) return;
-
-        var dismissKey = "printsRibbonDismissUntil";
-        var seenKey = "printsRibbonSeenThisSession";
-        var now = Date.now();
-        var dismissUntil = 0;
-
-        try {
-          dismissUntil = parseInt(localStorage.getItem(dismissKey) || "0", 10);
-        } catch (e) {
-          dismissUntil = 0;
-        }
-
-        if (dismissUntil > now) {
-          ribbon.classList.add("prints-ribbon--suppressed");
-          return;
-        }
-
-        try {
-          if (sessionStorage.getItem(seenKey) === "1") {
-            ribbon.classList.add("prints-ribbon--visible");
-          }
-        } catch (e) {
-          // Continue with default delayed reveal behavior.
-        }
-
-        var finalizeRibbonVisible = function () {
-          ribbon.classList.add("prints-ribbon--visible");
-          try { sessionStorage.setItem(seenKey, "1"); } catch (e) {}
-        };
-
-        if (window.getComputedStyle(ribbon).animationName === "none") {
-          finalizeRibbonVisible();
-        } else if (!ribbon.classList.contains("prints-ribbon--visible")) {
-          ribbon.addEventListener("animationend", function handleReveal() {
-            finalizeRibbonVisible();
-            ribbon.removeEventListener("animationend", handleReveal);
-          });
-        }
-
-        ribbon.addEventListener("click", function () {
-          try {
-            localStorage.setItem(dismissKey, String(Date.now() + (60 * 60 * 1000)));
-          } catch (e) {
-            // Ignore storage errors and proceed with navigation.
-          }
-        });
-      });
-    </script>
 
   {% unless jekyll.environment == "development" %}
     {% include analytics.html %}
