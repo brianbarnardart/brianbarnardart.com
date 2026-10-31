@@ -51,7 +51,8 @@ exclude:
   - README.md
   - LICENSE
   - USER-GUIDE.md
-  - HOWTO.md
+  - START-HERE.md
+  - docs/  - HOWTO.md
   - SEO-STRATEGY.md
   - AGENTS.md
   - CLAUDE.md

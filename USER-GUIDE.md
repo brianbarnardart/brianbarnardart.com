@@ -70,9 +70,9 @@ current. A password nobody can find is as bad as a lost one.
 
 | Service | What it controls | Details | Who has access ✏️ |
 |---|---|---|---|
-| **Network Solutions** (domain registrar) | Ownership of the name `brianbarnardart.com` | Registered Feb 2026, expires **Feb 2, 2027**. Most important account. | |
-| **Bluehost** (DNS) | The "phone book" entries that point the name at GitHub | Nameservers are `ns1/ns2.bluehost.com`. You rarely need this. Don't delete the DNS records that point to GitHub (see `HOWTO.md`, "Connect your domain"). | |
-| **GitHub**, account `brianbarnardart` | All site text, images, and design: [github.com/brianbarnardart/brianbarnardart.com](https://github.com/brianbarnardart/brianbarnardart.com) | Personal account. Save the **two-factor recovery codes** somewhere safe. | |
+| **Network Solutions** (where the name was bought) | Ownership of the name `brianbarnardart.com` | Registered Feb 2026, expires **Feb 2, 2027**. Most important account. ✏️ *Brian: confirm this is still where the name is registered.* | Brian only |
+| **Bluehost** (the "address book", called DNS) | Entries that point the name at GitHub | The name is set to use `ns1/ns2.bluehost.com`. You rarely need this. Don't delete the entries that point to GitHub (see `HOWTO.md`, "Connect your domain"). | Brian only |
+| **GitHub**, account `brianbarnardart` | All site text, images, and design: [github.com/brianbarnardart/brianbarnardart.com](https://github.com/brianbarnardart/brianbarnardart.com) | Owned by Brian. **AE1020** can edit the site but can't change settings. Save the **two-factor recovery codes** somewhere safe. | Brian (owner), AE1020 (editing only) |
 | **FormSpark** ([formspark.io](https://formspark.io)) | Delivers contact/print form messages by email | Form ID `AvqUDoWyl`. Forwards to: ✏️ ____________ | |
 | **GoatCounter** ([goatcounter.com](https://www.goatcounter.com)) | Visitor counts (no cookies, no tracking) | Site code is `brianbarnardtest` (left over from setup; it works fine) | |
 | **Google Search Console** / **Bing Webmaster Tools** | How the site appears in search results | See [section 10](#10-search-engines-google-and-bing) | |
@@ -81,9 +81,15 @@ current. A password nobody can find is as bad as a lost one.
 
 ### Making sure the site outlives any one person
 
-- **Add a second person to the GitHub repository.** In the repository, go to
-  **Settings → Collaborators → Add people** and invite a trusted person's own
-  GitHub account. They can then edit the site without sharing a password.
+- **Give a second person full access to the GitHub project.** AE1020 can
+  already edit pages. To let someone also fix settings if Brian is
+  unavailable, Brian goes to **Settings → Collaborators**, finds that person
+  and raises their role to **Admin**. Doing this together with Brian sitting
+  at the keyboard is the point: he should know what each button does.
+- **Write down the "who knows what" gap.** Right now the domain and DNS
+  logins are known only to Brian. Put them in a shared password manager
+  (such as Bitwarden's family or organization plan) so a trusted person can
+  get in if needed.
 - **Name a GitHub successor.** Logged in as `brianbarnardart`, go to the
   account **Settings → Account → Successor settings** and invite someone.
   GitHub will let that person take over the repositories if the account
@@ -115,8 +121,11 @@ current. A password nobody can find is as bad as a lost one.
 - **Paintings** each have a small file in `_works/`.
 - **Images** live in `assets/` (paintings in `assets/paintings/`, print photos
   in `assets/prints/`, and so on).
-- The software that assembles it all is called **Jekyll**. You don't need
-  to know anything about it to make content changes.
+- The free tool that assembles it all is called **Jekyll**. You never need
+  to run it. GitHub does it for you.
+
+A picture version of this is in [START-HERE.md](START-HERE.md) and
+[docs/site-overview.svg](docs/site-overview.svg).
 
 **Where things are:**
 
@@ -199,11 +208,11 @@ find the commit that deleted it, view the file as it was in the commit
 
 ## 6. Recipes: common tasks
 
-> **The golden rule for every page:** each `.md` file starts with a block
-> between two `---` lines called **front matter**. It holds the settings for
-> the page (title, description, image). Copy an existing file's front matter
-> as your starting point, and see [section 13](#13-reference-front-matter-fields)
-> for what each field means.
+> **The golden rule for every page:** each page file starts with a small
+> settings box between two `---` lines (the technical name is "front matter").
+> It holds the page's title, description and picture. Copy an existing file's
+> box as your starting point, and see [section 13](#13-reference-front-matter-fields)
+> for what each setting means.
 
 ### Update the events page
 
@@ -368,10 +377,10 @@ Remember: **the old site is still live.** Nothing is broken for visitors.
 | `missing description for indexable page` | A public page has no `description:` | Add a one or two sentence `description:` to its front matter (or mark it draft, see [section 6](#work-on-a-page-that-isnt-ready-yet)) |
 | `missing image for indexable page` | A public page has no `image:` | Add `image: /assets/...` (the picture shown when the link is shared) |
 | `broken absolute internal link /something` | A link or image points to something that doesn't exist | Check spelling and capitalization of the path; make sure the image was uploaded |
-| `invalid YAML front matter` / `did not find expected key` / `mapping values are not allowed` | Front matter formatting problem | See below |
-| An error mentioning `Liquid` | A `{% … %}` or `{{ … }}` tag is mistyped | Compare with the same tag in another file |
+| `invalid YAML front matter` / `did not find expected key` / `mapping values are not allowed` | The settings box at the top of a page is typed wrong | See below |
+| An error mentioning `Liquid` | A bit of code in `{% … %}` or `{{ … }}` is mistyped | Compare with the same bit in another file |
 
-**Front matter (YAML) formatting tips:**
+**Settings-box formatting tips** (front matter, also called YAML):
 - If a value contains a colon followed by a space (`: `), wrap it in quotes:
   `description: "Meet Frog King: the mascot"`
 - If a value contains `"`, wrap it in single quotes: `dimensions: '24" x 36"'`
@@ -381,9 +390,9 @@ Remember: **the old site is still live.** Nothing is broken for visitors.
 **Still stuck?** Undo the last change ([section 5](#5-undoing-a-mistake)) to
 get back to a working state, then ask for help ([section 12](#12-getting-help-including-from-ai-assistants)).
 
-**If a build fails and you didn't change anything relevant**, the
-cause may be an update to the free tools GitHub uses. The live site isn't
-affected. Ask a technical friend or an AI assistant, and show them the error message.
+**If it fails and you didn't change anything relevant**, GitHub's free tools
+may have been updated. The live site isn't affected. Ask a technical friend
+or an AI assistant, and show them the error message.
 
 ---
 

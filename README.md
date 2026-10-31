@@ -16,6 +16,7 @@ want to share, so check that out if you have not heard of it before!)
 
 | You are… | Read |
 |---|---|
+| **New here and not a programmer** | **[START-HERE.md](START-HERE.md)**: one page, with diagrams, what to keep paid up and logged in |
 | **Looking after this website** (updating events, adding paintings and prints, keeping accounts current) | **[USER-GUIDE.md](USER-GUIDE.md)**: plain-language caretaker's manual, no programming needed |
 | Working on search visibility | [SEO-STRATEGY.md](SEO-STRATEGY.md) |
 | An AI assistant (or someone directing one) | [AGENTS.md](AGENTS.md) |
