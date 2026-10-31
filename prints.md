@@ -10,8 +10,7 @@ image: /assets/prints/fox-jam-print-fake.jpg
 
 Selling prints online is very new for Brian, and his team is handling print
 requests personally.  This way we can confirm availability, make sure you're
-getting the right piece(s), and coordinate shipping directly.  It's also a
-chance to say hello, and how you found out about his work.
+getting the right piece(s), and coordinate shipping directly.
 
 <sub>(Doing this *might* be because we don't actually know how to make our own
 online store. 🙈  *BUT* the personal touch is preferable anyway!)</sub>
@@ -35,8 +34,8 @@ front of one of his murals, but it is being prototyped with postcards.)*
 ## How ordering works
 
 1. Send your request through the form below (include print title(s), quantity, and shipping ZIP code).
-2. Brian confirms availability and total cost (print + shipping).
-3. Payment is coordinated directly (typically Venmo), then the print is packed and mailed.
+2. We confirm availability and total cost (prints + shipping).
+3. Payment is coordinated directly (typically Venmo), then the prints are packed and mailed.
 
 ## Request Prints
 
@@ -44,4 +43,4 @@ front of one of his murals, but it is being prototyped with postcards.)*
   id="prints-form"
   submit_text="Send Print Request"
   message_placeholder="Which print(s) do you want? Include quantity, shipping ZIP code, and any notes."
-  success_message="Thanks! Your print request was sent. Brian will follow up with availability and shipping details." %}
+  success_message="Thanks! Your print request was sent. We will follow up with availability and shipping details." %}

@@ -25,7 +25,7 @@ of his paintings.)*
 ## How ordering works
 
 1. Send a request below with the print title(s), quantity, and shipping ZIP code.
-2. Brian confirms availability and total (print + shipping).
+2. We confirm availability and total (print + shipping).
 3. Payment is coordinated directly (usually Venmo), then shipped.
 
 ## Request Lebowski Prints
@@ -34,4 +34,4 @@ of his paintings.)*
   id="lebowski-prints-form"
   submit_text="Send Lebowski Print Request"
   message_placeholder="Which Lebowski print(s) are you interested in? Include quantity and shipping ZIP code."
-  success_message="Thanks! Your Lebowski print request was sent. Brian will follow up with availability and shipping details." %}
+  success_message="Thanks! Your Lebowski print request was sent. We will follow up with availability and shipping details." %}
