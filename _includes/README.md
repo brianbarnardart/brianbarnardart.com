@@ -171,16 +171,16 @@ Use it with `capture`:
 ### `prints-ribbon.html`
 
 The fixed **Get Prints** call-to-action ribbon plus its show/hide script.
-Included by both `default.html` and `404.html`. Hidden on `/prints/` and
-`/gallery/`.
+Included by both `default.html` and `404.html`. Hidden on `/gallery/`, on
+`/prints/`, and automatically on every page under `/prints/` (all print
+category pages, present and future).
 
 Link target, in priority order:
 
 1. `prints_url:` in the page's front matter
-2. `/prints/` if the page is itself under `/prints/`
-3. `/prints/<last URL segment>/` if such a page exists (e.g.
+2. `/prints/<last URL segment>/` if such a page exists (e.g.
    `/interests/the-big-lebowski/` → `/prints/the-big-lebowski/`)
-4. `/prints/`
+3. `/prints/`
 
 Visibility: slides in after a delay, stays visible for the rest of the
 browsing session (`sessionStorage` key `printsRibbonSeenThisSession`), and is

@@ -3,17 +3,17 @@
   !!! Humans (or AI): if you change this file, update the README too!
 {%- endcomment -%}
 
-{%- unless page.url == "/prints/" or page.url == "/gallery/" -%}
+{%- assign _in_prints = page.url | slice: 0, 8 -%}
+{%- unless _in_prints == "/prints/" or page.url == "/gallery/" -%}
   {%- comment -%}
-    Target priority: prints_url front matter, then /prints/<this-page's-slug>/
-    if such a category page exists, then plain /prints/.  Pages already inside
-    /prints/ (category pages) always point back to the main /prints/ page.
+    Hidden on /gallery/ and on /prints/ and every page under it, since the
+    visitor is already looking at prints.  Elsewhere, target priority:
+    prints_url front matter, then /prints/<this-page's-slug>/ if such a
+    category page exists, then plain /prints/.
   {%- endcomment -%}
   {%- assign _prints_target = "/prints/" -%}
   {%- if page.prints_url -%}
     {%- assign _prints_target = page.prints_url -%}
-  {%- elsif page.url contains "/prints/" -%}
-    {%- assign _prints_target = "/prints/" -%}
   {%- else -%}
     {%- assign _slug = page.url | split: "/" | last -%}
     {%- if _slug and _slug != "" -%}
